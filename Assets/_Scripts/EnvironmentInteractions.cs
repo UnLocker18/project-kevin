@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
-    [SerializeField] private float range = 50f;
+    [SerializeField] private float range = 1.3f;
 
     private FloorButton previousTarget = null;
     private bool grabbing = false;
@@ -18,15 +17,6 @@ public class EnvironmentInteractions : MonoBehaviour
     void Update()
     {
         ButtonInteraction();
-        AdditionalControls();
-    }
-
-    private void AdditionalControls()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            BoxInteraction();
-        }
     }
 
     void ButtonInteraction()
@@ -42,19 +32,19 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             FloorButton button = hit.collider.gameObject.GetComponent<FloorButton>();
 
-            if (previousTarget != button && previousTarget != null) previousTarget.Activate(false);
+            if (previousTarget != button && previousTarget != null) previousTarget.Activate(false, false);
 
             previousTarget = button;
 
             if (button != null)
             {
-                button.Activate(true);
+                button.Activate(true, false);
             }
         }
-        else if (previousTarget != null) previousTarget.Activate(false);
+        else if (previousTarget != null) previousTarget.Activate(false, false);
     }
 
-    void BoxInteraction()
+    public void BoxInteraction()
     {
         Vector3 rayOrigin = transform.position + 0.25f * Vector3.up;
         Vector3 rayDirection = transform.forward;
