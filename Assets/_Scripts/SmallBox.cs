@@ -2,10 +2,6 @@
 
 public class SmallBox : MonoBehaviour
 {
-    [SerializeField] private float range = 0.2f;
-
-    private FloorButton previousTarget = null;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +16,27 @@ public class SmallBox : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        FloorButton button = collision.gameObject.GetComponent<FloorButton>();
-
-        if (button != null)
+        if (collision.gameObject.name == "Trigger")
         {
-            button.Activate(true, true);
+            FloorButton button = collision.gameObject.GetComponentInParent<FloorButton>();
+
+            if (button != null)
+            {
+                button.Activate(true, true);
+            }
         }
     }
 
     void OnCollisionExit(Collision collision)
     {
-        FloorButton button = collision.gameObject.GetComponent<FloorButton>();
-
-        if (button != null)
+        if (collision.gameObject.name == "Trigger")
         {
-            button.Activate(false, true);
+            FloorButton button = collision.gameObject.GetComponentInParent<FloorButton>();
+
+            if (button != null)
+            {
+                button.Activate(false, true);
+            }
         }
     }
 
