@@ -2,6 +2,7 @@
 
 public class FloorButton : MonoBehaviour
 {
+    [SerializeField] private Door door;
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
 
@@ -24,11 +25,23 @@ public class FloorButton : MonoBehaviour
     {
         if (activatorIsBox) hasBoxOn = !hasBoxOn;
 
-        if (hasBoxOn) _renderer.material = activeMaterial;
+        if (hasBoxOn)
+        {
+            _renderer.material = activeMaterial;
+            if (door != null) door.Open();
+        }
         else
         {
-            if (activate) _renderer.material = activeMaterial;
-            else _renderer.material = inactiveMaterial;
+            if (activate)
+            {
+                _renderer.material = activeMaterial;
+                if (door != null) door.Open();
+            }
+            else
+            {
+                _renderer.material = inactiveMaterial;
+                if (door != null) door.Close();
+            }
         }        
     }    
 }
