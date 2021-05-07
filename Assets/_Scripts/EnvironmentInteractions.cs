@@ -55,12 +55,12 @@ public class EnvironmentInteractions : MonoBehaviour
 
         if (grabbing)
         {
-            SmallBox box = transform.Find("SmallBox").GetComponent<SmallBox>();
+            SmallBox smallBox = transform.GetComponentInChildren<SmallBox>();
 
-            if (box != null)
+            if(smallBox != null)
             {
                 grabbing = !grabbing;
-                box.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+                smallBox.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
             }
         }
         else
