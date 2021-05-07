@@ -24,12 +24,10 @@ public class PuzzleButton : MonoBehaviour
     {
         if (isActive)
         {
-            Debug.Log("toggle deactivate");
             _renderer[0].material = inactiveMaterial;
         }
         else
         {
-            Debug.Log("toggle activate");
             _renderer[0].material = activeMaterial;
         }
 
