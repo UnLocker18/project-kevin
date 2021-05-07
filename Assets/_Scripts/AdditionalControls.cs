@@ -16,7 +16,7 @@ public class AdditionalControls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            environmentInteractions.BoxInteraction();
+            environmentInteractions.Interaction();
         }
     }
 }

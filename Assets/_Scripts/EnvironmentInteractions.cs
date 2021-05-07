@@ -16,10 +16,10 @@ public class EnvironmentInteractions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ButtonInteraction();
+        FloorButtonInteraction();
     }
 
-    void ButtonInteraction()
+    void FloorButtonInteraction()
     {
         Vector3 rayOrigin = transform.position + 1 * Vector3.up;
         Vector3 rayDirection = -transform.up;
@@ -30,21 +30,21 @@ public class EnvironmentInteractions : MonoBehaviour
 
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, range))
         {
-            FloorButton button = hit.collider.gameObject.GetComponentInParent<FloorButton>();
+            FloorButton floorButton = hit.collider.gameObject.GetComponentInParent<FloorButton>();
 
-            if (previousTarget != button && previousTarget != null) previousTarget.Activate(false, false);
+            if (previousTarget != floorButton && previousTarget != null) previousTarget.Activate(false, false);
 
-            previousTarget = button;
+            previousTarget = floorButton;
 
-            if (button != null)
+            if (floorButton != null)
             {
-                button.Activate(true, false);
+                floorButton.Activate(true, false);
             }
         }
         else if (previousTarget != null) previousTarget.Activate(false, false);
     }
 
-    public void BoxInteraction()
+    public void Interaction()
     {
         Vector3 rayOrigin = transform.position + 0.25f * Vector3.up;
         Vector3 rayDirection = transform.forward;
@@ -67,14 +67,30 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             if (Physics.Raycast(rayOrigin, rayDirection, out hit, range))
             {
-                SmallBox box = hit.collider.gameObject.GetComponent<SmallBox>();
-
-                if (box != null)
-                {
-                    grabbing = !grabbing;
-                    box.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-                }
+                BoxInteraction(hit);
+                PuzzleButtonInteraction(hit);
             }
         }        
+    }
+
+    void BoxInteraction(RaycastHit hit)
+    {
+        SmallBox box = hit.collider.gameObject.GetComponent<SmallBox>();
+
+        if (box != null)
+        {
+            grabbing = !grabbing;
+            box.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+        }
+    }
+
+    void PuzzleButtonInteraction(RaycastHit hit)
+    {
+        PuzzleButton puzzleButton = hit.collider.gameObject.GetComponentInParent<PuzzleButton>();
+
+        if (puzzleButton != null)
+        {
+            puzzleButton.Toggle();
+        }
     }
 }
