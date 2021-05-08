@@ -1,18 +1,24 @@
 ﻿using UnityEngine;
+using System;
 
 public class FloorButton : MonoBehaviour
 {
-    [SerializeField] private Door door;
+    //[SerializeField] private Door door;
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
 
+    public event Action<int, bool> ButtonPress;
+    public int buttonNumber;
+
     private Renderer _renderer;
-    private bool hasBoxOn = false;
+    [SerializeField] private bool isActive = false;
+    [SerializeField] private bool hasBoxOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _renderer = GetComponent<Renderer>();
+        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
     // Update is called once per frame
@@ -21,27 +27,32 @@ public class FloorButton : MonoBehaviour
         
     }
 
-    public void Activate(bool activate, bool activatorIsBox)
+    public void Activate(bool activatorIsBox)
     {
-        if (activatorIsBox) hasBoxOn = !hasBoxOn;
+        Toggle(true, activatorIsBox);
+    }
 
-        if (hasBoxOn)
+    public void Deactivate(bool activatorIsBox)
+    {
+        Toggle(false, activatorIsBox);
+    }
+
+    void Toggle(bool activate, bool activatorIsBox)
+    {
+        if (activatorIsBox && !activate) hasBoxOn = !hasBoxOn;
+
+        if (activate != isActive)
         {
-            _renderer.material = activeMaterial;
-            if (door != null) door.Open();
+            if (!hasBoxOn)
+            {
+                isActive = activate;
+                if (ButtonPress != null) ButtonPress.Invoke(buttonNumber, isActive);
+            }
         }
-        else
-        {
-            if (activate)
-            {
-                _renderer.material = activeMaterial;
-                if (door != null) door.Open();
-            }
-            else
-            {
-                _renderer.material = inactiveMaterial;
-                if (door != null) door.Close();
-            }
-        }        
-    }    
+
+        if (activatorIsBox && activate) hasBoxOn = !hasBoxOn;
+
+        if (isActive) _renderer.material = activeMaterial;
+        else _renderer.material = inactiveMaterial;
+    } 
 }

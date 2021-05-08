@@ -22,7 +22,8 @@ public class SmallBox : MonoBehaviour
 
             if (button != null)
             {
-                button.Activate(true, true);
+                //button.Activate(true, true);
+                button.Activate(true);
             }
         }
     }
@@ -35,7 +36,8 @@ public class SmallBox : MonoBehaviour
 
             if (button != null)
             {
-                button.Activate(false, true);
+                //button.Activate(false, true);
+                button.Deactivate(true);
             }
         }
     }

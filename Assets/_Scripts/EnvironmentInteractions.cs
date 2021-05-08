@@ -31,17 +31,17 @@ public class EnvironmentInteractions : MonoBehaviour
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, range))
         {
             FloorButton floorButton = hit.collider.gameObject.GetComponentInParent<FloorButton>();
-
-            if (previousTarget != floorButton && previousTarget != null) previousTarget.Activate(false, false);
+            
+            if (previousTarget != floorButton && previousTarget != null) previousTarget.Deactivate(false);
 
             previousTarget = floorButton;
 
             if (floorButton != null)
             {
-                floorButton.Activate(true, false);
+                floorButton.Activate(false);
             }
         }
-        else if (previousTarget != null) previousTarget.Activate(false, false);
+        else if (previousTarget != null) previousTarget.Deactivate(false);
     }
 
     public void Interaction()
