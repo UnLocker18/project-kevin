@@ -17,8 +17,18 @@ public class Door : MonoBehaviour
         int i = 0;
         foreach (GameObject activator in activators)
         {
-            activator.GetComponent<FloorButton>().ButtonPress += Toggle;
-            floorButtonNumbers[i] = activator.GetComponent<FloorButton>().buttonNumber;
+            if (activator.GetComponent<FloorButton>() != null)
+            {
+                activator.GetComponent<FloorButton>().ButtonPress += Toggle;
+                floorButtonNumbers[i] = activator.GetComponent<FloorButton>().buttonNumber;
+            }
+
+            if (activator.GetComponent<PuzzleButton>() != null)
+            {
+                activator.GetComponent<PuzzleButton>().ButtonPress += Toggle;
+                floorButtonNumbers[i] = activator.GetComponent<PuzzleButton>().buttonNumber;
+            }
+
             i++;
         }        
     }

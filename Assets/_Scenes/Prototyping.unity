@@ -152,12 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &577997843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6200874820936200762, guid: 3438a1b39f4e0a24e9217f54e8f5fbb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 756661443}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689962469
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +439,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 29.859001, y: 0, z: 0}
+--- !u!1 &1098433467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4354793899643198291, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
+    type: 3}
+  m_PrefabInstance: {fileID: 4354793899156719560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1576198680
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,12 +873,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3438a1b39f4e0a24e9217f54e8f5fbb1, type: 3}
---- !u!1 &1903590236 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6200874820936200762, guid: 3438a1b39f4e0a24e9217f54e8f5fbb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1903590235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1560112391946562622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1032,7 +1026,7 @@ PrefabInstance:
     - target: {fileID: 4354793899643198291, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
       propertyPath: m_Name
-      value: PuzzleButton
+      value: PuzzleButton_4
       objectReference: {fileID: 0}
     - target: {fileID: 4354793899643198293, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
@@ -1186,18 +1180,18 @@ PrefabInstance:
     - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: activators.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: activators.Array.data[0]
       value: 
-      objectReference: {fileID: 577997843}
+      objectReference: {fileID: 1098433467}
     - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: activators.Array.data[1]
       value: 
-      objectReference: {fileID: 1903590236}
+      objectReference: {fileID: 1098433467}
     - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: activators.Array.data[2]
