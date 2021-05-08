@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using System;
 
 public class PuzzleButton : MonoBehaviour
 {
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
+
+    public event Action<int, bool> ButtonPress;
+    public int buttonNumber;
 
     private bool isActive = false;
     private Renderer[] _renderer;
@@ -12,6 +16,7 @@ public class PuzzleButton : MonoBehaviour
     void Start()
     {
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
+        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
     // Update is called once per frame
@@ -32,5 +37,7 @@ public class PuzzleButton : MonoBehaviour
         }
 
         isActive = !isActive;
+
+        if (ButtonPress != null) ButtonPress.Invoke(buttonNumber, isActive);        
     }
 }
