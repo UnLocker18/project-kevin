@@ -3,8 +3,34 @@
 public class EnvironmentInteractions : MonoBehaviour
 {
     [SerializeField] private float range = 1.3f;
-    
-    private bool grabbing = false;
+
+    [SerializeField] private bool grabbing = false;
+    [SerializeField] public PuzzleButton currentPb;
+    [SerializeField] public SmallBox currentSb;
+
+    public void NewInteraction()
+    {
+        if (currentPb != null) currentPb.Toggle();
+
+        if (currentSb != null)
+        {
+            if (!grabbing)
+            {
+                grabbing = !grabbing;
+                currentSb.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+            }
+            else
+            {
+                SmallBox smallBox = transform.GetComponentInChildren<SmallBox>();
+
+                if (smallBox != null)
+                {
+                    grabbing = !grabbing;
+                    smallBox.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+                }
+            }
+        }
+    }
 
     public void Interaction()
     {
