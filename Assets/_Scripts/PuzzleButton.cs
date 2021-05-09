@@ -19,12 +19,6 @@ public class PuzzleButton : MonoBehaviour
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Toggle()
     {
         if (isActive)

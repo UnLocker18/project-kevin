@@ -33,12 +33,6 @@ public class Door : MonoBehaviour
         }        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Open()
     {
         transform.DORotate(new Vector3(0, 120, 0), 1);
