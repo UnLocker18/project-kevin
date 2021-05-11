@@ -7,12 +7,15 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject[] activators;
 
     private bool isOpen = false;
+    private Vector3 doorAngle;
     [SerializeField] private int[] floorButtonNumbers;
     [SerializeField] private int activeButtons = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        doorAngle = transform.localEulerAngles;
+
         floorButtonNumbers = new int[activators.Length];
 
         int i = 0;
@@ -36,13 +39,13 @@ public class Door : MonoBehaviour
 
     public void Open()
     {        
-        transform.DORotate(transform.localEulerAngles + new Vector3(0, 120, 0), 1);
+        transform.DORotate(doorAngle + new Vector3(0, 120, 0), 1);
         isOpen = true;
     }
 
     public void Close()
     {
-        transform.DORotate(transform.localEulerAngles - new Vector3(0, 120, 0), 1);
+        transform.DORotate(doorAngle, 1);
         isOpen = false;
     }
 

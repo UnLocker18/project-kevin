@@ -495,7 +495,7 @@ PrefabInstance:
         type: 3}
       propertyPath: activators.Array.data[1]
       value: 
-      objectReference: {fileID: 242611891}
+      objectReference: {fileID: 1098433467}
     - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: activators.Array.data[2]
@@ -1265,6 +1265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FloorButton_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962311450820470, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
