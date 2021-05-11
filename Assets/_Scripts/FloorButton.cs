@@ -11,12 +11,15 @@ public class FloorButton : MonoBehaviour
 
     private Renderer _renderer;    
     private bool isActive = false;
+    
+    void Awake()
+    {        
+        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         _renderer = GetComponentInChildren<Renderer>();
-        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
     public void Activate()
