@@ -5,8 +5,9 @@ using System;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject[] activators;
-    
-    private int[] floorButtonNumbers;
+
+    private bool isOpen = false;
+    [SerializeField] private int[] floorButtonNumbers;
     [SerializeField] private int activeButtons = 0;
 
     // Start is called before the first frame update
@@ -34,24 +35,29 @@ public class Door : MonoBehaviour
     }
 
     public void Open()
-    {
-        transform.DORotate(new Vector3(0, 120, 0), 1);
+    {        
+        transform.DORotate(transform.localEulerAngles + new Vector3(0, 120, 0), 1);
+        isOpen = true;
     }
 
     public void Close()
     {
-        transform.DORotate(new Vector3(0, 0, 0), 1);
+        transform.DORotate(transform.localEulerAngles - new Vector3(0, 120, 0), 1);
+        isOpen = false;
     }
 
     void Toggle(int buttonNumber, bool isActive)
     {
         if (Array.IndexOf(floorButtonNumbers, buttonNumber) >= 0)
         {
-            if (isActive) activeButtons++;
+            if (isActive)
+            {
+                activeButtons++;
+            }
             else activeButtons--;
         }
 
         if (activeButtons >= activators.Length) Open();
-        else Close();
+        else if (isOpen) Close();
     }
 }

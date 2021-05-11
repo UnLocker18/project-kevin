@@ -11,12 +11,15 @@ public class PuzzleButton : MonoBehaviour
 
     private bool isActive = false;
     private Renderer[] _renderer;
+    
+    void Awake()
+    {        
+        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
-        buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
     public void Toggle()
