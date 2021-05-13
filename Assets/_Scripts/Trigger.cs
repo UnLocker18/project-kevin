@@ -18,7 +18,7 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (floorButton != null)
+        if (floorButton != null && other.gameObject.name != "Trigger")
         {
             if (!TriggerList.Contains(other))
             {
