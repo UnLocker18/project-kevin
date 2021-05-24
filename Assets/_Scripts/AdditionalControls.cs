@@ -16,5 +16,10 @@ public class AdditionalControls : MonoBehaviour
         {
             environmentInteractions.NewInteraction();
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            environmentInteractions.StickRope();
+        }
     }
 }

@@ -7,6 +7,8 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] private bool grabbing = false;
     [SerializeField] public PuzzleButton currentPb;
     [SerializeField] public SmallBox currentSb;
+    [SerializeField] public Rope currentRope;
+    [SerializeField] public Piston currentPiston;
 
     public void NewInteraction()
     {
@@ -30,6 +32,40 @@ public class EnvironmentInteractions : MonoBehaviour
                 }
             }
         }
+
+        if (currentRope != null)
+        {
+            if (!grabbing)
+            {
+                grabbing = !grabbing;
+                currentRope.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+            }
+            else
+            {
+                Rope rope = transform.GetComponentInChildren<Rope>();
+
+                if (rope != null)
+                {
+                    grabbing = !grabbing;
+                    rope.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
+                }
+            }
+        }
+    }
+
+    public void StickRope()
+    {
+        if (currentRope != null && currentSb != null)
+        {
+            currentRope.stickChildren.Add(currentSb);
+        }
+
+        if (currentRope != null && currentPiston != null)
+        {
+            currentRope.stickParent = currentPiston;
+        }
+
+        currentRope.ApplyRope();
     }
 
     //public void Interaction()
