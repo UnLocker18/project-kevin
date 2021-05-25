@@ -5,6 +5,7 @@ using System;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject[] activators;
+    [SerializeField] private float animationSeconds = 1f;
 
     private bool isOpen = false;
     private Vector3 doorAngle;
@@ -39,13 +40,13 @@ public class Door : MonoBehaviour
 
     public void Open()
     {        
-        transform.DORotate(doorAngle + new Vector3(0, 120, 0), 1);
+        transform.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
         isOpen = true;
     }
 
     public void Close()
     {
-        transform.DORotate(doorAngle, 1);
+        transform.DORotate(doorAngle, animationSeconds);
         isOpen = false;
     }
 
