@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
+using System;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
-    [SerializeField] private float range = 1.3f;
-
     [SerializeField] private bool grabbing = false;
     [SerializeField] public PuzzleButton currentPb;
     [SerializeField] public SmallBox currentSb;
     [SerializeField] public Rope currentRope;
     [SerializeField] public Piston currentPiston;
 
-    public void NewInteraction()
+    public void Interaction()
     {
         if (currentPb != null) currentPb.Toggle();
 
@@ -57,15 +56,27 @@ public class EnvironmentInteractions : MonoBehaviour
     {
         if (currentRope != null && currentSb != null)
         {
-            currentRope.stickChildren.Add(currentSb);
+            if (!currentRope.stickChildren.Contains(currentSb))
+                currentRope.stickChildren.Add(currentSb);
+            else
+                currentRope.stickChildren.Remove(currentSb);
         }
 
         if (currentRope != null && currentPiston != null)
         {
-            currentRope.stickParent = currentPiston;
+            if (currentRope.stickParent != currentPiston)
+            {
+                currentRope.stickParent = currentPiston;
+                currentPiston.currentRope = currentRope;
+            }
+            else
+            {
+                currentRope.stickParent = null;
+                currentPiston.currentRope = null;
+            }
         }
 
-        currentRope.ApplyRope();
+        if (currentRope != null) currentRope.ApplyRope();
     }
 
     //public void Interaction()

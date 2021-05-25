@@ -3,19 +3,21 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    private FloorButton floorButton;
+    private FloorButton floorButton;    
+    private EnvironmentInteractions environmentInteractions;
+    private List<Collider> TriggerList = new List<Collider>();
+
     //private PuzzleButton puzzleButton;
     //private SmallBox smallBox;
     //private Rope rope;    
     //private Piston piston;
-    private EnvironmentInteractions environmentInteractions;
-    private List<Collider> TriggerList = new List<Collider>();
 
     // Start is called before the first frame update
     void Start()
     {
         environmentInteractions = GetComponentInParent<EnvironmentInteractions>();
         floorButton = GetComponentInParent<FloorButton>();
+
         //puzzleButton = GetComponentInParent<PuzzleButton>();
         //smallBox = GetComponentInParent<SmallBox>();
         //rope = GetComponentInParent<Rope>();
@@ -36,10 +38,10 @@ public class Trigger : MonoBehaviour
 
         //EnvironmentInteractions environmentInteractions = other.gameObject.GetComponent<EnvironmentInteractions>();
 
-        PuzzleButton puzzleButton = other.gameObject.GetComponentInParent<PuzzleButton>();
+        PuzzleButton puzzleButton = other.gameObject.GetComponent<PuzzleButton>();
         SmallBox smallBox = other.gameObject.GetComponent<SmallBox>();
-        Rope rope = other.gameObject.GetComponentInParent<Rope>();
-        Piston piston = other.gameObject.GetComponentInParent<Piston>();
+        Rope rope = other.gameObject.GetComponent<Rope>();
+        Piston piston = other.gameObject.GetComponent<Piston>();
 
         if (environmentInteractions != null)
         {
@@ -64,10 +66,10 @@ public class Trigger : MonoBehaviour
 
         //EnvironmentInteractions environmentInteractions = other.gameObject.GetComponent<EnvironmentInteractions>();
 
-        PuzzleButton puzzleButton = other.gameObject.GetComponentInParent<PuzzleButton>();
+        PuzzleButton puzzleButton = other.gameObject.GetComponent<PuzzleButton>();
         SmallBox smallBox = other.gameObject.GetComponent<SmallBox>();
-        Rope rope = other.gameObject.GetComponentInParent<Rope>();
-        Piston piston = other.gameObject.GetComponentInParent<Piston>();
+        Rope rope = other.gameObject.GetComponent<Rope>();
+        Piston piston = other.gameObject.GetComponent<Piston>();
 
         if (environmentInteractions != null)
         {
