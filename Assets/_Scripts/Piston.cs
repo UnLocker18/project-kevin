@@ -56,7 +56,7 @@ public class Piston : MonoBehaviour
 
     void Toggle(int buttonNumber, bool isActive)
     {
-        if (currentRope != null) currentRope.MoveRope();
+        //if (currentRope != null) currentRope.MoveRope();
 
         if (Array.IndexOf(floorButtonNumbers, buttonNumber) >= 0)
         {
