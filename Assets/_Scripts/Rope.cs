@@ -13,31 +13,34 @@ public class Rope : MonoBehaviour
 
     Cable cable;
     public GameObject cableObj;
-    public GameObject parent;
-    public GameObject child;
 
     // Use this for initialization
     void Awake()
     {
         cable = cableObj.GetComponent<Cable>();
-        GenerateMesh();
     }
 
     public void GenerateMesh()
     {
-        cable.links = new Cable.Link[2];
+        Debug.Log("generate mesh");
+        if (cable != null && stickParent != null && stickChildren.Count > 0)
+        {
+            cable.links = new Cable.Link[2];
 
-        Cable.Link parentLink = new Cable.Link();
-        parentLink.type = Cable.Link.LinkType.Attachment;
-        parentLink.body = parent.GetComponent<CableBody>();
-        //parentLink.outAnchor = Vector3.up * 0.5f;
-        cable.links[0] = parentLink;
+            Cable.Link parentLink = new Cable.Link();
+            parentLink.type = Cable.Link.LinkType.Attachment;
+            parentLink.body = stickParent.gameObject.GetComponentInChildren<CableBody>();
+            //parentLink.outAnchor = Vector3.up * 0.5f;
+            cable.links[0] = parentLink;
 
-        Cable.Link childLink = new Cable.Link();
-        childLink.type = Cable.Link.LinkType.Attachment;
-        childLink.body = child.GetComponent<CableBody>();
-        //childLink.outAnchor = Vector3.up * 0.5f;
-        cable.links[1] = childLink;
+            Cable.Link childLink = new Cable.Link();
+            childLink.type = Cable.Link.LinkType.Attachment;
+            childLink.body = stickChildren[0].gameObject.GetComponentInChildren<CableBody>();
+            //childLink.outAnchor = Vector3.up * 0.5f;
+            cable.links[1] = childLink;
+
+            GameObject.Instantiate(cableObj);
+        }
     }
 
     public void MoveRope()

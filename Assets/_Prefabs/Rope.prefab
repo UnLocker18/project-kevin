@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stickParent: {fileID: 0}
   stickChildren: []
+  cableObj: {fileID: 3958981283666627004, guid: 6eb8e026bf2d6e341ae57a0e50959d55,
+    type: 3}
 --- !u!54 &7945664621490279836
 Rigidbody:
   m_ObjectHideFlags: 0
