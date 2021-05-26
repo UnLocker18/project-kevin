@@ -70,7 +70,7 @@ public class Rope : MonoBehaviour
         if (ropeMesh != null && stickParent != null && stickChildren.Count > 0)
         {
             Vector3 parentPosition = stickParent.transform.GetChild(0).position;
-            Vector3 childPosition = stickChildren[0].transform.GetChild(0).position; // + new Vector3(0, 0.25f, 0);
+            Vector3 childPosition = stickChildren[0].transform.position; // + new Vector3(0, 0.25f, 0);
 
             ObiRope obiRope = ropeMesh.GetComponentInChildren<ObiRope>();
             //ObiRopeBlueprint blueprint = ScriptableObject.CreateInstance<ObiRopeBlueprint>();
@@ -89,7 +89,7 @@ public class Rope : MonoBehaviour
             blueprint.path.Clear();
             blueprint.path.AddControlPoint(parentPosition, -Vector3.right, Vector3.right, Vector3.up, 0.1f, 0.1f, 1, 1, Color.white, "start");
             blueprint.path.AddControlPoint(childPosition, -Vector3.right, Vector3.right, Vector3.up, 0.1f, 0.1f, 1, 1, Color.white, "end");
-            //blueprint.path.FlushEvents();
+            blueprint.path.FlushEvents();
 
             StartCoroutine(Generate(blueprint));
 
@@ -98,7 +98,7 @@ public class Rope : MonoBehaviour
             ropeMesh.GetComponentsInChildren<ObiParticleAttachment>()[0].target = stickParent.transform.GetChild(0);
             ropeMesh.GetComponentsInChildren<ObiParticleAttachment>()[0].particleGroup = blueprint.groups[0];
 
-            ropeMesh.GetComponentsInChildren<ObiParticleAttachment>()[1].target = stickChildren[0].transform.GetChild(0);
+            ropeMesh.GetComponentsInChildren<ObiParticleAttachment>()[1].target = stickChildren[0].transform;
             ropeMesh.GetComponentsInChildren<ObiParticleAttachment>()[1].particleGroup = blueprint.groups[1];
 
             Instantiate(ropeMesh, Vector3.zero, Quaternion.identity);
