@@ -76,7 +76,8 @@ public class EnvironmentInteractions : MonoBehaviour
             }
         }
 
-        if (currentRope != null) currentRope.ApplyRope();
+        //if (currentRope != null) currentRope.ApplyRope();
+        if (currentRope != null) currentRope.GenerateMesh();
     }
 
     //public void Interaction()
