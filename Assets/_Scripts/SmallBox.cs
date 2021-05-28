@@ -2,6 +2,8 @@
 
 public class SmallBox : MonoBehaviour
 {
+    public bool isConnected = false;
+
     public void Grab(GameObject mainCharacter, bool grabbing, Vector3 grabbingPoint)
     {
         Rigidbody rb = GetComponent<Rigidbody>();

@@ -9,6 +9,7 @@ public class Piston : MonoBehaviour
 
     public Rope currentRope;
     public bool isExtended = false;
+    public bool isConnected = false;
     public float range = 1f;
     [SerializeField] private Transform head;
     [SerializeField] private Vector3 headPosition;

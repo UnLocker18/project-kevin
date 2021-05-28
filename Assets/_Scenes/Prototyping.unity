@@ -121,6 +121,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20317059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1560112391038083241, guid: 5ce8888665dbd5b44bc3009034d2f39b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1560112391946562622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &20317060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20317059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dce48c24112c46069d2cc5631d25f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: 0
+  freezeRotation: 1
+  convexHull: {fileID: 0}
 --- !u!1 &242611891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2716962310855865948, guid: 975b66eb49529ad4394a751d15e72260,
@@ -470,6 +491,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
+        type: 3}
+      propertyPath: activators.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188513988630463196, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
+        type: 3}
+      propertyPath: activators.Array.data[0]
+      value: 
+      objectReference: {fileID: 1842194099}
     - target: {fileID: 7188513988630463198, guid: 79260cf3e21a03b4a91e7b5d7220aeca,
         type: 3}
       propertyPath: m_Name
@@ -1176,6 +1207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349354255524748347, guid: 78dd319c9c4148442a38bb4266248806,
         type: 3}
+      propertyPath: animationSeconds
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349354255524748347, guid: 78dd319c9c4148442a38bb4266248806,
+        type: 3}
       propertyPath: activators.Array.data[0]
       value: 
       objectReference: {fileID: 1098433467}
@@ -1260,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 3434412768758782925, guid: 5e173ee67a4fc974b8834a816004bd19,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3434412768758782929, guid: 5e173ee67a4fc974b8834a816004bd19,
         type: 3}
