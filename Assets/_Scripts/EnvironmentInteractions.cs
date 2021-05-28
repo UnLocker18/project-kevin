@@ -56,28 +56,49 @@ public class EnvironmentInteractions : MonoBehaviour
     {
         if (currentRope != null && currentSb != null)
         {
-            if (!currentRope.stickChildren.Contains(currentSb))
-                currentRope.stickChildren.Add(currentSb);
+            if (!currentRope.stickObjects.Contains(currentSb.gameObject))
+            {
+                currentRope.stickObjects.Add(currentSb.gameObject);
+                currentRope.GenerateRope(gameObject);
+            }
             else
-                currentRope.stickChildren.Remove(currentSb);
+            {
+                currentRope.stickObjects.Remove(currentSb.gameObject);
+                currentRope.RemoveRope(currentSb);
+            }
         }
 
         if (currentRope != null && currentPiston != null)
         {
-            if (currentRope.stickParent != currentPiston)
+            if (!currentRope.stickObjects.Contains(currentPiston.gameObject))
             {
-                currentRope.stickParent = currentPiston;
-                currentPiston.currentRope = currentRope;
+                currentRope.stickObjects.Add(currentPiston.gameObject);
+                currentRope.GenerateRope(gameObject);
             }
             else
             {
-                currentRope.stickParent = null;
-                currentPiston.currentRope = null;
+                currentRope.stickObjects.Remove(currentPiston.gameObject);
+                currentRope.RemoveRope(null);
             }
         }
 
+        //if (currentRope != null && currentPiston != null)
+        //{
+        //    if (currentRope.stickParent != currentPiston)
+        //    {
+        //        currentRope.stickParent = currentPiston;
+        //        currentPiston.currentRope = currentRope;
+        //        currentRope.GenerateRope(gameObject);
+        //    }
+        //    else
+        //    {
+        //        currentRope.RemoveRope(null);
+        //        currentRope.stickParent = null;
+        //        currentPiston.currentRope = null;                
+        //    }
+        //}
+
         //if (currentRope != null) currentRope.ApplyRope();
-        if (currentRope != null) currentRope.GenerateMesh();
     }
 
     //public void Interaction()
