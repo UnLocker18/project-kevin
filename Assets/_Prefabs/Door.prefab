@@ -154,10 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597b80e804905f94bb7205d57cfd6e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activators:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  activators: []
   animationSeconds: 1
   floorButtonNumbers: 
   activeButtons: 0

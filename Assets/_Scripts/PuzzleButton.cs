@@ -19,6 +19,7 @@ public class PuzzleButton : Interactable
 
     void Start()
     {
+        isInteractable = true;
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
     }
 
