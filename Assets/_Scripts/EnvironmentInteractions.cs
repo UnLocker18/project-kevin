@@ -31,5 +31,7 @@ public class EnvironmentInteractions : MonoBehaviour
             }            
             currentRope.GenerateRope();
         }
+
+        currentRope = null;
     }
 }

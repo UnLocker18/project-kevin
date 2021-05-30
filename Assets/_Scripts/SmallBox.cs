@@ -2,9 +2,9 @@
 
 public class SmallBox : Interactable
 {
-    private void Awake()
+    private void Start()
     {
-        interactable = true;
+        isInteractable = true;
     }
 
     public override void Interact(Transform mainCharacter)

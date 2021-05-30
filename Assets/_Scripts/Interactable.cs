@@ -2,7 +2,7 @@
 
 public abstract class Interactable : MonoBehaviour
 {
-    public bool interactable;
+    public bool isInteractable;
     public Outline outline;
 
     public abstract void Interact(Transform mainCharacter);
@@ -25,7 +25,7 @@ public abstract class Interactable : MonoBehaviour
 
     public void SetOutline(bool value)
     {
-        if (!interactable) return;
+        if (!isInteractable) return;
 
         SetUpOutline();
         outline.enabled = value;
@@ -33,7 +33,7 @@ public abstract class Interactable : MonoBehaviour
 
     public void Grab(Transform mainCharacter)
     {
-        if (!interactable) return;
+        if (!isInteractable) return;
 
         Rigidbody rb = GetComponent<Rigidbody>();
 

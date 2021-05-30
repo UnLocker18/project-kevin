@@ -13,13 +13,12 @@ public class Rope : Interactable
     // Use this for initialization
     void Awake()
     {
-        interactable = true;
         cable = cableObj.GetComponent<Cable>();
     }
 
     private void Start()
     {
-        SetUpOutline();
+        isInteractable = true;
     }
 
     public override void Interact(Transform mainCharacter)
@@ -31,7 +30,7 @@ public class Rope : Interactable
     {
         if (stickObjects.Count > 1)
         {
-            if (cableInstance != null) Destroy(cableInstance);
+            DestroyRope();
 
             cable.links = new Cable.Link[stickObjects.Count];
 
@@ -42,9 +41,9 @@ public class Rope : Interactable
                 i++;
             }
 
-            cableInstance = Instantiate(cableObj);
+            InstantiateRope();
         }
-        else if (cableInstance != null) Destroy(cableInstance);
+        else DestroyRope();
     }
 
     public void ClearRope()
@@ -55,7 +54,22 @@ public class Rope : Interactable
         }
         
         stickObjects.Clear();
-        Destroy(cableInstance);        
+        DestroyRope();
+    }
+
+    private void InstantiateRope()
+    {
+        cableInstance = Instantiate(cableObj);
+        //gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+    }
+
+    private void DestroyRope()
+    {
+        if (cableInstance != null)
+        {
+            Destroy(cableInstance);
+            //gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+        }
     }
 
     private Cable.Link CreateLink(GameObject obj)

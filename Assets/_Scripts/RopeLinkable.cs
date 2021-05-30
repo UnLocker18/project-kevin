@@ -32,7 +32,7 @@ public class RopeLinkable : MonoBehaviour
         if (sb != null)
         {
             sb.GetComponent<Rigidbody>().freezeRotation = isConnected;
-            sb.interactable = !isConnected;
+            sb.isInteractable = !isConnected;
         }
     }
 
