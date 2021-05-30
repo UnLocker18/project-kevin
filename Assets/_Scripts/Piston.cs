@@ -6,10 +6,8 @@ public class Piston : MonoBehaviour
 {
     [SerializeField] private GameObject[] activators;
     [SerializeField] private float animationSeconds = 0.3f;
-
-    public Rope currentRope;
+    
     public bool isExtended = false;
-    public bool isConnected = false;
     public float range = 1f;
     [SerializeField] private Transform head;
     [SerializeField] private Vector3 headPosition;

@@ -5,78 +5,65 @@ public class Trigger : MonoBehaviour
 {
     private FloorButton floorButton;    
     private EnvironmentInteractions environmentInteractions;
-    private List<Collider> TriggerList = new List<Collider>();
-
-    //private PuzzleButton puzzleButton;
-    //private SmallBox smallBox;
-    //private Rope rope;    
-    //private Piston piston;
+    [SerializeField] private List<Collider> triggerList = new List<Collider>();
 
     // Start is called before the first frame update
     void Start()
     {
         environmentInteractions = GetComponentInParent<EnvironmentInteractions>();
         floorButton = GetComponentInParent<FloorButton>();
-
-        //puzzleButton = GetComponentInParent<PuzzleButton>();
-        //smallBox = GetComponentInParent<SmallBox>();
-        //rope = GetComponentInParent<Rope>();
-        //piston = GetComponentInParent<Piston>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (floorButton != null && other.gameObject.name != "Trigger")
+        if (!triggerList.Contains(other))
         {
-            if (!TriggerList.Contains(other))
-            {
-                TriggerList.Add(other);
-            }
-
-            if (TriggerList.Count > 0) floorButton.Activate();
+            triggerList.Add(other);
         }
 
-        //EnvironmentInteractions environmentInteractions = other.gameObject.GetComponent<EnvironmentInteractions>();
-
-        PuzzleButton puzzleButton = other.gameObject.GetComponent<PuzzleButton>();
-        SmallBox smallBox = other.gameObject.GetComponent<SmallBox>();
-        Rope rope = other.gameObject.GetComponent<Rope>();
-        Piston piston = other.gameObject.GetComponent<Piston>();
+        if (floorButton != null && other.gameObject.name != "Trigger")
+        {
+            if (triggerList.Count > 0) floorButton.Activate();
+        }
+        
+        Interactable interactable = triggerList[0].gameObject.GetComponent<Interactable>();
+        RopeLinkable rl = null;
+        
+        foreach (Collider trigger in triggerList)
+        {
+            if (trigger.gameObject.GetComponent<RopeLinkable>() != null) rl = trigger.gameObject.GetComponent<RopeLinkable>();
+        }        
 
         if (environmentInteractions != null)
         {
-            if (puzzleButton != null) environmentInteractions.currentPb = puzzleButton;
-            if (smallBox != null) environmentInteractions.currentSb = smallBox;
-            if (rope != null) environmentInteractions.currentRope = rope;
-            if (piston != null) environmentInteractions.currentPiston = piston;
+            environmentInteractions.currentInteractable = interactable;
+            if (environmentInteractions.currentInteractable != null)
+                environmentInteractions.currentInteractable.SetOutline(true);
+            if (rl != null) environmentInteractions.currentRl = rl;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (floorButton != null)
+        if (triggerList.Contains(other) && !other.transform.IsChildOf(transform.parent))
         {
-            if (TriggerList.Contains(other))
-            {
-                TriggerList.Remove(other);
-            }
-
-            if (TriggerList.Count <= 0) floorButton.Deactivate();
+            triggerList.Remove(other);
         }
 
-        //EnvironmentInteractions environmentInteractions = other.gameObject.GetComponent<EnvironmentInteractions>();
-
-        PuzzleButton puzzleButton = other.gameObject.GetComponent<PuzzleButton>();
-        SmallBox smallBox = other.gameObject.GetComponent<SmallBox>();
-        Rope rope = other.gameObject.GetComponent<Rope>();
-        Piston piston = other.gameObject.GetComponent<Piston>();
+        if (floorButton != null)
+        {
+            if (triggerList.Count <= 0) floorButton.Deactivate();
+        }
 
         if (environmentInteractions != null)
         {
-            if (puzzleButton != null) environmentInteractions.currentPb = null;
-            if (smallBox != null) environmentInteractions.currentSb = null;
-            if (rope != null) environmentInteractions.currentRope = null;
-            if (piston != null) environmentInteractions.currentPiston = null;
+            if (triggerList.Count <= 0)
+            {
+                if (environmentInteractions.currentInteractable != null)
+                    environmentInteractions.currentInteractable.SetOutline(false);
+                environmentInteractions.currentInteractable = null;
+            }
+            environmentInteractions.currentRl = null;
         }
     }
 }

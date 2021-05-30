@@ -3,151 +3,33 @@ using System;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
-    [SerializeField] private bool grabbing = false;
-    [SerializeField] public PuzzleButton currentPb;
-    [SerializeField] public SmallBox currentSb;
-    [SerializeField] public Rope currentRope;
-    [SerializeField] public Piston currentPiston;
+    [SerializeField] public Interactable currentInteractable;
+    [SerializeField] public RopeLinkable currentRl;
+
+    [SerializeField] private Rope currentRope;    
 
     public void Interaction()
     {
-        if (currentPb != null) currentPb.Toggle();
-
-        if (currentSb != null)
-        {
-            if (!grabbing)
-            {
-                grabbing = !grabbing;
-                currentSb.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-            }
-            else
-            {
-                SmallBox smallBox = transform.GetComponentInChildren<SmallBox>();
-
-                if (smallBox != null)
-                {
-                    grabbing = !grabbing;
-                    smallBox.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-                }
-            }
-        }
-
-        if (currentRope != null)
-        {
-            if (!grabbing)
-            {
-                grabbing = !grabbing;
-                currentRope.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-            }
-            else
-            {
-                Rope rope = transform.GetComponentInChildren<Rope>();
-
-                if (rope != null)
-                {
-                    grabbing = !grabbing;
-                    rope.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-                }
-            }
-        }
+        if (currentInteractable != null) currentInteractable.Interact(gameObject.transform);
     }
 
     public void StickRope()
     {
-        if (currentRope != null && currentSb != null)
+        if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+
+        if (currentRope != null && currentRl != null)
         {
-            if (!currentRope.stickObjects.Contains(currentSb.gameObject))
+            if (!currentRope.stickObjects.Contains(currentRl))
             {
-                currentRope.stickObjects.Add(currentSb.gameObject);
-                currentRope.GenerateRope(gameObject);
+                currentRope.stickObjects.Add(currentRl);
+                currentRl.Connect();
             }
             else
             {
-                currentRope.stickObjects.Remove(currentSb.gameObject);
-                currentRope.RemoveRope(currentSb);
-            }
+                currentRope.stickObjects.Remove(currentRl);
+                currentRl.Disconnect();
+            }            
+            currentRope.GenerateRope();
         }
-
-        if (currentRope != null && currentPiston != null)
-        {
-            if (!currentRope.stickObjects.Contains(currentPiston.gameObject))
-            {
-                currentRope.stickObjects.Add(currentPiston.gameObject);
-                currentRope.GenerateRope(gameObject);
-            }
-            else
-            {
-                currentRope.stickObjects.Remove(currentPiston.gameObject);
-                currentRope.RemoveRope(null);
-            }
-        }
-
-        //if (currentRope != null && currentPiston != null)
-        //{
-        //    if (currentRope.stickParent != currentPiston)
-        //    {
-        //        currentRope.stickParent = currentPiston;
-        //        currentPiston.currentRope = currentRope;
-        //        currentRope.GenerateRope(gameObject);
-        //    }
-        //    else
-        //    {
-        //        currentRope.RemoveRope(null);
-        //        currentRope.stickParent = null;
-        //        currentPiston.currentRope = null;                
-        //    }
-        //}
-
-        //if (currentRope != null) currentRope.ApplyRope();
     }
-
-    //public void Interaction()
-    //{
-    //    Vector3 rayOrigin = transform.position + 0.25f * Vector3.up;
-    //    Vector3 rayDirection = transform.forward;
-
-    //    Debug.DrawRay(rayOrigin, rayDirection * range, Color.blue);
-
-    //    RaycastHit hit;
-
-    //    if (grabbing)
-    //    {
-    //        SmallBox smallBox = transform.GetComponentInChildren<SmallBox>();
-
-    //        if(smallBox != null)
-    //        {
-    //            grabbing = !grabbing;
-    //            smallBox.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (Physics.Raycast(rayOrigin, rayDirection, out hit, range))
-    //        {
-    //            BoxInteraction(hit);
-    //            PuzzleButtonInteraction(hit);
-    //        }
-    //    }        
-    //}
-
-    //void BoxInteraction(RaycastHit hit)
-    //{
-    //    SmallBox box = hit.collider.gameObject.GetComponent<SmallBox>();
-
-    //    if (box != null)
-    //    {
-    //        grabbing = !grabbing;
-    //        box.Grab(gameObject, grabbing, transform.Find("GrabbingPoint").transform.position);
-    //    }
-    //}
-
-    //void PuzzleButtonInteraction(RaycastHit hit)
-    //{
-    //    PuzzleButton puzzleButton = hit.collider.gameObject.GetComponentInParent<PuzzleButton>();
-
-    //    if (puzzleButton != null)
-    //    {
-    //        puzzleButton.Toggle();
-    //    }
-    //}
 }
