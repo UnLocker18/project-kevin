@@ -1,24 +1,14 @@
 ﻿using UnityEngine;
 
-public class SmallBox : MonoBehaviour
+public class SmallBox : Interactable
 {
-    public bool isConnected = false;
-
-    public void Grab(GameObject mainCharacter, bool grabbing, Vector3 grabbingPoint)
+    private void Awake()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        interactable = true;
+    }
 
-        if (grabbing)
-        {
-            rb.isKinematic = true;
-            transform.parent = mainCharacter.transform;
-            transform.rotation = mainCharacter.transform.localRotation;
-            transform.position = grabbingPoint;
-        }
-        else
-        {
-            transform.parent = null;
-            rb.isKinematic = false;
-        }
+    public override void Interact(Transform mainCharacter)
+    {
+        Grab(mainCharacter);
     }
 }

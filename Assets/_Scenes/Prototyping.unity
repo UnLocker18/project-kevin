@@ -1207,11 +1207,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349354255524748347, guid: 78dd319c9c4148442a38bb4266248806,
         type: 3}
-      propertyPath: animationSeconds
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2349354255524748347, guid: 78dd319c9c4148442a38bb4266248806,
-        type: 3}
       propertyPath: activators.Array.data[0]
       value: 
       objectReference: {fileID: 1098433467}
@@ -1293,11 +1288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3434412768758782925, guid: 5e173ee67a4fc974b8834a816004bd19,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3434412768758782929, guid: 5e173ee67a4fc974b8834a816004bd19,
         type: 3}
       propertyPath: m_Name

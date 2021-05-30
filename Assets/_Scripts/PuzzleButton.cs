@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-public class PuzzleButton : MonoBehaviour
+public class PuzzleButton : Interactable
 {
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
@@ -13,13 +13,18 @@ public class PuzzleButton : MonoBehaviour
     private Renderer[] _renderer;
     
     void Awake()
-    {        
+    {
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
     }
 
     void Start()
     {
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
+    }
+
+    public override void Interact(Transform mainCharacter)
+    {
+        Toggle();
     }
 
     public void Toggle()

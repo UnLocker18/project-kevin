@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 2349354255524748340}
   - component: {fileID: 2349354255524748347}
   - component: {fileID: 3834297500087483048}
+  - component: {fileID: 4204456597392964409}
   m_Layer: 0
   m_Name: Piston
   m_TagString: Untagged
@@ -253,8 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activators:
   - {fileID: 0}
-  animationSeconds: 1
-  currentRope: {fileID: 0}
+  animationSeconds: 0.3
   isExtended: 0
   range: 1
   head: {fileID: 0}
@@ -274,3 +274,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &4204456597392964409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349354255524748346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c536318aa5352b74c821e04cef969666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnected: 0
