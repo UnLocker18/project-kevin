@@ -16,6 +16,9 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+        if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+
         if (!triggerList.Contains(other))
         {
             triggerList.Add(other);
@@ -45,6 +48,9 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log(other.name);
+        if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+
         if (triggerList.Contains(other) && !other.transform.IsChildOf(transform.parent))
         {
             triggerList.Remove(other);
