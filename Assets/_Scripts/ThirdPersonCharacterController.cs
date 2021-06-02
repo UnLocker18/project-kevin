@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
+    [SerializeField] private int currentPersonality = 0;
+
     [SerializeField] private Transform _cameraT;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _rotationSpeed = 3f;
@@ -18,8 +20,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
     [SerializeField] private float walkAnimationSpeed = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
 
+    //[SerializeField] private RuntimeAnimatorController[] AnimatorControllers;
+    //[SerializeField] private Avatar[] Avatars;
+
     private CharacterController _characterController;
-    private Animator animator;
+    //private Animator animator;
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
@@ -30,7 +35,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     
@@ -78,6 +83,15 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     private void UpdateAnimator()
     {
+        transform.Find("Storico").gameObject.SetActive(currentPersonality == 0);
+        transform.Find("Bambino").gameObject.SetActive(currentPersonality == 1);
+        transform.Find("Sportivo").gameObject.SetActive(currentPersonality == 2);
+
+        Animator animator = GetComponentInChildren<Animator>();
+
+        //animator.avatar = Avatars[currentPersonality];
+        //animator.runtimeAnimatorController = AnimatorControllers[currentPersonality];
+
         animator.SetFloat("WalkSpeed", _inputSpeed * _speed * walkAnimationSpeed, 0.1f, Time.deltaTime);
         animator.SetFloat("InputSpeed", _inputSpeed, 0.1f, Time.deltaTime);
     }
