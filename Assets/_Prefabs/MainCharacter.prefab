@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 6171458293567613564}
   - component: {fileID: 6171458293567613560}
   - component: {fileID: 8938615838749252104}
+  - component: {fileID: 1032796780}
+  - component: {fileID: 1032796781}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -169,7 +171,7 @@ CharacterController:
   m_Height: 3.6
   m_Radius: 0.5
   m_SlopeLimit: 10
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.8, z: 0}
@@ -216,6 +218,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1032796780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171458293567613565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e217a79c701dd4ea2b7157bfbe2da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1032796781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171458293567613565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a0222db546f624a89dc3ccbe585e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentInteractable: {fileID: 0}
+  currentRl: {fileID: 0}
+  currentRope: {fileID: 0}
 --- !u!1001 &8938615839651105007
 PrefabInstance:
   m_ObjectHideFlags: 0
