@@ -20,15 +20,11 @@ public class ThirdPersonCharacterController : MonoBehaviour
     [SerializeField] private float walkAnimationSpeed = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
 
-    [SerializeField] private RuntimeAnimatorController[] AnimatorControllers;
-    //[SerializeField] private RuntimeAnimatorController bambinoAnimatorController;
-    //[SerializeField] private RuntimeAnimatorController sportivoAnimatorController;
-    [SerializeField] private Avatar[] Avatars;
-    //[SerializeField] private Avatar bambinoAvatar;
-    //[SerializeField] private Avatar sportivoAvatar;
+    //[SerializeField] private RuntimeAnimatorController[] AnimatorControllers;
+    //[SerializeField] private Avatar[] Avatars;
 
     private CharacterController _characterController;
-    private Animator animator;
+    //private Animator animator;
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
@@ -39,7 +35,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     
@@ -91,19 +87,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
         transform.Find("Bambino").gameObject.SetActive(currentPersonality == 1);
         transform.Find("Sportivo").gameObject.SetActive(currentPersonality == 2);
 
-        animator.avatar = Avatars[currentPersonality];
-        animator.runtimeAnimatorController = AnimatorControllers[currentPersonality];        
+        Animator animator = GetComponentInChildren<Animator>();
 
-        //if (currentPersonality == 0)
-        //{
-        //    animator.runtimeAnimatorController = storicoAnimatorController;
-        //    animator.avatar = storicoAvatar;
-        //}
-        //else if (currentPersonality == 1)
-        //{
-        //    animator.runtimeAnimatorController = bambinoAnimatorController;
-        //    animator.avatar = bambinoAvatar;
-        //}
+        //animator.avatar = Avatars[currentPersonality];
+        //animator.runtimeAnimatorController = AnimatorControllers[currentPersonality];
 
         animator.SetFloat("WalkSpeed", _inputSpeed * _speed * walkAnimationSpeed, 0.1f, Time.deltaTime);
         animator.SetFloat("InputSpeed", _inputSpeed, 0.1f, Time.deltaTime);
