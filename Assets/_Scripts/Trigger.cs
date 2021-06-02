@@ -29,12 +29,12 @@ public class Trigger : MonoBehaviour
             if (triggerList.Count > 0) floorButton.Activate();
         }
         
-        Interactable interactable = triggerList[0].gameObject.GetComponent<Interactable>();
+        Interactable interactable = triggerList[0].gameObject.GetComponentInParent<Interactable>();
         RopeLinkable rl = null;
         
         foreach (Collider trigger in triggerList)
         {
-            if (trigger.gameObject.GetComponent<RopeLinkable>() != null) rl = trigger.gameObject.GetComponent<RopeLinkable>();
+            if (trigger.gameObject.GetComponentInParent<RopeLinkable>() != null) rl = trigger.gameObject.GetComponentInParent<RopeLinkable>();
         }        
 
         if (environmentInteractions != null)
