@@ -2,6 +2,7 @@
 using UnityEngine;
 using Filo;
 
+
 public class Rope : Interactable
 {
     public List<RopeLinkable> stickObjects = new List<RopeLinkable>();
@@ -75,8 +76,21 @@ public class Rope : Interactable
     private Cable.Link CreateLink(GameObject obj)
     {
         Cable.Link link = new Cable.Link();
+
+        if (obj.GetComponentInChildren<CableBody>().GetType()==typeof(CableDisc)){
+
+        link.type = Cable.Link.LinkType.Rolling;
+        
+        }
+
+        else {
+
         link.type = Cable.Link.LinkType.Attachment;
+        
+        }
+
         link.body = obj.GetComponentInChildren<CableBody>();
+
         //link.outAnchor = Vector3.up * 0.5f;
 
         return link;
