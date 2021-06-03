@@ -78,6 +78,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         _characterController.Move(_velocity * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.Alpha1)) currentPersonality = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) currentPersonality = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) currentPersonality = 2;
+
         UpdateAnimator();
     }
 
