@@ -18,12 +18,9 @@ public class ThirdPersonCharacterController : MonoBehaviour
     [SerializeField] private float walkAnimationSpeed = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
 
-    //[SerializeField] private RuntimeAnimatorController[] AnimatorControllers;
-    //[SerializeField] private Avatar[] Avatars;
-
     private CharacterController _characterController;
     private EnvironmentInteractions environmentInteractions;
-    //private Animator animator;
+
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
@@ -35,7 +32,8 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         environmentInteractions = GetComponent<EnvironmentInteractions>();
-        //animator = GetComponent<Animator>();
+
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += SwitchCharacter;
     }
 
     
@@ -83,16 +81,29 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        transform.Find("Storico").gameObject.SetActive(environmentInteractions.currentPersonality == 0);
-        transform.Find("Bambino").gameObject.SetActive(environmentInteractions.currentPersonality == 1);
-        transform.Find("Sportivo").gameObject.SetActive(environmentInteractions.currentPersonality == 2);
-
         Animator animator = GetComponentInChildren<Animator>();
-
-        //animator.avatar = Avatars[currentPersonality];
-        //animator.runtimeAnimatorController = AnimatorControllers[currentPersonality];
 
         animator.SetFloat("WalkSpeed", _inputSpeed * _speed * walkAnimationSpeed, 0.1f, Time.deltaTime);
         animator.SetFloat("InputSpeed", _inputSpeed, 0.1f, Time.deltaTime);
+    }
+
+    private void SwitchCharacter(int personality)
+    {
+        StartCoroutine("SwitchAnimation", personality);
+    }
+
+    private IEnumerator SwitchAnimation(int personality)
+    {
+        Animator animator = GetComponentInChildren<Animator>();
+
+        animator.SetBool("CharacterSwitch", true);
+
+        yield return new WaitForSeconds(0.15f);
+
+        transform.Find("Storico").gameObject.SetActive(personality == 0);
+        transform.Find("Bambino").gameObject.SetActive(personality == 1);
+        transform.Find("Sportivo").gameObject.SetActive(personality == 2);
+
+        animator.SetBool("CharacterSwitch", false);
     }
 }
