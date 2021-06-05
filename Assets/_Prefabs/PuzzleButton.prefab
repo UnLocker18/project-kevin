@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4354793899643198293}
   - component: {fileID: 4354793899643198292}
-  - component: {fileID: 8941174136790517352}
-  - component: {fileID: 3941760649521074170}
   - component: {fileID: 1098433472}
   m_Layer: 0
   m_Name: PuzzleButton
@@ -50,35 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteractable: 0
   outline: {fileID: 0}
+  requiredPersonality: 0
   activeMaterial: {fileID: 2100000, guid: 58914d0324b4407458eec5806ab7dd11, type: 2}
   inactiveMaterial: {fileID: 2100000, guid: d4e4a93e43891624f91882e44b085d69, type: 2}
   buttonNumber: 0
---- !u!65 &8941174136790517352
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4354793899643198291}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 1, z: 0.3}
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!65 &3941760649521074170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4354793899643198291}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!54 &1098433472
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -106,6 +79,7 @@ GameObject:
   - component: {fileID: 4354793899657522696}
   - component: {fileID: 4354793899657522699}
   - component: {fileID: 4354793899657522698}
+  - component: {fileID: 1527667665}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -174,6 +148,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1527667665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354793899657522807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4354793899775307770
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +172,7 @@ GameObject:
   - component: {fileID: 4354793899775307771}
   - component: {fileID: 4354793899775307774}
   - component: {fileID: 4354793899775307773}
+  - component: {fileID: 1433046045}
   m_Layer: 0
   m_Name: Puzzle
   m_TagString: Untagged
@@ -253,3 +241,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1433046045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354793899775307770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
