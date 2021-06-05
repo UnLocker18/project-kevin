@@ -18,10 +18,7 @@ public class Trigger : MonoBehaviour
     {
         if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
 
-        if (!triggerList.Contains(other))
-        {
-            triggerList.Add(other);
-        }
+        AddToList(other);
 
         if (floorButton != null && other.gameObject.name != "Trigger")
         {
@@ -49,10 +46,7 @@ public class Trigger : MonoBehaviour
     {
         if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
 
-        if (triggerList.Contains(other) && !other.transform.IsChildOf(transform.parent))
-        {
-            triggerList.Remove(other);
-        }
+        RemoveFromList(other);
 
         if (floorButton != null)
         {
@@ -68,6 +62,22 @@ public class Trigger : MonoBehaviour
                 environmentInteractions.currentInteractable = null;
             }
             environmentInteractions.currentRl = null;
+        }
+    }
+
+    private void AddToList(Collider col)
+    {
+        if (!triggerList.Contains(col))
+        {
+            triggerList.Add(col);
+        }
+    }
+
+    public void RemoveFromList(Collider col)
+    {
+        if (triggerList.Contains(col) && !col.transform.IsChildOf(transform.parent))
+        {
+            triggerList.Remove(col);
         }
     }
 }

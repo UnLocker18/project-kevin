@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
-    [SerializeField] private int currentPersonality = 0;
-
     [SerializeField] private Transform _cameraT;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _rotationSpeed = 3f;
@@ -24,6 +22,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     //[SerializeField] private Avatar[] Avatars;
 
     private CharacterController _characterController;
+    private EnvironmentInteractions environmentInteractions;
     //private Animator animator;
     private Vector3 _inputVector;
     private float _inputSpeed;
@@ -35,6 +34,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        environmentInteractions = GetComponent<EnvironmentInteractions>();
         //animator = GetComponent<Animator>();
     }
 
@@ -78,18 +78,14 @@ public class ThirdPersonCharacterController : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         _characterController.Move(_velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) currentPersonality = 0;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) currentPersonality = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) currentPersonality = 2;
-
         UpdateAnimator();
     }
 
     private void UpdateAnimator()
     {
-        transform.Find("Storico").gameObject.SetActive(currentPersonality == 0);
-        transform.Find("Bambino").gameObject.SetActive(currentPersonality == 1);
-        transform.Find("Sportivo").gameObject.SetActive(currentPersonality == 2);
+        transform.Find("Storico").gameObject.SetActive(environmentInteractions.currentPersonality == 0);
+        transform.Find("Bambino").gameObject.SetActive(environmentInteractions.currentPersonality == 1);
+        transform.Find("Sportivo").gameObject.SetActive(environmentInteractions.currentPersonality == 2);
 
         Animator animator = GetComponentInChildren<Animator>();
 

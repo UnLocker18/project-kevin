@@ -3,14 +3,22 @@ using System;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
+    [SerializeField] public int currentPersonality;
     [SerializeField] public Interactable currentInteractable;
     [SerializeField] public RopeLinkable currentRl;
 
-    [SerializeField] private Rope currentRope;    
+    [SerializeField] private Rope currentRope;
+    public event Action<int> ChangePersonality;
 
     public void Interaction()
     {
-        if (currentInteractable != null) currentInteractable.Interact(gameObject.transform);
+        int newPersonality = -1;
+        if (currentInteractable != null) newPersonality = currentInteractable.Interact(gameObject.transform);
+        if (newPersonality != -1)
+        {
+            if (ChangePersonality != null) ChangePersonality.Invoke(newPersonality);
+            currentPersonality = newPersonality;
+        }
     }
 
     public void StickRope()
