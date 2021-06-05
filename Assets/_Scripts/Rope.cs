@@ -22,9 +22,11 @@ public class Rope : Interactable
         isInteractable = true;
     }
 
-    public override void Interact(Transform mainCharacter)
+    public override int Interact(Transform mainCharacter)
     {
         Grab(mainCharacter);
+
+        return -1;
     }
 
     public void GenerateRope()

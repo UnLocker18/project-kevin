@@ -23,9 +23,11 @@ public class PuzzleButton : Interactable
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
     }
 
-    public override void Interact(Transform mainCharacter)
+    public override int Interact(Transform mainCharacter)
     {
         Toggle();
+
+        return -1;
     }
 
     public void Toggle()
