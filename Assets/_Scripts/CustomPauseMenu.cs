@@ -6,8 +6,8 @@ public class CustomPauseMenu : MonoBehaviour
     public bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
-    public GameObject UICanvas;
-    public AudioSource backgroundAudio;
+    //public GameObject UICanvas;
+    //public AudioSource backgroundAudio;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class CustomPauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
             if (gameIsPaused) Resume();
             else Pause();
@@ -26,11 +26,11 @@ public class CustomPauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        UICanvas.SetActive(false);
+        //UICanvas.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
 
-        backgroundAudio.Pause();
+        //backgroundAudio.Pause();
     }
 
     public void Resume()
@@ -38,11 +38,11 @@ public class CustomPauseMenu : MonoBehaviour
         if (optionsMenuUI.activeSelf) optionsMenuUI.SetActive(false);
 
         pauseMenuUI.SetActive(false);
-        UICanvas.SetActive(true);
+        //UICanvas.SetActive(true);
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        backgroundAudio.Play();
+        //backgroundAudio.Play();
     }
 
     public void QuitToMenu()
