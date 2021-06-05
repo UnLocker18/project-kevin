@@ -26,7 +26,7 @@ public class EnvironmentInteractions : MonoBehaviour
             if (ChangePersonality != null) ChangePersonality.Invoke(newPersonality);
             currentPersonality = newPersonality;
         }
-    }
+    }    
 
     public void StickRope()
     {
@@ -48,5 +48,11 @@ public class EnvironmentInteractions : MonoBehaviour
         }
 
         currentRope = null;
+    }
+
+    public void SetPersonality(int personality)
+    {
+        if (ChangePersonality != null) ChangePersonality.Invoke(personality);
+        currentPersonality = personality;
     }
 }
