@@ -3,6 +3,7 @@ using System;
 
 public class PuzzleButton : Interactable
 {
+    [SerializeField] private int requiredPersonality = 0;
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
 
@@ -11,7 +12,8 @@ public class PuzzleButton : Interactable
 
     private bool isActive = false;
     private Renderer[] _renderer;
-    
+    private EnvironmentInteractions environmentInteractions;
+
     void Awake()
     {
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
@@ -19,12 +21,16 @@ public class PuzzleButton : Interactable
 
     void Start()
     {
-        isInteractable = true;
         _renderer = gameObject.GetComponentsInChildren<Renderer>();
+
+        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
     }
 
     public override int Interact(Transform mainCharacter)
     {
+        if (!isInteractable) return -1;
+
         Toggle();
 
         return -1;
@@ -44,5 +50,17 @@ public class PuzzleButton : Interactable
         isActive = !isActive;
 
         if (ButtonPress != null) ButtonPress.Invoke(buttonNumber, isActive);        
+    }
+
+    public void ToggleInteractability(int personality)
+    {
+        if (personality == requiredPersonality)
+        {
+            isInteractable = true;
+        }
+        else
+        {
+            isInteractable = false;
+        }
     }
 }

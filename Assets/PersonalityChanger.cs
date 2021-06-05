@@ -15,6 +15,8 @@ public class PersonalityChanger : Interactable
 
     public override int Interact(Transform mainCharacter)
     {
+        if (!isInteractable) return -1;
+
         Destroy(gameObject);
         if (trigger != null) trigger.RemoveFromList(GetComponentInChildren<Collider>());
 

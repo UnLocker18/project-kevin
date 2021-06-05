@@ -24,6 +24,8 @@ public class Rope : Interactable
 
     public override int Interact(Transform mainCharacter)
     {
+        if (!isInteractable) return -1;
+
         Grab(mainCharacter);
 
         return -1;
