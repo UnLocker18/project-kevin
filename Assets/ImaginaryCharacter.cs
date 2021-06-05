@@ -5,23 +5,25 @@ using UnityEngine;
 
 public class ImaginaryCharacter : Interactable
 {
+    [SerializeField] private int requiredPersonality = 1;
+
     private EnvironmentInteractions environmentInteractions;
     private Renderer renderer;
 
     private void Start()
     {
         environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();        
-        renderer = gameObject.GetComponentInChildren<Renderer>();
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
 
-        renderer.enabled = false;
-        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleVisibility;
+        renderer = gameObject.GetComponentInChildren<Renderer>();
+        if (renderer != null) renderer.enabled = false;
     }
 
-    private void ToggleVisibility(int personality)
+    private void ToggleInteractability(int personality)
     {
         if (renderer == null) return;
 
-        if (personality == 1)
+        if (personality == requiredPersonality)
         {
             renderer.enabled = true;
             isInteractable = true;
@@ -35,6 +37,8 @@ public class ImaginaryCharacter : Interactable
 
     public override int Interact(Transform mainCharacter)
     {
+        if (!isInteractable) return -1;
+
         return -1;
     }    
 }
