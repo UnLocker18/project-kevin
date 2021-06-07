@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 232848524}
   - component: {fileID: 232848526}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: VirtualCamera_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,17 +1348,17 @@ PrefabInstance:
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: to
-      value: 
-      objectReference: {fileID: 232848524}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: from
-      value: 
-      objectReference: {fileID: 1734279786}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035537, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: m_Name
-      value: TriggerCamera2to1
+      value: TriggerCamera_2to1
       objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035550, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
@@ -1847,17 +1847,17 @@ PrefabInstance:
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: to
-      value: 
-      objectReference: {fileID: 1734279786}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: from
-      value: 
-      objectReference: {fileID: 1939660558}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035537, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: m_Name
-      value: TriggerCamera3to2
+      value: TriggerCamera_3to2
       objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035550, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
@@ -3725,17 +3725,17 @@ PrefabInstance:
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: to
-      value: 
-      objectReference: {fileID: 1939660558}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: from
-      value: 
-      objectReference: {fileID: 1734279786}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035537, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: m_Name
-      value: TriggerCamera2to3
+      value: TriggerCamera_2to3
       objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035550, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
@@ -4377,7 +4377,7 @@ GameObject:
   - component: {fileID: 1734279786}
   - component: {fileID: 1734279785}
   m_Layer: 0
-  m_Name: CM vcam2
+  m_Name: VirtualCamera_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5082,7 +5082,7 @@ GameObject:
   - component: {fileID: 1939660558}
   - component: {fileID: 1939660557}
   m_Layer: 0
-  m_Name: CM vcam3
+  m_Name: VirtualCamera_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5504,17 +5504,17 @@ PrefabInstance:
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: to
-      value: 
-      objectReference: {fileID: 1734279786}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661594583101123177, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: from
-      value: 
-      objectReference: {fileID: 232848524}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035537, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
       propertyPath: m_Name
-      value: TriggerCamera1to2
+      value: TriggerCamera_1to2
       objectReference: {fileID: 0}
     - target: {fileID: 4150269152032035550, guid: 1566f3427bc63c245a425c7856019176,
         type: 3}
