@@ -20,6 +20,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     private CharacterController _characterController;
     private EnvironmentInteractions environmentInteractions;
+    private ParticleSystem particleSystem;
 
     private Vector3 _inputVector;
     private float _inputSpeed;
@@ -32,6 +33,9 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         environmentInteractions = GetComponent<EnvironmentInteractions>();
+
+        if (GameObject.Find("Transformation") != null) particleSystem = GameObject.Find("Transformation").GetComponentInChildren<ParticleSystem>();
+        else Debug.Log("Cannot find Transformation gameobject");
 
         if (environmentInteractions != null) environmentInteractions.ChangePersonality += SwitchCharacter;
     }
@@ -97,6 +101,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         Animator animator = GetComponentInChildren<Animator>();
 
         animator.SetBool("CharacterSwitch", true);
+        if (particleSystem != null) particleSystem.Play();
 
         yield return new WaitForSeconds(0.15f);
 
