@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class ImaginaryCharacter : Interactable
@@ -9,6 +7,8 @@ public class ImaginaryCharacter : Interactable
 
     private EnvironmentInteractions environmentInteractions;
     private Renderer renderer;
+    private Vector3 afterInteractionPosition;
+    private Vector3 afterInteractionRotation;
 
     private void Start()
     {
@@ -17,6 +17,9 @@ public class ImaginaryCharacter : Interactable
 
         renderer = gameObject.GetComponentInChildren<Renderer>();
         if (renderer != null) renderer.enabled = false;
+
+        afterInteractionPosition = transform.Find("AfterInteraction").position;
+        afterInteractionRotation = transform.Find("AfterInteraction").eulerAngles;
     }
 
     private void ToggleInteractability(int personality)
@@ -38,6 +41,9 @@ public class ImaginaryCharacter : Interactable
     public override int Interact(Transform mainCharacter)
     {
         if (!isInteractable) return -1;
+
+        transform.DORotate(afterInteractionRotation, 0.5f);
+        transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), 1);
 
         return -1;
     }    
