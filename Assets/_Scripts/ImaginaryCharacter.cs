@@ -10,11 +10,14 @@ public class ImaginaryCharacter : Interactable
     private Vector3 afterInteractionPosition;
     private Vector3 afterInteractionRotation;
 
+    private void Awake()
+    {
+        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
+    }
+
     private void Start()
     {
-        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();        
-        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
-
         renderer = gameObject.GetComponentInChildren<Renderer>();
         if (renderer != null) renderer.enabled = false;
 

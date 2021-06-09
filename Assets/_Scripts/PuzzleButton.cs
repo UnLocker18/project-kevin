@@ -17,14 +17,14 @@ public class PuzzleButton : Interactable
     void Awake()
     {
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
+
+        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
     }
 
     void Start()
     {
-        _renderer = gameObject.GetComponentsInChildren<Renderer>();
-
-        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
-        if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
+        _renderer = gameObject.GetComponentsInChildren<Renderer>();        
     }
 
     public override int Interact(Transform mainCharacter)
