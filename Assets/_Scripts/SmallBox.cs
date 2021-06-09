@@ -6,7 +6,7 @@ public class SmallBox : Interactable
 
     private EnvironmentInteractions environmentInteractions;
 
-    private void Start()
+    private void Awake()
     {
         environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
         if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;

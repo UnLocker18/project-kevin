@@ -28,7 +28,7 @@ public class RopeLinkable : MonoBehaviour
 
     private void HandleRotation()
     {
-        SmallBox sb = gameObject.GetComponent<SmallBox>();
+        SmallBox sb = GetComponent<SmallBox>();
         if (sb != null)
         {
             sb.GetComponent<Rigidbody>().freezeRotation = isConnected;
@@ -38,7 +38,7 @@ public class RopeLinkable : MonoBehaviour
 
     private void SetUpOutLine()
     {
-        outline = gameObject.GetComponent<Outline>();
+        outline = GetComponent<Outline>();
 
         if (outline == null)
         {
