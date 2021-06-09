@@ -17,9 +17,13 @@ public class EnvironmentInteractions : MonoBehaviour
 
     public void Interaction()
     {
-        int newPersonality = -1;
+        int newPersonality = -1;        
 
-        if (currentInteractable != null) newPersonality = currentInteractable.Interact(gameObject.transform);
+        if (currentInteractable != null)
+        {
+            newPersonality = currentInteractable.Interact(gameObject.transform);
+            if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+        }
 
         if (newPersonality != -1)
         {
@@ -30,24 +34,26 @@ public class EnvironmentInteractions : MonoBehaviour
 
     public void StickRope()
     {
-        if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+        //if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
 
         if (currentRope != null && currentRl != null)
         {
             if (!currentRope.stickObjects.Contains(currentRl))
             {
                 currentRope.stickObjects.Add(currentRl);
-                currentRl.Connect();
+                currentRl.Connect(currentPersonality);
             }
             else
             {
                 currentRope.stickObjects.Remove(currentRl);
-                currentRl.Disconnect();
+                currentRl.Disconnect(currentPersonality);
             }            
             currentRope.GenerateRope();
+
+            if (currentRope.stickObjects.Count == 0) currentRope = null;
         }
 
-        currentRope = null;
+        //currentRope = null;
     }
 
     public void SetPersonality(int personality)

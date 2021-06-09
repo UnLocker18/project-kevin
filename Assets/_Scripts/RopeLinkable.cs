@@ -6,33 +6,34 @@ public class RopeLinkable : MonoBehaviour
 
     private Outline outline;
     
-    public void Connect()
+    public void Connect(int currentPersonality)
     {
         SetUpOutLine();
 
         isConnected = true;
         outline.enabled = true;
 
-        HandleRotation();
+        HandleRotation(currentPersonality);
     }
 
-    public void Disconnect()
+    public void Disconnect(int currentPersonality)
     {
         SetUpOutLine();
 
         isConnected = false;
         outline.enabled = false;
 
-        HandleRotation();
+        HandleRotation(currentPersonality);
     }
 
-    private void HandleRotation()
+    private void HandleRotation(int currentPersonality)
     {
         SmallBox sb = GetComponent<SmallBox>();
         if (sb != null)
         {
             sb.GetComponent<Rigidbody>().freezeRotation = isConnected;
-            sb.isInteractable = !isConnected;
+            sb.isLocked = isConnected;
+            sb.ToggleInteractability(currentPersonality);
         }
     }
 
