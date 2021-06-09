@@ -43,9 +43,11 @@ public abstract class Interactable : MonoBehaviour
             transform.parent = mainCharacter;
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
+            mainCharacter.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
+            mainCharacter.GetComponent<BoxCollider>().enabled = false;
             transform.parent = null;
             rb.isKinematic = false;
         }
