@@ -2,9 +2,10 @@
 
 public class SmallBox : Interactable
 {
-    [SerializeField] private int requiredPersonality = 2;
+    [SerializeField] public int requiredPersonality = 2;
 
     private EnvironmentInteractions environmentInteractions;
+    public bool isLocked = false;
 
     private void Awake()
     {
@@ -21,10 +22,9 @@ public class SmallBox : Interactable
         return -1;
     }
 
-    private void ToggleInteractability(int personality)
+    public void ToggleInteractability(int personality)
     {
-
-        if (personality == requiredPersonality)
+        if (personality == requiredPersonality && !isLocked)
         {
             isInteractable = true;
         }
