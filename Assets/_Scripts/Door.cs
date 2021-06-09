@@ -15,7 +15,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doorAngle = transform.localEulerAngles;
+        doorAngle = transform.eulerAngles;
 
         floorButtonNumbers = new int[activators.Length];
 

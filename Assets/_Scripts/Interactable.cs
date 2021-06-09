@@ -5,7 +5,7 @@ public abstract class Interactable : MonoBehaviour
     public bool isInteractable;
     public Outline outline;
 
-    public abstract void Interact(Transform mainCharacter);
+    public abstract int Interact(Transform mainCharacter);
 
     public void SetUpOutline()
     {
