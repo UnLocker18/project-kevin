@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6228297239377150907}
   - component: {fileID: 8502290138384103391}
   - component: {fileID: 8692827906302043664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4152271859294325194}
   - component: {fileID: 7636554977782825625}
   - component: {fileID: 2073269768966592321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
