@@ -165,9 +165,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4028980776577136376}
+  - component: {fileID: 7083243251938010860}
   - component: {fileID: 1211115343767239681}
   - component: {fileID: 7083243251938010861}
-  - component: {fileID: 7083243251938010860}
   - component: {fileID: 3636966617862301583}
   - component: {fileID: 442704522781376093}
   - component: {fileID: 6171458293008225623}
@@ -198,35 +198,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1211115343767239681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4028980776577136380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb5d0b41cb2c8a47a3693b30e876bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cameraT: {fileID: 0}
-  _speed: 2
-  _rotationSpeed: 15
-  walkAnimationSpeed: 0.667
-  moveThreshold: 0.1
---- !u!114 &7083243251938010861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4028980776577136380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e217a79c701dd4ea2b7157bfbe2da1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7083243251938010860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +214,37 @@ MonoBehaviour:
   currentInteractable: {fileID: 0}
   currentRl: {fileID: 0}
   currentRope: {fileID: 0}
+--- !u!114 &1211115343767239681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028980776577136380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb5d0b41cb2c8a47a3693b30e876bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraT: {fileID: 0}
+  _speed: 2
+  _rotationSpeed: 15
+  walkAnimationSpeed: 0.667
+  storicoWalkCoefficient: 0.667
+  sportivoWalkCoefficient: 0.667
+  moveThreshold: 0.1
+--- !u!114 &7083243251938010861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028980776577136380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e217a79c701dd4ea2b7157bfbe2da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &3636966617862301583
 Rigidbody:
   m_ObjectHideFlags: 0
