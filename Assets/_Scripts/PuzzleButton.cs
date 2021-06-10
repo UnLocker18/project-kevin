@@ -10,7 +10,7 @@ public class PuzzleButton : Interactable
     public event Action<int, bool> ButtonPress;
     public int buttonNumber;
 
-    private bool isActive = false;
+    [SerializeField] private bool isActive = false;
     private Renderer[] _renderer;
     private EnvironmentInteractions environmentInteractions;
 
@@ -29,11 +29,23 @@ public class PuzzleButton : Interactable
 
     public override int Interact(Transform mainCharacter)
     {
-        if (!isInteractable) return -1;
+        if (!isInteractable && !isActive) return -1;
 
         Toggle();
 
+        if (!isInteractable && !isActive) outline.enabled = false;
+
         return -1;
+    }
+
+    public override void SetOutline(bool value)
+    {
+        SetUpOutline();
+
+        if (value)
+            outline.enabled = isInteractable || isActive;
+        else
+            outline.enabled = false;
     }
 
     public void Toggle()

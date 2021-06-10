@@ -21,7 +21,7 @@ public class EnvironmentInteractions : MonoBehaviour
 
         if (currentInteractable != null)
         {
-            newPersonality = currentInteractable.Interact(gameObject.transform);
+            newPersonality = currentInteractable.Interact(transform);
             if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
         }
 
@@ -48,7 +48,7 @@ public class EnvironmentInteractions : MonoBehaviour
                 currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality);
             }            
-            currentRope.GenerateRope();
+            currentRope.GenerateRope(transform);
 
             if (currentRope.stickObjects.Count == 0) currentRope = null;
         }
@@ -60,5 +60,6 @@ public class EnvironmentInteractions : MonoBehaviour
     {
         if (ChangePersonality != null) ChangePersonality.Invoke(personality);
         currentPersonality = personality;
+        if (currentInteractable != null) currentInteractable.SetOutline(true);
     }
 }

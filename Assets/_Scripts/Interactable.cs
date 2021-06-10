@@ -23,7 +23,7 @@ public abstract class Interactable : MonoBehaviour
         outline.enabled = false;
     }
 
-    public void SetOutline(bool value)
+    public virtual void SetOutline(bool value)
     {
         if (!isInteractable) return;
 
