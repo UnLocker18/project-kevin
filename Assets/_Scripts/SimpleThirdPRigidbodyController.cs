@@ -8,7 +8,9 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _rotationSpeed = 15f;
 
-    [SerializeField] private float walkAnimationSpeed = 0.667f;
+    [SerializeField] private float walkAnimationSpeed = 0f;
+    [SerializeField] private float storicoWalkCoefficient = 0.667f;
+    [SerializeField] private float sportivoWalkCoefficient = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
     
     private EnvironmentInteractions environmentInteractions;
@@ -18,7 +20,7 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
-    
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -27,7 +29,11 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
         if (GameObject.Find("Transformation") != null) particleSystem = GameObject.Find("Transformation").GetComponentInChildren<ParticleSystem>();
         else Debug.Log("Cannot find Transformation gameobject");
 
-        if (environmentInteractions != null) environmentInteractions.ChangePersonality += SwitchCharacter;
+        if (environmentInteractions != null)
+        {
+            environmentInteractions.ChangePersonality += SwitchCharacter;
+            SwitchCharacter(environmentInteractions.currentPersonality);
+        }
     }
 
     void Update()
@@ -68,6 +74,9 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
 
     private void SwitchCharacter(int personality)
     {
+        if (personality < 2) walkAnimationSpeed = storicoWalkCoefficient;
+        if (personality == 2) walkAnimationSpeed = sportivoWalkCoefficient;
+
         StartCoroutine("SwitchAnimation", personality);
     }
 
