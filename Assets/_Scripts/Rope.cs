@@ -38,7 +38,7 @@ public class Rope : Interactable
         return -1;
     }
 
-    public void GenerateRope(Transform mainCharacter)
+    public void GenerateRope()
     {
         if (stickObjects.Count > 1)
         {
@@ -59,7 +59,7 @@ public class Rope : Interactable
 
         if (stickObjects.Count == 0)
         {
-            mainCharacter.Find("RopeTeleport").GetComponent<RopeTeleport>().Teleport(transform);
+            GameObject.Find("RopeTeleport").GetComponent<RopeTeleport>().Teleport(transform);
             rigidbody.isKinematic = false;
         }
     }

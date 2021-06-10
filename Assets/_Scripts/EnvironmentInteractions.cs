@@ -40,20 +40,39 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             if (!currentRope.stickObjects.Contains(currentRl))
             {
-                currentRope.stickObjects.Add(currentRl);
-                currentRl.Connect(currentPersonality);
+                //currentRope.stickObjects.Add(currentRl);
+                currentRl.Connect(currentPersonality, currentRope);
             }
             else
             {
-                currentRope.stickObjects.Remove(currentRl);
-                currentRl.Disconnect(currentPersonality);
+                //currentRope.stickObjects.Remove(currentRl);
+                currentRl.Disconnect(currentPersonality, currentRope);
             }            
-            currentRope.GenerateRope(transform);
+            //currentRope.GenerateRope(transform);
 
             if (currentRope.stickObjects.Count == 0) currentRope = null;
         }
+        else if (currentRope == null && currentRl != null)
+        {
+            if (currentRl.connectedRopes.Count == 1)
+            {
+                currentRope = currentRl.connectedRopes[0];
+                //currentRope.stickObjects.Remove(currentRl);
+                currentRl.Disconnect(currentPersonality, currentRope);
+                //currentRope.GenerateRope(transform);                
+            }
+            else if (currentRl.connectedRopes.Count > 1)
+            {
+                currentRl.DisconnectAll(currentPersonality);
+            }
+        }
 
         //currentRope = null;
+    }
+
+    public void LeaveRope()
+    {
+        currentRope = null;
     }
 
     public void SetPersonality(int personality)
