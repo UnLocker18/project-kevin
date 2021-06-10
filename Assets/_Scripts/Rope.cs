@@ -8,6 +8,7 @@ public class Rope : Interactable
     public List<RopeLinkable> stickObjects = new List<RopeLinkable>();
 
     private Vector3 startPostition;
+    private Rigidbody rigidbody;
 
     Cable cable;
     [SerializeField] private GameObject cableObj;
@@ -23,6 +24,7 @@ public class Rope : Interactable
     {
         isInteractable = true;
         startPostition = transform.position;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     public override int Interact(Transform mainCharacter)
@@ -31,6 +33,7 @@ public class Rope : Interactable
 
         //Grab(mainCharacter);
         transform.Translate(Vector3.down);
+        rigidbody.isKinematic = true;
 
         return -1;
     }
@@ -54,7 +57,11 @@ public class Rope : Interactable
         }
         else DestroyRope();
 
-        if (stickObjects.Count == 0) transform.Translate(Vector3.up);
+        if (stickObjects.Count == 0)
+        {
+            mainCharacter.Find("RopeTeleport").GetComponent<RopeTeleport>().Teleport(transform);
+            rigidbody.isKinematic = false;
+        }
     }
 
     //public void ClearRope()
@@ -71,15 +78,13 @@ public class Rope : Interactable
     private void InstantiateRope()
     {
         cableInstance = Instantiate(cableObj);
-        //gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     private void DestroyRope()
     {
         if (cableInstance != null)
         {
-            Destroy(cableInstance);            
-            //gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+            Destroy(cableInstance);
         }
     }
 
