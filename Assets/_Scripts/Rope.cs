@@ -35,7 +35,7 @@ public class Rope : Interactable
         return -1;
     }
 
-    public void GenerateRope()
+    public void GenerateRope(Transform mainCharacter)
     {
         if (stickObjects.Count > 1)
         {
