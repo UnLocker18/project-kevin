@@ -16,11 +16,12 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+        //if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+        if (other.name == "RopeTeleport") return;
 
         AddToList(other);
 
-        if (floorButton != null && other.gameObject.name != "Trigger")
+        if (floorButton != null && other.name != "Trigger")
         {
             if (triggerList.Count > 0) floorButton.Activate();
         }
@@ -44,7 +45,8 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+        //if (other.GetComponent<CharacterController>() && GetComponentInParent<CharacterController>()) return;
+        if (other.name == "RopeTeleport") return;
 
         RemoveFromList(other);
 
