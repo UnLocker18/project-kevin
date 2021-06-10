@@ -38,9 +38,12 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
         _inputVector = new Vector3(h, 0, v);
         _inputSpeed = Mathf.Clamp(_inputVector.magnitude, 0f, 1f);
 
+        if (_inputSpeed < moveThreshold) _inputSpeed = 0f;
+
         //Compute direction According to Camera Orientation
         _targetDirection = _cameraT.TransformDirection(_inputVector).normalized;
         _targetDirection.y = 0f;
+
         UpdateAnimator();
     }
 
