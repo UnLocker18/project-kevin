@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 584465058290236832}
   - component: {fileID: 584465058290236833}
   - component: {fileID: 584465058290236838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 584465059104170792}
   - component: {fileID: 584465059104170793}
   - component: {fileID: 584465059104170795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dumbbell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

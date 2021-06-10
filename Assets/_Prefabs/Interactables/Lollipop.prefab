@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2209068250429507317}
   - component: {fileID: 2209068250429507316}
   - component: {fileID: 2209068250429507315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 2209068251243976829}
   - component: {fileID: 2209068251243976828}
   - component: {fileID: 2209068251243976830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lollipop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

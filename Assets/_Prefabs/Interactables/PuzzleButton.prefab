@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4354793899643198293}
   - component: {fileID: 4354793899643198292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PuzzleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: 58914d0324b4407458eec5806ab7dd11, type: 2}
   inactiveMaterial: {fileID: 2100000, guid: d4e4a93e43891624f91882e44b085d69, type: 2}
   buttonNumber: 0
+  isActive: 0
 --- !u!1 &4354793899657522807
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ GameObject:
   - component: {fileID: 4354793899657522699}
   - component: {fileID: 4354793899657522698}
   - component: {fileID: 1527667665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +157,7 @@ GameObject:
   - component: {fileID: 4354793899775307774}
   - component: {fileID: 4354793899775307773}
   - component: {fileID: 1433046045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
