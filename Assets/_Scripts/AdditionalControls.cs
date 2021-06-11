@@ -21,5 +21,7 @@ public class AdditionalControls : MonoBehaviour
         {
             environmentInteractions.StickRope();
         }
+
     }
+
 }

@@ -5,6 +5,13 @@ public abstract class Interactable : MonoBehaviour
     public bool isInteractable;
     public Outline outline;
 
+    //private EnvironmentInteractions environmentInteractions;
+    // Start is called before the first frame update
+    void Start()
+    {
+        //environmentInteractions = gameObject.GetComponent<EnvironmentInteractions>();
+    }
+
     public abstract void Interact(Transform mainCharacter);
 
     public void SetUpOutline()
@@ -36,6 +43,7 @@ public abstract class Interactable : MonoBehaviour
         if (!isInteractable) return;
 
         Rigidbody rb = GetComponent<Rigidbody>();
+        
 
         if (transform.parent != mainCharacter)
         {
@@ -49,5 +57,10 @@ public abstract class Interactable : MonoBehaviour
             transform.parent = null;
             rb.isKinematic = false;
         }
+
     }
+
+    //public void changeToChildPersonality() {
+        //environmentInteractions.ChangePersonality("child");
+    //}
 }

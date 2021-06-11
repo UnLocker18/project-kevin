@@ -6,7 +6,9 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] public Interactable currentInteractable;
     [SerializeField] public RopeLinkable currentRl;
 
-    [SerializeField] private Rope currentRope;    
+    [SerializeField] private Rope currentRope;
+    
+
 
     public void Interaction()
     {
