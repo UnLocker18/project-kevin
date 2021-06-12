@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
-	public Text nameText;
-	public Text dialogueText;
+    private GameObject dialogueCanvas;
+	private Text nameText;
+	private Text dialogueText;
 
 	public Animator animator;
 
@@ -14,8 +15,13 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		sentences = new Queue<string>();
-	}
+        dialogueCanvas = transform.GetChild(0).gameObject;
+        dialogueCanvas.SetActive(true);
+
+        sentences = new Queue<string>();
+        nameText = GameObject.FindGameObjectsWithTag("Dialogue")[0].GetComponent<Text>();
+        dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
+    }
 
 	public void StartDialogue (Dialogue dialogue)
 	{
@@ -59,6 +65,6 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
-	}
+    }
 
 }

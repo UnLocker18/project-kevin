@@ -3,10 +3,13 @@
 public class AdditionalControls : MonoBehaviour
 {
     private EnvironmentInteractions environmentInteractions;
+    private DialogueTrigger dialogueTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
-        environmentInteractions = gameObject.GetComponent<EnvironmentInteractions>();
+        environmentInteractions = GetComponent<EnvironmentInteractions>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
     // Update is called once per frame
@@ -30,5 +33,7 @@ public class AdditionalControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) environmentInteractions.SetPersonality(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);
+
+        if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue();
     }
 }

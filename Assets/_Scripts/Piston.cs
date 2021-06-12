@@ -5,14 +5,16 @@ using System;
 public class Piston : MonoBehaviour
 {
     [SerializeField] private GameObject[] activators;
+    [SerializeField] private bool andMode = true;
     [SerializeField] private float animationSeconds = 0.3f;
     
     public bool isExtended = false;
     public float range = 1f;
-    [SerializeField] private Transform head;
-    [SerializeField] private Vector3 headPosition;
-    [SerializeField] private int[] floorButtonNumbers;
-    [SerializeField] private int activeButtons = 0;
+    private Transform head;
+    private Vector3 headPosition;
+    private int[] floorButtonNumbers;
+    private int activeButtons = 0;
+    private int neededActivators = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class Piston : MonoBehaviour
         headPosition = head.localPosition;
 
         floorButtonNumbers = new int[activators.Length];
+        if (andMode) neededActivators = activators.Length;
+        else neededActivators = 1;
 
         int i = 0;
         foreach (GameObject activator in activators)
@@ -66,7 +70,7 @@ public class Piston : MonoBehaviour
             else activeButtons--;
         }
 
-        if (activeButtons >= activators.Length) Extend();
+        if (activeButtons >= neededActivators) Extend();
         else if (isExtended) Contract();        
     }
 }

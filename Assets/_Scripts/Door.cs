@@ -5,12 +5,14 @@ using System;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject[] activators;
+    [SerializeField] private bool andMode = true;
     [SerializeField] private float animationSeconds = 1f;
 
     private bool isOpen = false;
     private Vector3 doorAngle;
-    [SerializeField] private int[] floorButtonNumbers;
-    [SerializeField] private int activeButtons = 0;
+    private int[] floorButtonNumbers;
+    private int activeButtons = 0;
+    private int neededActivators = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,8 @@ public class Door : MonoBehaviour
         doorAngle = transform.eulerAngles;
 
         floorButtonNumbers = new int[activators.Length];
+        if (andMode) neededActivators = activators.Length;
+        else neededActivators = 1;
 
         int i = 0;
         foreach (GameObject activator in activators)
@@ -61,7 +65,7 @@ public class Door : MonoBehaviour
             else activeButtons--;
         }
 
-        if (activeButtons >= activators.Length) Open();
+        if (activeButtons >= neededActivators) Open();
         else if (isOpen) Close();
     }
 }
