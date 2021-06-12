@@ -160,19 +160,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &220711547
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051799274859508789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0136987, y: 2.59228, z: 0.20000419}
-  m_Center: {x: 0.006848336, y: 1.2961404, z: -0.0000023720343}
 --- !u!1 &8169277570511966922
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,13 +362,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activators:
   - {fileID: 0}
-  animationSeconds: 0.3
+  andMode: 1
+  animationSeconds: 0.5
   isExtended: 0
   range: 3
-  head: {fileID: 0}
-  headPosition: {x: 0, y: 0, z: 0}
-  floorButtonNumbers: 
-  activeButtons: 0
 --- !u!65 &7348402615406633545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -389,6 +373,19 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051799274323985952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0136987, y: 2.59228, z: 0.20000419}
+  m_Center: {x: 0.006848336, y: 1.2961404, z: -0.0000023720343}
+--- !u!65 &220711547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051799274859508789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -476,6 +473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piston_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2689b267e627e7941a3b7031cd5f2159,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2689b267e627e7941a3b7031cd5f2159,
         type: 3}
@@ -580,6 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2689b267e627e7941a3b7031cd5f2159,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2689b267e627e7941a3b7031cd5f2159,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -663,6 +670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: piston_wall_new
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d14e815d3f602a446b87c2b21d25cbff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d14e815d3f602a446b87c2b21d25cbff, type: 3}
