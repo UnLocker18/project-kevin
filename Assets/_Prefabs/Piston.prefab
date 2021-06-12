@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 675850976}
   - component: {fileID: 1152317242}
   - component: {fileID: 8619015108831802580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2349354254803879681}
   - component: {fileID: 2349354254803879680}
   - component: {fileID: 533945870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2349354255524748340}
   - component: {fileID: 2349354255524748347}
   - component: {fileID: 4204456597392964409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Piston
   m_TagString: Untagged
   m_Icon: {fileID: 0}
