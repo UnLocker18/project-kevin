@@ -10,8 +10,11 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] private Rope currentRope;
     public event Action<int> ChangePersonality;
 
+    private UIManager uIManager;
+
     private void Start()
     {
+        uIManager = FindObjectOfType<UIManager>();
         if (ChangePersonality != null) ChangePersonality.Invoke(currentPersonality);
     }
 
@@ -22,7 +25,7 @@ public class EnvironmentInteractions : MonoBehaviour
         if (currentInteractable != null)
         {
             newPersonality = currentInteractable.Interact(transform);
-            if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+            if (currentInteractable.GetType() == typeof(Rope)) TakeRope();
         }
 
         if (newPersonality != -1)
@@ -47,10 +50,10 @@ public class EnvironmentInteractions : MonoBehaviour
             {
                 //currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality, currentRope);
-            }            
+            }
             //currentRope.GenerateRope(transform);
 
-            if (currentRope.stickObjects.Count == 0) currentRope = null;
+            if (currentRope.stickObjects.Count == 0) LeaveRope();
         }
         else if (currentRope == null && currentRl != null)
         {
@@ -70,9 +73,16 @@ public class EnvironmentInteractions : MonoBehaviour
         //currentRope = null;
     }
 
+    private void TakeRope()
+    {
+        currentRope = currentInteractable.GetComponent<Rope>();
+        uIManager.ShowRopeIndicator(currentRope.GetComponent<Outline>().OutlineColor);
+    }
+
     public void LeaveRope()
     {
         currentRope = null;
+        uIManager.HideRopeIndicator();
     }
 
     public void SetPersonality(int personality)

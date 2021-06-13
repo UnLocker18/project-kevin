@@ -2,6 +2,8 @@
 
 public class AdditionalControls : MonoBehaviour
 {
+    [SerializeField] private bool enableCheats = true;
+
     private EnvironmentInteractions environmentInteractions;
     private DialogueTrigger dialogueTrigger;
     private DialogueManager dialogueManager;
@@ -19,6 +21,15 @@ public class AdditionalControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enableCheats)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) environmentInteractions.SetPersonality(1);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);
+
+            if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue();
+        }
+
         if (Input.GetButtonDown("Interact")) environmentInteractions.Interaction();
 
         if (Input.GetButtonDown("Interact2")) environmentInteractions.StickRope();
@@ -29,10 +40,6 @@ public class AdditionalControls : MonoBehaviour
 
         if (Input.GetButtonDown("Pause")) customPauseMenu.ToggleMenu();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) environmentInteractions.SetPersonality(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);
-
-        if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue();
+        if (Input.GetButtonDown("Restart")) customPauseMenu.Restart();
     }
 }

@@ -51,6 +51,11 @@ public class CustomPauseMenu : MonoBehaviour
         //backgroundAudio.Play();
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitToMenu()
     {
         SceneManager.LoadScene(0);
