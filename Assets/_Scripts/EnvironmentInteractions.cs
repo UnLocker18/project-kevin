@@ -6,8 +6,8 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] public int currentPersonality = 0;
     [SerializeField] public Interactable currentInteractable;
     [SerializeField] public RopeLinkable currentRl;
+    [SerializeField] public Rope currentRope;
 
-    [SerializeField] private Rope currentRope;
     public event Action<int> ChangePersonality;
 
     private UIManager uIManager;
@@ -37,21 +37,16 @@ public class EnvironmentInteractions : MonoBehaviour
 
     public void StickRope()
     {
-        //if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
-
         if (currentRope != null && currentRl != null)
         {
             if (!currentRope.stickObjects.Contains(currentRl))
             {
-                //currentRope.stickObjects.Add(currentRl);
                 currentRl.Connect(currentPersonality, currentRope);
             }
             else
             {
-                //currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality, currentRope);
             }
-            //currentRope.GenerateRope(transform);
 
             if (currentRope.stickObjects.Count == 0) LeaveRope();
         }
@@ -60,27 +55,31 @@ public class EnvironmentInteractions : MonoBehaviour
             if (currentRl.connectedRopes.Count == 1)
             {
                 currentRope = currentRl.connectedRopes[0];
-                //currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality, currentRope);
-                //currentRope.GenerateRope(transform);                
             }
             else if (currentRl.connectedRopes.Count > 1)
             {
                 currentRl.DisconnectAll(currentPersonality);
             }
         }
-
-        //currentRope = null;
     }
 
     private void TakeRope()
     {
+        if (currentRope != null) LeaveRope();
+
         currentRope = currentInteractable.GetComponent<Rope>();
-        uIManager.ShowRopeIndicator(currentRope.GetComponent<Outline>().OutlineColor);
+
+        if (currentRl != null) currentRl.SetOutline(currentRope.ropeColor, true);
+
+        uIManager.ShowRopeIndicator(currentRope.ropeColor);
     }
 
     public void LeaveRope()
     {
+        if (currentRl != null) currentRl.SetOutline(Color.green, false);
+
+        currentRope.DropRope();
         currentRope = null;
         uIManager.HideRopeIndicator();
     }

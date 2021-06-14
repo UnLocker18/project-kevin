@@ -2,6 +2,8 @@
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] public Color outlineColor = Color.yellow;
+
     public bool isInteractable;
     public Outline outline;
 
@@ -17,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
         }        
 
         outline.OutlineMode = Outline.Mode.OutlineVisible;
-        outline.OutlineColor = Color.yellow;
+        outline.OutlineColor = outlineColor;
         outline.OutlineWidth = 3f;
 
         outline.enabled = false;

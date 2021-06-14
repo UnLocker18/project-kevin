@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccae81a38daf4949b71306807f8dfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineColor: {r: 1, g: 0.8039216, b: 0.25490198, a: 1}
   isInteractable: 0
   outline: {fileID: 0}
   requiredPersonality: 1

@@ -264,11 +264,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumbbell
       objectReference: {fileID: 0}
-    - target: {fileID: 4556149330292313478, guid: ae0ab24ec961d244082b03d375b56246,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0ab24ec961d244082b03d375b56246, type: 3}
 --- !u!43 &33582181
@@ -277,7 +272,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24110
+  m_Name: pb_Mesh-1522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1403,7 +1398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-25402
+  m_Name: pb_Mesh-2814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1831,7 +1826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446513754}
   m_LocalRotation: {x: 0.25762874, y: -0, z: -0, w: 0.966244}
-  m_LocalPosition: {x: -2.1789904, y: 2.9893222, z: -2.3362744}
+  m_LocalPosition: {x: -2.1788795, y: 2.9893222, z: -2.3362744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1192790001}
@@ -2142,7 +2137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631218201}
   m_LocalRotation: {x: 0.25762874, y: -0, z: -0, w: 0.966244}
-  m_LocalPosition: {x: -2.1789904, y: 2.9893222, z: -2.25}
+  m_LocalPosition: {x: -2.1788795, y: 2.9893222, z: -2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1765340947}
@@ -2492,6 +2487,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.b
+      value: 0.25699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.g
+      value: 0.48801678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dbc45c0abe95254180f0ed295caebaa, type: 3}
 --- !u!1001 &783006607
@@ -2681,27 +2696,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1521332713}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &884242509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4028980776577136380, guid: 970bd419dfdbffe40aff56d87171a5c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 7083243253493212074}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &884242510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884242509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dcbf2e7920e0dc4cb2c726e11d1aca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences: []
 --- !u!1001 &887452830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3070,7 +3064,7 @@ PrefabInstance:
     - target: {fileID: 7945664621490279827, guid: 3dbc45c0abe95254180f0ed295caebaa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.563095
+      value: 10.06
       objectReference: {fileID: 0}
     - target: {fileID: 7945664621490279827, guid: 3dbc45c0abe95254180f0ed295caebaa,
         type: 3}
@@ -3116,6 +3110,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.g
+      value: 0.69957125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945664621490279837, guid: 3dbc45c0abe95254180f0ed295caebaa,
+        type: 3}
+      propertyPath: ropeColor.r
+      value: 0.29900002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dbc45c0abe95254180f0ed295caebaa, type: 3}
@@ -3912,7 +3926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251935166}
   m_LocalRotation: {x: 0.25762874, y: -0, z: -0, w: 0.966244}
-  m_LocalPosition: {x: -2.1789904, y: 2.9893222, z: -2.3362744}
+  m_LocalPosition: {x: -2.1788795, y: 2.9893222, z: -2.3362744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1193593384}
@@ -3977,7 +3991,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23992
+  m_Name: pb_Mesh-1404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4925,7 +4939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618602591}
   m_LocalRotation: {x: 0.25762874, y: -0, z: -0, w: 0.966244}
-  m_LocalPosition: {x: -2.1789904, y: 2.9893222, z: -2.3362744}
+  m_LocalPosition: {x: -2.1788795, y: 2.9893222, z: -2.3362744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1750760612}
@@ -5159,7 +5173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699445829}
   m_LocalRotation: {x: 0.25762874, y: -0, z: -0, w: 0.966244}
-  m_LocalPosition: {x: -2.1789904, y: 2.9893222, z: -2.3362744}
+  m_LocalPosition: {x: -2.1788795, y: 2.9893222, z: -2.3362744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1226771242}
@@ -6530,7 +6544,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24690
+  m_Name: pb_Mesh-2102
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7004,6 +7018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035593251883101304, guid: 9a3a5526d76b8ad46927fd33e501220e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3a5526d76b8ad46927fd33e501220e, type: 3}
