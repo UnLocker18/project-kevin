@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7945664621490279827}
   - component: {fileID: 7945664621490279837}
   - component: {fileID: 7945664621490279836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 7945664623203276860}
   - component: {fileID: 7945664623203276851}
   - component: {fileID: 9109297711388867568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,6 +254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 283a62b7f8935b64f81986f7baa20599,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283a62b7f8935b64f81986f7baa20599, type: 3}

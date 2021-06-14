@@ -1,29 +1,68 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class RopeLinkable : MonoBehaviour
 {
     [SerializeField] private bool isConnected = false;
+    [SerializeField] public List<Rope> connectedRopes = new List<Rope>();
 
     private Outline outline;
     
-    public void Connect(int currentPersonality)
+    public void Connect(int currentPersonality, Rope rope)
     {
         SetUpOutLine();
 
-        isConnected = true;
-        outline.enabled = true;
+        if (!connectedRopes.Contains(rope)) connectedRopes.Add(rope);
+
+        if (connectedRopes.Count > 0)
+        {
+            isConnected = true;
+            outline.enabled = true;
+        }
+
+        rope.stickObjects.Add(this);
+        rope.GenerateRope();
 
         HandleRotation(currentPersonality);
     }
 
-    public void Disconnect(int currentPersonality)
+    public void Disconnect(int currentPersonality, Rope rope)
     {
         SetUpOutLine();
 
-        isConnected = false;
-        outline.enabled = false;
+        if (connectedRopes.Contains(rope)) connectedRopes.Remove(rope);
+
+        if (connectedRopes.Count == 0)
+        {
+            isConnected = false;
+            outline.enabled = false;
+        }
+
+        rope.stickObjects.Remove(this);
+        rope.GenerateRope();
 
         HandleRotation(currentPersonality);
+    }
+
+    public void DisconnectAll(int currentPersonality)
+    {
+        foreach (Rope rope in connectedRopes)
+        {
+            SetUpOutLine();           
+
+            rope.stickObjects.Remove(this);
+            rope.GenerateRope();
+
+            HandleRotation(currentPersonality);
+        }
+
+        connectedRopes.Clear();
+
+        if (connectedRopes.Count == 0)
+        {
+            isConnected = false;
+            outline.enabled = false;
+        }
     }
 
     private void HandleRotation(int currentPersonality)
@@ -50,6 +89,6 @@ public class RopeLinkable : MonoBehaviour
         outline.OutlineColor = Color.green;
         outline.OutlineWidth = 3f;
 
-        outline.enabled = false;
+        //outline.enabled = false;
     }
 }

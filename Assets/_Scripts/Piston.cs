@@ -43,13 +43,13 @@ public class Piston : MonoBehaviour
 
     public void Extend()
     {
-        head.DOLocalMoveX(headPosition.x + range, animationSeconds);
+        head.DOLocalMoveZ(headPosition.z + range, animationSeconds);
         isExtended = true;
     }
 
     public void Contract()
     {
-        head.DOLocalMoveX(headPosition.x, animationSeconds);
+        head.DOLocalMoveZ(headPosition.z, animationSeconds);
         isExtended = false;
     }
 

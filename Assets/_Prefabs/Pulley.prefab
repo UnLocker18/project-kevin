@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3174801868603398043}
   - component: {fileID: 3174801868603398042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3174801869549132411}
   - component: {fileID: 3174801869549132410}
   - component: {fileID: 713431466788253625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

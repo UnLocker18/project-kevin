@@ -22,6 +22,11 @@ public class AdditionalControls : MonoBehaviour
             environmentInteractions.StickRope();
         }
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            environmentInteractions.LeaveRope();
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) environmentInteractions.SetPersonality(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);

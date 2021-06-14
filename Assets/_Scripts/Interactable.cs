@@ -23,7 +23,7 @@ public abstract class Interactable : MonoBehaviour
         outline.enabled = false;
     }
 
-    public void SetOutline(bool value)
+    public virtual void SetOutline(bool value)
     {
         if (!isInteractable) return;
 
@@ -44,11 +44,11 @@ public abstract class Interactable : MonoBehaviour
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
             FindObjectOfType<AudioManager>().Play("pickSound");
+            mainCharacter.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
-
-
+            mainCharacter.GetComponent<BoxCollider>().enabled = false;
             transform.parent = null;
             rb.isKinematic = false;
             FindObjectOfType<AudioManager>().Play("dropSound");
