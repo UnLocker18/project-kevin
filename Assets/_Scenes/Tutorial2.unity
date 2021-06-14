@@ -429,6 +429,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &58708335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4729594145218279607, guid: 402cccf3202d7fa499f786ddfc7f0db1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1303884186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &64491851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2478,6 +2484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706891865}
+  - component: {fileID: 706891866}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -2505,6 +2512,21 @@ Transform:
   m_Father: {fileID: 153072835}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706891866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706891864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c2618059a861a478556551d05ba5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prova: {fileID: 0}
+  floorOrigin: {fileID: 1654951955}
+  floorMax: {fileID: 58708335}
 --- !u!1001 &770272951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4838,6 +4860,12 @@ Transform:
   m_Father: {fileID: 153072835}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1654951955 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 237593963216105632, guid: 402cccf3202d7fa499f786ddfc7f0db1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7597375563524566874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1658371884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774046888925337616, guid: 970bd419dfdbffe40aff56d87171a5c7,
@@ -5315,21 +5343,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 783006607}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1849486429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849486427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88da44fe72eecbc4cbe3f037fc45e33f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  albedoStandard: {fileID: 2800000, guid: addf47bade7d0974aa2d66d19503ba4d, type: 3}
-  albedoPath: {fileID: 2800000, guid: 2860702c291d8a94f8d4ed7edc29e951, type: 3}
-  emissionPath: {fileID: 2800000, guid: cfad1b7fdaa4d8845b3bcb9b762dc994, type: 3}
 --- !u!114 &1849486430
 MonoBehaviour:
   m_ObjectHideFlags: 0
