@@ -5,6 +5,7 @@ public class Trigger : MonoBehaviour
 {
     private FloorButton floorButton;    
     private EnvironmentInteractions environmentInteractions;
+    private UIManager uIManager;
     [SerializeField] private List<Collider> triggerList = new List<Collider>();
 
     // Start is called before the first frame update
@@ -12,6 +13,7 @@ public class Trigger : MonoBehaviour
     {
         environmentInteractions = GetComponentInParent<EnvironmentInteractions>();
         floorButton = GetComponentInParent<FloorButton>();
+        uIManager = FindObjectOfType<UIManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,13 +39,20 @@ public class Trigger : MonoBehaviour
         {
             environmentInteractions.currentInteractable = interactable;
             if (environmentInteractions.currentInteractable != null)
+            {
                 environmentInteractions.currentInteractable.SetOutline(true);
+                uIManager.ShowHint(environmentInteractions.currentInteractable);
+            }
             if (rl != null)
             {
                 environmentInteractions.currentRl = rl;
 
                 if (environmentInteractions.currentRope != null)
-                    environmentInteractions.currentRl.SetOutline(environmentInteractions.currentRope.ropeColor, true);
+                {
+                    environmentInteractions.currentRl.SetOutline(environmentInteractions.currentRope.ropeColor, true);                    
+                }
+
+                uIManager.ShowRopeHint(environmentInteractions.currentRope, environmentInteractions.currentRl);
             }
         }
     }
@@ -64,13 +73,17 @@ public class Trigger : MonoBehaviour
             if (triggerList.Count <= 0)
             {
                 if (environmentInteractions.currentInteractable != null)
-                    environmentInteractions.currentInteractable.SetOutline(false);
+                {
+                    environmentInteractions.currentInteractable.SetOutline(false);                    
+                }
                 environmentInteractions.currentInteractable = null;
 
                 if (environmentInteractions.currentRl != null)
-                    environmentInteractions.currentRl.SetOutline(Color.green, false);
+                    environmentInteractions.currentRl.SetOutline(Color.black, false);
             }
             environmentInteractions.currentRl = null;
+
+            uIManager.HideHint();
         }
     }
 

@@ -12,7 +12,7 @@ public class PuzzleButton : Interactable
     public event Action<int, bool> ButtonPress;
     public int buttonNumber;
 
-    [SerializeField] private bool isActive = false;
+    [SerializeField] public bool isActive = false;
     private Renderer[] renderers;
     private Transform[] discs;
     private EnvironmentInteractions environmentInteractions;    
