@@ -78,8 +78,9 @@ public class RopeLinkable : MonoBehaviour
 
     public void SetOutline(Color color, bool value)
     {
-        if (isConnected) return;
+        if (isConnected) value = true;
 
+        color.a = 0.4f;
         SetUpOutline(color);
         outline.enabled = value;
     }
@@ -94,14 +95,19 @@ public class RopeLinkable : MonoBehaviour
         }
         
         float H = 0f, S = 0f, V = 0f;
+        Color.RGBToHSV(color, out H, out S, out V);
 
         foreach (Rope rope in connectedRopes)
         {
-            Color.RGBToHSV(rope.ropeColor, out float H1, out S, out V);
+            float H1 = 0f;
 
-            H += H1;
+            Color.RGBToHSV(rope.ropeColor, out H1, out S, out V);
 
-            if (H != H1) S = 0.9f;
+            if (H != H1)
+            {
+                H += H1;
+                S = 0.9f;
+            }
         }            
 
         if (connectedRopes.Count > 0) color = Color.HSVToRGB(H, S, V);

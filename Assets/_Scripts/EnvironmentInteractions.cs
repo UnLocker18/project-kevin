@@ -31,8 +31,10 @@ public class EnvironmentInteractions : MonoBehaviour
         if (newPersonality != -1)
         {
             if (ChangePersonality != null) ChangePersonality.Invoke(newPersonality);
-            currentPersonality = newPersonality;
+            currentPersonality = newPersonality;            
         }
+
+        if (currentRl == null) uIManager.HideHint();
     }    
 
     public void StickRope()
@@ -56,6 +58,7 @@ public class EnvironmentInteractions : MonoBehaviour
             {
                 currentRope = currentRl.connectedRopes[0];
                 currentRl.Disconnect(currentPersonality, currentRope);
+                currentRope = null;
             }
             else if (currentRl.connectedRopes.Count > 1)
             {
@@ -77,10 +80,11 @@ public class EnvironmentInteractions : MonoBehaviour
 
     public void LeaveRope()
     {
-        if (currentRl != null) currentRl.SetOutline(Color.green, false);
+        if (currentRl != null) currentRl.SetOutline(Color.black, false);
 
-        currentRope.DropRope();
+        if (currentRope != null) currentRope.DropRope();
         currentRope = null;
+
         uIManager.HideRopeIndicator();
     }
 
@@ -88,6 +92,11 @@ public class EnvironmentInteractions : MonoBehaviour
     {
         if (ChangePersonality != null) ChangePersonality.Invoke(personality);
         currentPersonality = personality;
-        if (currentInteractable != null) currentInteractable.SetOutline(true);
+
+        if (currentInteractable != null)
+        {
+            currentInteractable.SetOutline(true);
+            uIManager.ShowHint(currentInteractable);
+        }
     }
 }
