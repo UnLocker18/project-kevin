@@ -16,11 +16,17 @@ public class CustomPauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (gameIsPaused) Resume();
-            else Pause();
-        }
+        //if (Input.GetButtonDown("Cancel"))
+        //{
+        //    if (gameIsPaused) Resume();
+        //    else Pause();
+        //}
+    }
+
+    public void ToggleMenu()
+    {
+        if (gameIsPaused) Resume();
+        else Pause();
     }
 
     public void Pause()
@@ -43,6 +49,11 @@ public class CustomPauseMenu : MonoBehaviour
         gameIsPaused = false;
 
         //backgroundAudio.Play();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitToMenu()

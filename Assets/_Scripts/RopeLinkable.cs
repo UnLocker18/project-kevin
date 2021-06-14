@@ -10,9 +10,9 @@ public class RopeLinkable : MonoBehaviour
     
     public void Connect(int currentPersonality, Rope rope)
     {
-        SetUpOutLine();
-
         if (!connectedRopes.Contains(rope)) connectedRopes.Add(rope);
+
+        SetUpOutline(rope.ropeColor);
 
         if (connectedRopes.Count > 0)
         {
@@ -28,9 +28,9 @@ public class RopeLinkable : MonoBehaviour
 
     public void Disconnect(int currentPersonality, Rope rope)
     {
-        SetUpOutLine();
-
         if (connectedRopes.Contains(rope)) connectedRopes.Remove(rope);
+
+        SetUpOutline(rope.ropeColor);
 
         if (connectedRopes.Count == 0)
         {
@@ -48,7 +48,7 @@ public class RopeLinkable : MonoBehaviour
     {
         foreach (Rope rope in connectedRopes)
         {
-            SetUpOutLine();           
+            //SetUpOutLine(rope.ropeColor);           
 
             rope.stickObjects.Remove(this);
             rope.GenerateRope();
@@ -76,7 +76,16 @@ public class RopeLinkable : MonoBehaviour
         }
     }
 
-    private void SetUpOutLine()
+    public void SetOutline(Color color, bool value)
+    {
+        if (isConnected) value = true;
+
+        color.a = 0.4f;
+        SetUpOutline(color);
+        outline.enabled = value;
+    }
+
+    private void SetUpOutline(Color color)
     {
         outline = GetComponent<Outline>();
 
@@ -84,9 +93,27 @@ public class RopeLinkable : MonoBehaviour
         {
             outline = gameObject.AddComponent<Outline>();
         }
+        
+        float H = 0f, S = 0f, V = 0f;
+        Color.RGBToHSV(color, out H, out S, out V);
+
+        foreach (Rope rope in connectedRopes)
+        {
+            float H1 = 0f;
+
+            Color.RGBToHSV(rope.ropeColor, out H1, out S, out V);
+
+            if (H != H1)
+            {
+                H += H1;
+                S = 0.9f;
+            }
+        }            
+
+        if (connectedRopes.Count > 0) color = Color.HSVToRGB(H, S, V);
 
         outline.OutlineMode = Outline.Mode.OutlineVisible;
-        outline.OutlineColor = Color.green;
+        outline.OutlineColor = color;
         outline.OutlineWidth = 3f;
 
         //outline.enabled = false;

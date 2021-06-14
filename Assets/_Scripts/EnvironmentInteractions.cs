@@ -6,12 +6,15 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] public int currentPersonality = 0;
     [SerializeField] public Interactable currentInteractable;
     [SerializeField] public RopeLinkable currentRl;
+    [SerializeField] public Rope currentRope;
 
-    [SerializeField] private Rope currentRope;
     public event Action<int> ChangePersonality;
+
+    private UIManager uIManager;
 
     private void Start()
     {
+        uIManager = FindObjectOfType<UIManager>();
         if (ChangePersonality != null) ChangePersonality.Invoke(currentPersonality);
     }
 
@@ -22,63 +25,78 @@ public class EnvironmentInteractions : MonoBehaviour
         if (currentInteractable != null)
         {
             newPersonality = currentInteractable.Interact(transform);
-            if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+            if (currentInteractable.GetType() == typeof(Rope)) TakeRope();
         }
 
         if (newPersonality != -1)
         {
             if (ChangePersonality != null) ChangePersonality.Invoke(newPersonality);
-            currentPersonality = newPersonality;
+            currentPersonality = newPersonality;            
         }
+
+        if (currentRl == null) uIManager.HideHint();
     }    
 
     public void StickRope()
     {
-        //if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
-
         if (currentRope != null && currentRl != null)
         {
             if (!currentRope.stickObjects.Contains(currentRl))
             {
-                //currentRope.stickObjects.Add(currentRl);
                 currentRl.Connect(currentPersonality, currentRope);
             }
             else
             {
-                //currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality, currentRope);
-            }            
-            //currentRope.GenerateRope(transform);
+            }
 
-            if (currentRope.stickObjects.Count == 0) currentRope = null;
+            if (currentRope.stickObjects.Count == 0) LeaveRope();
         }
         else if (currentRope == null && currentRl != null)
         {
             if (currentRl.connectedRopes.Count == 1)
             {
                 currentRope = currentRl.connectedRopes[0];
-                //currentRope.stickObjects.Remove(currentRl);
                 currentRl.Disconnect(currentPersonality, currentRope);
-                //currentRope.GenerateRope(transform);                
+                currentRope = null;
             }
             else if (currentRl.connectedRopes.Count > 1)
             {
                 currentRl.DisconnectAll(currentPersonality);
             }
         }
+    }
 
-        //currentRope = null;
+    private void TakeRope()
+    {
+        if (currentRope != null) LeaveRope();
+
+        currentRope = currentInteractable.GetComponent<Rope>();
+
+        if (currentRl != null) currentRl.SetOutline(currentRope.ropeColor, true);
+
+        uIManager.ShowRopeIndicator(currentRope.ropeColor);
     }
 
     public void LeaveRope()
     {
+        if (currentRl != null) currentRl.SetOutline(Color.black, false);
+
+        if (currentRope != null) currentRope.DropRope();
         currentRope = null;
+
+        uIManager.HideRopeIndicator();
     }
 
     public void SetPersonality(int personality)
     {
         if (ChangePersonality != null) ChangePersonality.Invoke(personality);
         currentPersonality = personality;
-        if (currentInteractable != null) currentInteractable.SetOutline(true);
+
+        if (currentInteractable != null)
+        {
+            currentInteractable.SetOutline(true);
+            uIManager.ShowHint(currentInteractable);
+        }
     }
 }

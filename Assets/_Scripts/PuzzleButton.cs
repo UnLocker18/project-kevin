@@ -1,30 +1,34 @@
 ﻿using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class PuzzleButton : Interactable
 {
     [SerializeField] private int requiredPersonality = 0;
+    [SerializeField] private float animationSeconds = 1f;
     [SerializeField] private Material activeMaterial;
     [SerializeField] private Material inactiveMaterial;
 
     public event Action<int, bool> ButtonPress;
     public int buttonNumber;
 
-    [SerializeField] private bool isActive = false;
-    private Renderer[] _renderer;
-    private EnvironmentInteractions environmentInteractions;
+    [SerializeField] public bool isActive = false;
+    private Renderer[] renderers;
+    private Transform[] discs;
+    private EnvironmentInteractions environmentInteractions;    
 
     void Awake()
     {
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
 
-        environmentInteractions = GameObject.Find("MainCharacter").GetComponent<EnvironmentInteractions>();
+        environmentInteractions = GameObject.FindGameObjectWithTag("Player").GetComponent<EnvironmentInteractions>();
         if (environmentInteractions != null) environmentInteractions.ChangePersonality += ToggleInteractability;
     }
 
     void Start()
     {
-        _renderer = gameObject.GetComponentsInChildren<Renderer>();        
+        renderers = GetComponentsInChildren<Renderer>();
+        discs = transform.GetChild(0).GetComponentsInChildren<Transform>();
     }
 
     public override int Interact(Transform mainCharacter)
@@ -52,16 +56,40 @@ public class PuzzleButton : Interactable
     {
         if (isActive)
         {
-            _renderer[0].material = inactiveMaterial;
+            //renderers[0].material = inactiveMaterial;
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material = inactiveMaterial;
+            }
+            PlayAnimation(0);
         }
         else
         {
-            _renderer[0].material = activeMaterial;
+            //renderers[0].material = activeMaterial;
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material = activeMaterial;
+            }
+            PlayAnimation(1);
         }
-
+        
         isActive = !isActive;
 
         if (ButtonPress != null) ButtonPress.Invoke(buttonNumber, isActive);        
+    }
+
+    private void PlayAnimation(int multiplier)
+    {
+        int sign = 1;
+
+        foreach (Transform disc in discs)
+        {            
+            if (disc.name != "Piedistallo" && disc.name != "Mesh")
+            {
+                disc.DORotate(new Vector3(0, multiplier * sign * 210, 0), animationSeconds);
+                sign = -sign;
+            }
+        }
     }
 
     public void ToggleInteractability(int personality)

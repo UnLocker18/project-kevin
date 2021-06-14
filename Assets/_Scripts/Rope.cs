@@ -5,6 +5,7 @@ using Filo;
 
 public class Rope : Interactable
 {
+    [SerializeField] public Color ropeColor = Color.green;
     public List<RopeLinkable> stickObjects = new List<RopeLinkable>();
 
     private Vector3 startPostition;
@@ -25,6 +26,7 @@ public class Rope : Interactable
         isInteractable = true;
         startPostition = transform.position;
         rigidbody = GetComponent<Rigidbody>();
+        outlineColor = ropeColor;
     }
 
     public override int Interact(Transform mainCharacter)
@@ -57,23 +59,17 @@ public class Rope : Interactable
         }
         else DestroyRope();
 
+        DropRope();
+    }
+
+    public void DropRope()
+    {
         if (stickObjects.Count == 0)
         {
-            GameObject.Find("RopeTeleport").GetComponent<RopeTeleport>().Teleport(transform);
+            FindObjectOfType<RopeTeleport>().Teleport(transform);
             rigidbody.isKinematic = false;
         }
     }
-
-    //public void ClearRope()
-    //{
-    //    foreach (RopeLinkable obj in stickObjects)
-    //    {
-    //        obj.Disconnect();
-    //    }
-        
-    //    stickObjects.Clear();
-    //    DestroyRope();
-    //}
 
     private void InstantiateRope()
     {
@@ -110,4 +106,15 @@ public class Rope : Interactable
 
         return link;
     }
+
+    //public void ClearRope()
+    //{
+    //    foreach (RopeLinkable obj in stickObjects)
+    //    {
+    //        obj.Disconnect();
+    //    }
+
+    //    stickObjects.Clear();
+    //    DestroyRope();
+    //}
 }

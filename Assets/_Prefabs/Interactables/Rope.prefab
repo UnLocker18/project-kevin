@@ -46,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2ad6dbfd91cbf4ca784aef0c51fae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineColor: {r: 1, g: 0.8039216, b: 0.25490198, a: 1}
   isInteractable: 0
   outline: {fileID: 0}
+  ropeColor: {r: 0, g: 0, b: 0, a: 0}
   stickObjects: []
   cableObj: {fileID: 3958981283666627004, guid: 6eb8e026bf2d6e341ae57a0e50959d55,
     type: 3}

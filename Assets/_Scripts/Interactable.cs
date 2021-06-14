@@ -2,6 +2,8 @@
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] public Color outlineColor = Color.yellow;
+
     public bool isInteractable;
     public Outline outline;
 
@@ -17,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
         }        
 
         outline.OutlineMode = Outline.Mode.OutlineVisible;
-        outline.OutlineColor = Color.yellow;
+        outline.OutlineColor = outlineColor;
         outline.OutlineWidth = 3f;
 
         outline.enabled = false;
@@ -44,12 +46,16 @@ public abstract class Interactable : MonoBehaviour
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
             mainCharacter.GetComponent<BoxCollider>().enabled = true;
+
+            FindObjectOfType<AudioManager>().Play("pickSound");
         }
         else
         {
             mainCharacter.GetComponent<BoxCollider>().enabled = false;
             transform.parent = null;
             rb.isKinematic = false;
+
+            FindObjectOfType<AudioManager>().Play("dropSound");
         }
     }
 }

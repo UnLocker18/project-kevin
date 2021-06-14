@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SimpleThirdPRigidbodyController : MonoBehaviour
-{
-    [SerializeField] private Transform _cameraT;
+{    
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _rotationSpeed = 15f;
 
@@ -12,7 +11,9 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     [SerializeField] private float storicoWalkCoefficient = 0.667f;
     [SerializeField] private float sportivoWalkCoefficient = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
-    
+
+    private Transform _cameraT;
+
     private EnvironmentInteractions environmentInteractions;
     private ParticleSystem particleSystem;
 
@@ -23,6 +24,7 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
 
     void Start()
     {
+        _cameraT = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _rigidbody = GetComponent<Rigidbody>();
         environmentInteractions = GetComponent<EnvironmentInteractions>();
 
