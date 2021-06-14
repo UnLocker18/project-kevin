@@ -43,11 +43,15 @@ public abstract class Interactable : MonoBehaviour
             transform.parent = mainCharacter;
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
+            FindObjectOfType<AudioManager>().Play("pickSound");
         }
         else
         {
+
+
             transform.parent = null;
             rb.isKinematic = false;
+            FindObjectOfType<AudioManager>().Play("dropSound");
         }
     }
 }
