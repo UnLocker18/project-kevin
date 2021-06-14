@@ -38,7 +38,13 @@ public class Trigger : MonoBehaviour
             environmentInteractions.currentInteractable = interactable;
             if (environmentInteractions.currentInteractable != null)
                 environmentInteractions.currentInteractable.SetOutline(true);
-            if (rl != null) environmentInteractions.currentRl = rl;
+            if (rl != null)
+            {
+                environmentInteractions.currentRl = rl;
+
+                if (environmentInteractions.currentRope != null)
+                    environmentInteractions.currentRl.SetOutline(environmentInteractions.currentRope.ropeColor, true);
+            }
         }
     }
 
@@ -60,6 +66,9 @@ public class Trigger : MonoBehaviour
                 if (environmentInteractions.currentInteractable != null)
                     environmentInteractions.currentInteractable.SetOutline(false);
                 environmentInteractions.currentInteractable = null;
+
+                if (environmentInteractions.currentRl != null)
+                    environmentInteractions.currentRl.SetOutline(Color.green, false);
             }
             environmentInteractions.currentRl = null;
         }

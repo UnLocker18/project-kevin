@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05efa95ec70e24a4db87b262a12057fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineColor: {r: 1, g: 0.8042549, b: 0.255, a: 1}
   isInteractable: 0
   outline: {fileID: 0}
   requiredPersonality: 0

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21caae7449ee60942a0ffd88083b06bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineColor: {r: 1, g: 0.8039216, b: 0.25490198, a: 1}
   isInteractable: 0
   outline: {fileID: 0}
   personality: 2
@@ -143,6 +144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Balestra
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 697644dd78b023746a0667e6198b2c20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697644dd78b023746a0667e6198b2c20, type: 3}
