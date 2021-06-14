@@ -5,7 +5,7 @@ public abstract class Interactable : MonoBehaviour
     public bool isInteractable;
     public Outline outline;
 
-    public abstract void Interact(Transform mainCharacter);
+    public abstract int Interact(Transform mainCharacter);
 
     public void SetUpOutline()
     {
@@ -43,11 +43,15 @@ public abstract class Interactable : MonoBehaviour
             transform.parent = mainCharacter;
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
+            FindObjectOfType<AudioManager>().Play("pickSound");
         }
         else
         {
+
+
             transform.parent = null;
             rb.isKinematic = false;
+            FindObjectOfType<AudioManager>().Play("dropSound");
         }
     }
 }

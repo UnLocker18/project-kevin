@@ -29,7 +29,7 @@ Animator:
   m_GameObject: {fileID: 1661638594612422944}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5aa3f3b2134305f449357268a268cdd3, type: 3}
-  m_Controller: {fileID: 9100000, guid: a7d83f917e524f844a3ab7c4274b9265, type: 2}
+  m_Controller: {fileID: 9100000, guid: d38d63315e665bd468e775c6eeb6ffd0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -226,7 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8773e8d1dfd83e4f99af11b54e4efda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPersonality: 0
   _cameraT: {fileID: 0}
   _speed: 2
   _rotationSpeed: 15
@@ -263,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a0222db546f624a89dc3ccbe585e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPersonality: 0
   currentInteractable: {fileID: 0}
   currentRl: {fileID: 0}
   currentRope: {fileID: 0}
@@ -276,7 +276,7 @@ Animator:
   m_GameObject: {fileID: 8128221547696010686}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9f367e5ce3da5824cb85179b7a61a374, type: 3}
-  m_Controller: {fileID: 9100000, guid: 19bb31ff6a53b4646ab16ecf7b2604ad, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0cc02f44a1e5a8f4fa5fce95657b5fd2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -590,7 +590,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 19bb31ff6a53b4646ab16ecf7b2604ad, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7038224160993856234, guid: 9f367e5ce3da5824cb85179b7a61a374,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

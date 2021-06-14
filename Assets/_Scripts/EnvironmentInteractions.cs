@@ -3,35 +3,62 @@ using System;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
+    [SerializeField] public int currentPersonality = 0;
     [SerializeField] public Interactable currentInteractable;
     [SerializeField] public RopeLinkable currentRl;
 
-    [SerializeField] private Rope currentRope;    
+    [SerializeField] private Rope currentRope;
+    public event Action<int> ChangePersonality;
+
+    private void Start()
+    {
+        if (ChangePersonality != null) ChangePersonality.Invoke(currentPersonality);
+    }
 
     public void Interaction()
     {
-        if (currentInteractable != null) currentInteractable.Interact(gameObject.transform);
-    }
+        int newPersonality = -1;        
+
+        if (currentInteractable != null)
+        {
+            newPersonality = currentInteractable.Interact(gameObject.transform);
+            if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+        }
+
+        if (newPersonality != -1)
+        {
+            if (ChangePersonality != null) ChangePersonality.Invoke(newPersonality);
+            currentPersonality = newPersonality;
+        }
+    }    
 
     public void StickRope()
     {
-        if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
+        //if (currentInteractable.GetType() == typeof(Rope)) currentRope = currentInteractable.GetComponent<Rope>();
 
         if (currentRope != null && currentRl != null)
         {
             if (!currentRope.stickObjects.Contains(currentRl))
             {
                 currentRope.stickObjects.Add(currentRl);
-                currentRl.Connect();
+                currentRl.Connect(currentPersonality);
             }
             else
             {
                 currentRope.stickObjects.Remove(currentRl);
-                currentRl.Disconnect();
+                currentRl.Disconnect(currentPersonality);
             }            
             currentRope.GenerateRope();
+
+            if (currentRope.stickObjects.Count == 0) currentRope = null;
         }
 
-        currentRope = null;
+        //currentRope = null;
+    }
+
+    public void SetPersonality(int personality)
+    {
+        if (ChangePersonality != null) ChangePersonality.Invoke(personality);
+        currentPersonality = personality;
     }
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ThirdPersonCharacterController : MonoBehaviour
 {
-    [SerializeField] private int currentPersonality = 0;
-
     [SerializeField] private Transform _cameraT;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _rotationSpeed = 3f;
@@ -20,11 +18,10 @@ public class ThirdPersonCharacterController : MonoBehaviour
     [SerializeField] private float walkAnimationSpeed = 0.667f;
     [SerializeField] private float moveThreshold = 0.1f;
 
-    //[SerializeField] private RuntimeAnimatorController[] AnimatorControllers;
-    //[SerializeField] private Avatar[] Avatars;
-
     private CharacterController _characterController;
-    //private Animator animator;
+    private EnvironmentInteractions environmentInteractions;
+    private ParticleSystem particleSystem;
+
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
@@ -35,7 +32,12 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
+        environmentInteractions = GetComponent<EnvironmentInteractions>();
+
+        if (GameObject.Find("Transformation") != null) particleSystem = GameObject.Find("Transformation").GetComponentInChildren<ParticleSystem>();
+        else Debug.Log("Cannot find Transformation gameobject");
+
+        if (environmentInteractions != null) environmentInteractions.ChangePersonality += SwitchCharacter;
     }
 
     
@@ -78,25 +80,35 @@ public class ThirdPersonCharacterController : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         _characterController.Move(_velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) currentPersonality = 0;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) currentPersonality = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) currentPersonality = 2;
-
         UpdateAnimator();
     }
 
     private void UpdateAnimator()
     {
-        transform.Find("Storico").gameObject.SetActive(currentPersonality == 0);
-        transform.Find("Bambino").gameObject.SetActive(currentPersonality == 1);
-        transform.Find("Sportivo").gameObject.SetActive(currentPersonality == 2);
-
         Animator animator = GetComponentInChildren<Animator>();
-
-        //animator.avatar = Avatars[currentPersonality];
-        //animator.runtimeAnimatorController = AnimatorControllers[currentPersonality];
 
         animator.SetFloat("WalkSpeed", _inputSpeed * _speed * walkAnimationSpeed, 0.1f, Time.deltaTime);
         animator.SetFloat("InputSpeed", _inputSpeed, 0.1f, Time.deltaTime);
+    }
+
+    private void SwitchCharacter(int personality)
+    {
+        StartCoroutine("SwitchAnimation", personality);
+    }
+
+    private IEnumerator SwitchAnimation(int personality)
+    {
+        Animator animator = GetComponentInChildren<Animator>();
+
+        animator.SetBool("CharacterSwitch", true);
+        if (particleSystem != null) particleSystem.Play();
+
+        yield return new WaitForSeconds(0.15f);
+
+        transform.Find("Storico").gameObject.SetActive(personality == 0);
+        transform.Find("Bambino").gameObject.SetActive(personality == 1);
+        transform.Find("Sportivo").gameObject.SetActive(personality == 2);
+
+        animator.SetBool("CharacterSwitch", false);
     }
 }
