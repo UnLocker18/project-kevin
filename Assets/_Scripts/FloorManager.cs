@@ -24,7 +24,7 @@ public class FloorManager : MonoBehaviour
 
         PopulateMatrix();
 
-        Debug.Log(BlockFromFloorCoordinates(13, 2).transform.position);
+        Debug.Log(BlockFromFloorCoordinates(8, 0).transform.position);
     }
 
     private void PopulateMatrix()
