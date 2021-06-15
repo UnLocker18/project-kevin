@@ -65,7 +65,7 @@ MonoBehaviour:
   andMode: 1
   animationSeconds: 0.5
   isExtended: 0
-  range: 3
+  range: 2
 --- !u!1 &2005852682452183280
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +388,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: eca2fcac997383d46a335444395759a7, type: 3}
       propertyPath: m_Name
       value: Fireplace_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eca2fcac997383d46a335444395759a7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: eca2fcac997383d46a335444395759a7, type: 3}
       propertyPath: m_IsActive

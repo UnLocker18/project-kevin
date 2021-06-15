@@ -4,7 +4,7 @@ using System;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private GameObject[] activators;
+    [SerializeField] public GameObject[] activators;
     [SerializeField] private bool andMode = true;
     [SerializeField] private float animationSeconds = 1f;
 
