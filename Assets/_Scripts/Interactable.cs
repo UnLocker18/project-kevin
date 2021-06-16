@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
+
 public abstract class Interactable : MonoBehaviour
 {
     public bool isInteractable;
     public Outline outline;
-
+    
     //private EnvironmentInteractions environmentInteractions;
     // Start is called before the first frame update
     void Start()
