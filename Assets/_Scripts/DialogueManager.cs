@@ -12,9 +12,10 @@ public class DialogueManager : MonoBehaviour {
 	public Animator animator;
 
 	private Queue<string> sentences;
+    private Queue<Dialogue> dialogues;
 
     private AdditionalControls additionalControls;
-    private SimpleThirdPRigidbodyController characterController;
+    private SimpleThirdPRigidbodyController characterController;    
 
     // Use this for initialization
     void Start () {
@@ -22,11 +23,24 @@ public class DialogueManager : MonoBehaviour {
         dialogueCanvas.SetActive(true);
 
         sentences = new Queue<string>();
+        dialogues = new Queue<Dialogue>();
         nameText = GameObject.FindGameObjectsWithTag("Dialogue")[0].GetComponent<Text>();
         dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
 
         additionalControls = FindObjectOfType<AdditionalControls>();
         characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();
+    }
+
+    public void StartDialogueChain(Dialogue[] dialogueChain)
+    {
+        dialogues.Clear();
+
+        foreach (Dialogue dialogue in dialogueChain)
+        {
+            dialogues.Enqueue(dialogue);
+        }
+
+        NextDialogue();
     }
 
 	public void StartDialogue (Dialogue dialogue)
@@ -52,7 +66,7 @@ public class DialogueManager : MonoBehaviour {
 	{
 		if (sentences.Count == 0)
 		{
-			EndDialogue();
+			NextDialogue();
 			return;
 		}
 
@@ -70,6 +84,19 @@ public class DialogueManager : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+    private void NextDialogue()
+    {
+        if (dialogues.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        Dialogue dialogue = dialogues.Dequeue();
+
+        StartDialogue(dialogue);
+    }
 
 	void EndDialogue()
 	{

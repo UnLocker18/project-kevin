@@ -14,10 +14,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     public void TriggerDialogue ()
 	{
-        foreach (Dialogue dialogue in dialogueChain)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
+        FindObjectOfType<DialogueManager>().StartDialogueChain(dialogueChain);        
 	}
 
     private IEnumerator DelayedTrigger()
