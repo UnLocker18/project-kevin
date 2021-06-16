@@ -7043,11 +7043,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2005852682506369482, guid: 51ccf9a345bef634a8b8b8fde616f93d,
         type: 3}
-      propertyPath: range
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2005852682506369482, guid: 51ccf9a345bef634a8b8b8fde616f93d,
-        type: 3}
       propertyPath: activators.Array.data[0]
       value: 
       objectReference: {fileID: 283990935}
