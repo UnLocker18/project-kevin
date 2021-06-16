@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class FloorManager : MonoBehaviour
 {
-    [SerializeField] private Transform prova;
-
     [SerializeField] private Transform floorOrigin;
     [SerializeField] private Transform floorMax;
 

@@ -61,6 +61,7 @@ public class UIManager : MonoBehaviour
         }
         if (currentInteractable.GetType() == typeof(PersonalityChanger)) hintText.text = hints[3];
         if (currentInteractable.GetType() == typeof(Rope)) hintText.text = hints[4];
+        if (currentInteractable.GetType() == typeof(ImaginaryCharacter)) hintText.text = hints[8];
     }
 
     public void ShowRopeHint(Rope currentRope, RopeLinkable currentRopeLinkable)

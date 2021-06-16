@@ -9,7 +9,7 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
 
     [SerializeField] private float walkAnimationSpeed = 0f;
     [SerializeField] private float storicoWalkCoefficient = 0.667f;
-    [SerializeField] private float sportivoWalkCoefficient = 0.667f;
+    [SerializeField] private float sportivoWalkCoefficient = 0.7f;
     [SerializeField] private float moveThreshold = 0.1f;
 
     private Transform _cameraT;
