@@ -15,7 +15,8 @@ public class DialogueManager : MonoBehaviour {
     private Queue<Dialogue> dialogues;
 
     private AdditionalControls additionalControls;
-    private SimpleThirdPRigidbodyController characterController;    
+    private SimpleThirdPRigidbodyController characterController;
+    private ImaginaryCharacter imaginaryCharacter;
 
     // Use this for initialization
     void Start () {
@@ -31,8 +32,10 @@ public class DialogueManager : MonoBehaviour {
         characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();
     }
 
-    public void StartDialogueChain(Dialogue[] dialogueChain)
+    public void StartDialogueChain(Dialogue[] dialogueChain, ImaginaryCharacter imaginaryCharacter = null)
     {
+        if (imaginaryCharacter != null) this.imaginaryCharacter = imaginaryCharacter;
+
         dialogues.Clear();
 
         foreach (Dialogue dialogue in dialogueChain)
@@ -100,9 +103,15 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
+        Debug.Log("end");
+        Debug.Log(imaginaryCharacter);
+
 		animator.SetBool("IsOpen", false);
 
         characterController.EnableControls();
+        additionalControls.EnableControls();
+
+        if (imaginaryCharacter != null) imaginaryCharacter.Move();
     }
 
 }

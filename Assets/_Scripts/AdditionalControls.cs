@@ -28,7 +28,7 @@ public class AdditionalControls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha2)) environmentInteractions.SetPersonality(1);
             if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);
 
-            if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue();
+            if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue(-1);
         }
 
         if (controlsEnabled)
