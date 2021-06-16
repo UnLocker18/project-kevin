@@ -4,11 +4,13 @@ using UnityEngine;
 public class ImaginaryCharacter : Interactable
 {
     [SerializeField] private int requiredPersonality = 1;
+    [SerializeField] private float animationSeconds = 1.5f;
+    [SerializeField] private float rotationSeconds = 0.5f;
 
     private EnvironmentInteractions environmentInteractions;
     private Renderer renderer;
     private Vector3 afterInteractionPosition;
-    private Vector3 afterInteractionRotation;
+    private Vector3 afterInteractionRotation;    
 
     private void Awake()
     {
@@ -44,9 +46,9 @@ public class ImaginaryCharacter : Interactable
     public override int Interact(Transform mainCharacter)
     {
         if (!isInteractable) return -1;
-
-        transform.DORotate(afterInteractionRotation, 0.5f);
-        transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), 1);
+        
+        transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
+        transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);
 
         return -1;
     }    
