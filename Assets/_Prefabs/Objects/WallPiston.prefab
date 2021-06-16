@@ -363,7 +363,7 @@ MonoBehaviour:
   activators:
   - {fileID: 0}
   andMode: 1
-  animationSeconds: 0.5
+  animationSeconds: 1
   isExtended: 0
   range: 3
 --- !u!65 &7348402615406633545

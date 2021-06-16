@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour {
 
-	public Dialogue dialogue;
+	[SerializeField] private Dialogue[] dialogueChain;
+    [SerializeField] private bool triggerOnStart = false;
 
-	public void TriggerDialogue ()
+    private void Start()
+    {
+        if (triggerOnStart) StartCoroutine("DelayedTrigger");
+    }
+
+    public void TriggerDialogue ()
 	{
-		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        foreach (Dialogue dialogue in dialogueChain)
+        {
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        }
 	}
+
+    private IEnumerator DelayedTrigger()
+    {
+        yield return new WaitForSeconds(1f);
+        TriggerDialogue();
+    }
 
 }

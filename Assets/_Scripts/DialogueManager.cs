@@ -13,19 +13,28 @@ public class DialogueManager : MonoBehaviour {
 
 	private Queue<string> sentences;
 
-	// Use this for initialization
-	void Start () {
+    private AdditionalControls additionalControls;
+    private SimpleThirdPRigidbodyController characterController;
+
+    // Use this for initialization
+    void Start () {
         dialogueCanvas = transform.GetChild(0).gameObject;
         dialogueCanvas.SetActive(true);
 
         sentences = new Queue<string>();
         nameText = GameObject.FindGameObjectsWithTag("Dialogue")[0].GetComponent<Text>();
         dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
+
+        additionalControls = FindObjectOfType<AdditionalControls>();
+        characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();
     }
 
 	public void StartDialogue (Dialogue dialogue)
 	{
-		animator.SetBool("IsOpen", true);
+        additionalControls.DisableControls();
+        characterController.DisableControls();
+
+        animator.SetBool("IsOpen", true);
 
 		nameText.text = dialogue.name;
 
@@ -65,6 +74,8 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+
+        characterController.EnableControls();
     }
 
 }

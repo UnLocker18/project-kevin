@@ -8,6 +8,7 @@ public class AdditionalControls : MonoBehaviour
     private DialogueTrigger dialogueTrigger;
     private DialogueManager dialogueManager;
     private CustomPauseMenu customPauseMenu;
+    private bool controlsEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +31,29 @@ public class AdditionalControls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue();
         }
 
-        if (Input.GetButtonDown("Interact")) environmentInteractions.Interaction();
+        if (controlsEnabled)
+        {
+            if (Input.GetButtonDown("Interact")) environmentInteractions.Interaction();
 
-        if (Input.GetButtonDown("Interact2")) environmentInteractions.StickRope();
-        
-        if (Input.GetButtonDown("Interact3")) environmentInteractions.LeaveRope();        
+            if (Input.GetButtonDown("Interact2")) environmentInteractions.StickRope();
+
+            if (Input.GetButtonDown("Interact3")) environmentInteractions.LeaveRope();
+
+            if (Input.GetButtonDown("Pause")) customPauseMenu.ToggleMenu();
+
+            if (Input.GetButtonDown("Restart")) customPauseMenu.Restart();            
+        }
 
         if (Input.GetButtonDown("ContinueDialogue")) dialogueManager.DisplayNextSentence();
+    }
 
-        if (Input.GetButtonDown("Pause")) customPauseMenu.ToggleMenu();
+    public void DisableControls()
+    {
+        controlsEnabled = false;
+    }
 
-        if (Input.GetButtonDown("Restart")) customPauseMenu.Restart();
+    public void EnableControls()
+    {
+        controlsEnabled = true;
     }
 }

@@ -21,6 +21,7 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     private Vector3 _inputVector;
     private float _inputSpeed;
     private Vector3 _targetDirection;
+    private bool controlsEnabled = true;
 
     void Start()
     {
@@ -41,8 +42,14 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     void Update()
     {
         //Handle the Input
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = 0, v = 0;
+
+        if (controlsEnabled)
+        {
+            h = Input.GetAxis("Horizontal");
+            v = Input.GetAxis("Vertical");
+        }
+
         _inputVector = new Vector3(h, 0, v);
         _inputSpeed = Mathf.Clamp(_inputVector.magnitude, 0f, 1f);
 
@@ -96,5 +103,15 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
         transform.Find("Sportivo").gameObject.SetActive(personality == 2);
 
         animator.SetBool("CharacterSwitch", false);
-    }   
+    }
+
+    public void DisableControls()
+    {
+        controlsEnabled = false;
+    }
+
+    public void EnableControls()
+    {
+        controlsEnabled = true;
+    }
 }

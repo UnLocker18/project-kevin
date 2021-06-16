@@ -58,8 +58,6 @@ public class TextureSwitcher : MonoBehaviour
 
     private void SetEmissive(bool value, int texIndex)
     {
-        Debug.Log(albedoPath.Length);
-
         if (renderer == null) renderer = GetComponentInChildren<Renderer>();
 
         if (value)
