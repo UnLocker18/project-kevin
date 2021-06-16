@@ -6,12 +6,13 @@ public class CustomPauseMenu : MonoBehaviour
     public bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    private GameObject restartLevel;
     //public GameObject UICanvas;
     //public AudioSource backgroundAudio;
 
     private void Start()
     {
-
+        restartLevel = transform.Find("RestartLevel").gameObject;
     }
 
     private void Update()
@@ -42,6 +43,7 @@ public class CustomPauseMenu : MonoBehaviour
     public void Resume()
     {
         if (optionsMenuUI.activeSelf) optionsMenuUI.SetActive(false);
+        if (restartLevel.activeSelf) restartLevel.SetActive(false);
 
         pauseMenuUI.SetActive(false);
         //UICanvas.SetActive(true);
@@ -54,6 +56,7 @@ public class CustomPauseMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
     public void QuitToMenu()

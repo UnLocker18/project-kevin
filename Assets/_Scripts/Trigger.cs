@@ -20,23 +20,24 @@ public class Trigger : MonoBehaviour
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("TriggerVisible")) return;
 
-        AddToList(other);
-
         if (floorButton != null)
         {
+            if (other.gameObject.GetComponentInParent<Rope>() == null) AddToList(other);
             if (triggerList.Count > 0) floorButton.Activate();
-        }
-        
-        Interactable interactable = triggerList[0].gameObject.GetComponentInParent<Interactable>();
-        RopeLinkable rl = null;
-        
-        foreach (Collider trigger in triggerList)
-        {
-            if (trigger.gameObject.GetComponentInParent<RopeLinkable>() != null) rl = trigger.gameObject.GetComponentInParent<RopeLinkable>();
-        }        
+        }            
 
         if (environmentInteractions != null)
         {
+            AddToList(other);
+
+            Interactable interactable = triggerList[0].gameObject.GetComponentInParent<Interactable>();
+            RopeLinkable rl = null;
+
+            foreach (Collider trigger in triggerList)
+            {
+                if (trigger.gameObject.GetComponentInParent<RopeLinkable>() != null) rl = trigger.gameObject.GetComponentInParent<RopeLinkable>();
+            }
+
             environmentInteractions.currentInteractable = interactable;
             if (environmentInteractions.currentInteractable != null)
             {
