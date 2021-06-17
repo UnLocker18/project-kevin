@@ -26,6 +26,7 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             newPersonality = currentInteractable.Interact(transform);
             if (currentInteractable.GetType() == typeof(Rope)) TakeRope();
+            uIManager.ShowHint(currentInteractable);
         }
 
         if (newPersonality != -1)
