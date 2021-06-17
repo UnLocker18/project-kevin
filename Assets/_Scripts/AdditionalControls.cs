@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class AdditionalControls : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class AdditionalControls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha3)) environmentInteractions.SetPersonality(2);
 
             if (Input.GetKeyDown(KeyCode.M)) dialogueTrigger.TriggerDialogue(-1);
+            if (Input.GetKeyDown(KeyCode.O)) OpenAllDoors();
         }
 
         if (controlsEnabled)
@@ -48,6 +50,16 @@ public class AdditionalControls : MonoBehaviour
             }
         }
         else if (Input.GetButtonDown("ContinueDialogue")) dialogueManager.DisplayNextSentence();
+    }
+
+    private void OpenAllDoors()
+    {
+        Door[] doors = FindObjectsOfType<Door>();
+
+        foreach (Door door in doors)
+        {
+            door.Open();
+        }
     }
 
     public void DisableControls()
