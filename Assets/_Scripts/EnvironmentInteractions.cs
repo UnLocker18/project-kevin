@@ -50,7 +50,10 @@ public class EnvironmentInteractions : MonoBehaviour
                 currentRl.Disconnect(currentPersonality, currentRope);
             }
 
-            if (currentRope.stickObjects.Count == 0) LeaveRope();
+            uIManager.SetAttachedNumber(currentRope.stickObjects.Count);
+            uIManager.ShowRopeHint(currentRope, currentRl);
+
+            if (currentRope.stickObjects.Count == 0) LeaveRope();            
         }
         else if (currentRope == null && currentRl != null)
         {
@@ -75,16 +78,17 @@ public class EnvironmentInteractions : MonoBehaviour
 
         if (currentRl != null) currentRl.SetOutline(currentRope.ropeColor, true);
 
+        uIManager.SetAttachedNumber(currentRope.stickObjects.Count);
         uIManager.ShowRopeIndicator(currentRope.ropeColor);
     }
 
     public void LeaveRope()
     {
-        if (currentRl != null) currentRl.SetOutline(Color.black, false);
+        if (currentRl != null) currentRl.SetOutline(Color.black, false);        
 
         if (currentRope != null) currentRope.DropRope();
         currentRope = null;
-
+                
         uIManager.HideRopeIndicator();
     }
 

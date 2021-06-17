@@ -47,8 +47,7 @@ public class AdditionalControls : MonoBehaviour
                 Time.timeScale = 0f;                
             }
         }
-
-        if (Input.GetButtonDown("ContinueDialogue")) dialogueManager.DisplayNextSentence();
+        else if (Input.GetButtonDown("ContinueDialogue")) dialogueManager.DisplayNextSentence();
     }
 
     public void DisableControls()

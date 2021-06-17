@@ -80,7 +80,12 @@ public class RopeLinkable : MonoBehaviour
     {
         if (isConnected) value = true;
 
-        color.a = 0.4f;
+        float H = 0f, S = 0f, V = 0f;
+        Color.RGBToHSV(color, out H, out S, out V);
+        S = 0.3f;
+        color = Color.HSVToRGB(H, S, V);
+        color.a = 0.7f;
+
         SetUpOutline(color);
         outline.enabled = value;
     }

@@ -34,7 +34,11 @@ public class Rope : Interactable
         if (!isInteractable) return -1;
 
         //Grab(mainCharacter);
+
         transform.Translate(Vector3.down);
+
+        //transform.position = transform.position - new Vector3(0f, 3f, 0f);
+        //transform.eulerAngles = new Vector3(0f, 0f, 0f);
         rigidbody.isKinematic = true;
 
         return -1;

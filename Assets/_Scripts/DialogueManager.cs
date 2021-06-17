@@ -103,9 +103,6 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
-        Debug.Log("end");
-        Debug.Log(imaginaryCharacter);
-
 		animator.SetBool("IsOpen", false);
 
         characterController.EnableControls();

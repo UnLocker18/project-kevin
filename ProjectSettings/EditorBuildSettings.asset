@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: a50630538d4eb2748a92a2d8d32f38dd
   - enabled: 1
-    path: Assets/_Scenes/Testing/MedievalTest.unity
-    guid: 4fd095d2c84e89a4fb6f9bbda6bd4a44
+    path: Assets/_Scenes/Tutorial.unity
+    guid: 5a49ef8069be3994297b6083e727cbba
   m_configObjects: {}
