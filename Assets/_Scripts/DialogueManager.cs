@@ -25,8 +25,11 @@ public class DialogueManager : MonoBehaviour {
 
         sentences = new Queue<string>();
         dialogues = new Queue<Dialogue>();
-        nameText = GameObject.FindGameObjectsWithTag("Dialogue")[0].GetComponent<Text>();
-        dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
+        nameText = dialogueCanvas.transform.GetChild(0).Find("Name").GetComponent<Text>();
+        dialogueText = dialogueCanvas.transform.GetChild(0).Find("Dialogue").GetComponent<Text>();
+
+        //nameText = GameObject.FindGameObjectsWithTag("Dialogue")[0].GetComponent<Text>();
+        //dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
 
         additionalControls = FindObjectOfType<AdditionalControls>();
         characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();

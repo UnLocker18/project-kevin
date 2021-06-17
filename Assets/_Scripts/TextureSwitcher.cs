@@ -68,7 +68,7 @@ public class TextureSwitcher : MonoBehaviour
         }
         else
         {
-            renderer.material.SetColor("_EmissionColor", Color.black);
+            renderer.material.SetColor("_EmissionColor", new Color(0.004f, 0f, 0f));
             renderer.material.SetTexture("_MainTex", albedoPath[texIndex]);
         }
     }

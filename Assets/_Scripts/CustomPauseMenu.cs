@@ -62,11 +62,17 @@ public class CustomPauseMenu : MonoBehaviour
     public void QuitToMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 
     public void LoadMainLevel()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //public void LoadTutorial()
