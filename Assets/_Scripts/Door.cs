@@ -46,11 +46,15 @@ public class Door : MonoBehaviour
     {        
         transform.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
         isOpen = true;
+        FindObjectOfType<AudioManager>().Play("open_door");
+
     }
 
     public void Close()
     {
         transform.DORotate(doorAngle, animationSeconds);
+        FindObjectOfType<AudioManager>().Play("open_door");
+
         isOpen = false;
     }
 
