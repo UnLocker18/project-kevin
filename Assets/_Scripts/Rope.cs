@@ -35,9 +35,9 @@ public class Rope : Interactable
 
         //Grab(mainCharacter);
 
-        transform.Translate(Vector3.down);
+        //transform.Translate(Vector3.down);
 
-        //transform.position = transform.position - new Vector3(0f, 3f, 0f);
+        transform.position = transform.position - new Vector3(0f, 3f, 0f);
         //transform.eulerAngles = new Vector3(0f, 0f, 0f);
         rigidbody.isKinematic = true;
 
