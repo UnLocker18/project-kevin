@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
     [SerializeField] private float animationSeconds = 1f;
 
     private bool isOpen = false;
+    private Transform door1;
+    private Transform door2;
     private Vector3 doorAngle;
     private int[] floorButtonNumbers;
     private int activeButtons = 0;
@@ -18,6 +20,9 @@ public class Door : MonoBehaviour
     void Start()
     {
         doorAngle = transform.eulerAngles;
+
+        door1 = transform.Find("Door1");
+        door2 = transform.Find("Door2");        
 
         floorButtonNumbers = new int[activators.Length];
         if (andMode) neededActivators = activators.Length;
@@ -43,14 +48,24 @@ public class Door : MonoBehaviour
     }
 
     public void Open()
-    {        
-        transform.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
+    {   
+        if (door1 && door2)
+        {
+            door1.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
+            door2.DORotate(doorAngle + new Vector3(0, -120, 0), animationSeconds);
+        }
+        else transform.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
         isOpen = true;
     }
 
     public void Close()
     {
-        transform.DORotate(doorAngle, animationSeconds);
+        if (door1 && door2)
+        {
+            door1.DORotate(doorAngle, animationSeconds);
+            door2.DORotate(doorAngle, animationSeconds);
+        }
+        else transform.DORotate(doorAngle, animationSeconds);
         isOpen = false;
     }
 
