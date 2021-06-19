@@ -972,11 +972,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
---- !u!4 &144626366 stripped
+--- !u!4 &144626366
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 144626365}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838400347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1660539665}
+  m_Father: {fileID: 1367040881}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &153563846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1311,7 +1321,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31
+      value: 30.54
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -1321,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -1859,6 +1869,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &321070545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1216936136}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321070546}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &321070546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1216936136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321070545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1216936137}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &362452952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,6 +2164,7 @@ Transform:
   - {fileID: 610860211}
   - {fileID: 731913668876789750}
   - {fileID: 1908974582}
+  - {fileID: 645430998}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2938,6 +2979,22 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &495850137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1216936136}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216936137}
+  m_Layer: 0
+  m_Name: BigBox (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &501150332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3557,6 +3614,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 618282796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &645430997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645430998}
+  - component: {fileID: 645430999}
+  m_Layer: 0
+  m_Name: EventDialogueTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &645430998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645430997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406286010}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645430999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645430997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcbf2e7920e0dc4cb2c726e11d1aca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueChain:
+  - name: Billy
+    sentences:
+    - AAAAH!
+    - What happened? Where am I?
+  - name: Stephanie
+    sentences:
+    - Don't worry, Billy. I'm here to help you.
+  - name: Billy
+    sentences:
+    - Who are you? Why do you know my name? And why am I here?
+  - name: Stephanie
+    sentences:
+    - I'm Stephanie, a friend of Ethan. You're stuck in the past and you need to
+      get back to the present, but it's hard to explain why.
+  - name: Billy
+    sentences:
+    - We travelled back in time???
+    - But that's so cool! Can we go to see people fighting on horseback pleeeease?
+  - name: Stephanie
+    sentences:
+    - 'I''m sorry Billy, but you can''t.
+
+      Long story short, you''re here because
+      Ethan needs your help.'
+    - "He can't get through that door. There's something blocking him, but he can't
+      see anything. \nMaybe you could help him!"
+  triggerOnStart: 0
+  zoneTrigger: 0
+  eventTrigger: 1
+  triggerPersonality: 1
 --- !u!1001 &646967825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3592,7 +3723,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31
+      value: 30.51
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -3602,7 +3733,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -4351,7 +4482,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-42594
+  m_Name: pb_Mesh-3726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5036,6 +5167,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 832132571}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &838400347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 144626365}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144626366}
+  m_Layer: 0
+  m_Name: BigBox (1) (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &848571235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5122,7 +5269,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43890
+  m_Name: pb_Mesh-5022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7631,7 +7778,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43160
+  m_Name: pb_Mesh-4292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8024,11 +8171,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
---- !u!4 &1216936137 stripped
+--- !u!4 &1216936137
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1216936136}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495850137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 321070546}
+  m_Father: {fileID: 1367040881}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1221570464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10778,13 +10935,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 247710344}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1660539664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 144626365}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660539665}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660539665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 144626365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660539664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144626366}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1681811439
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-40672
+  m_Name: pb_Mesh-1782
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13692,7 +13879,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-42228
+  m_Name: pb_Mesh-3338
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15392,6 +15579,11 @@ MonoBehaviour:
   dialogueChain:
   - name: Billy
     sentences:
+    - 'Of course he can''t get through this door... there''s a DRAGON! How can he
+      not have seen it?!
+
+'
+    - ... I thought he was the smart one
     - Hey Mr. Dragon, can you move a little bit please?
   - name: Mr. Dragon?
     sentences:
@@ -15854,7 +16046,7 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[7].sentences.Array.data[2]
-      value: Let's see if you can open that door someway.
+      value: Let's see if you manage to open that door someway.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367878, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -17289,8 +17481,9 @@ MonoBehaviour:
       reads all the time!
   - name: Stephanie
     sentences:
-    - I know, I definitely like you better! But now you're stuck in the past and
-      have to come back to the present. So figure out how to open that door...
+    - 'I know, I definitely like you better! But now you''re stuck in the past and
+      have to come back to the present. '
+    - So figure out how to open that door.
   triggerOnStart: 0
   zoneTrigger: 0
   eventTrigger: 1

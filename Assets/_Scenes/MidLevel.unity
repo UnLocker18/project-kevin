@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -857,7 +857,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -1411,23 +1411,23 @@ Transform:
   - {fileID: 916963875}
   - {fileID: 1476699289}
   - {fileID: 2016517818}
-  - {fileID: 1216936137}
-  - {fileID: 1233874140}
   - {fileID: 961666475}
+  - {fileID: 1216936137}
   - {fileID: 200196371}
   - {fileID: 1509484995}
+  - {fileID: 1233874140}
   - {fileID: 535397500}
   - {fileID: 1834274601}
   - {fileID: 675610034}
   - {fileID: 214377690}
   - {fileID: 652793276}
   - {fileID: 982639565}
-  - {fileID: 1914574182}
   - {fileID: 34593083}
   - {fileID: 1712192726}
   - {fileID: 954067291}
   - {fileID: 2025849642}
   - {fileID: 2057495177}
+  - {fileID: 1914574182}
   - {fileID: 1415221268}
   - {fileID: 1441586677}
   - {fileID: 1708638740}
@@ -1547,7 +1547,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -1906,7 +1906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &406286010
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,6 +1932,7 @@ Transform:
   - {fileID: 610860211}
   - {fileID: 731913668876789750}
   - {fileID: 1908974582}
+  - {fileID: 1510159275}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2431,6 +2432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZoneDialogueTrigger (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2615,7 +2621,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -2875,7 +2881,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -2993,7 +2999,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -3777,7 +3783,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1790872
+      value: -2.17836
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -7267,7 +7273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159630656
 Transform:
   m_ObjectHideFlags: 0
@@ -7901,8 +7907,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
 --- !u!4 &1216936137 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4152271859294325194, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1216936136}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1233874139
@@ -7976,8 +7981,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
 --- !u!4 &1233874140 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4152271859294325194, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1233874139}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1254862886
@@ -8030,7 +8034,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -8130,7 +8134,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1790872
+      value: -2.17836
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -9830,6 +9834,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1509484994}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1510159274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1510159275}
+  - component: {fileID: 1510159276}
+  m_Layer: 0
+  m_Name: EventDialogueTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1510159275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510159274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406286010}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510159276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510159274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcbf2e7920e0dc4cb2c726e11d1aca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueChain:
+  - name: Billy
+    sentences:
+    - 'Since I''m back and we''re still here... '
+    - Can we go to see people fighting on horseback pleeeease?
+  - name: Stephanie
+    sentences:
+    - Still a no, sorry Billy.
+  - name: Billy
+    sentences:
+    - Ugh, you talk like my mother, Stephanie.
+  triggerOnStart: 0
+  zoneTrigger: 0
+  eventTrigger: 1
+  triggerPersonality: 1
 --- !u!1001 &1512593588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10939,7 +11001,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -12019,7 +12081,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1790872
+      value: -2.17836
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -12160,8 +12222,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
 --- !u!4 &1914574182 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4152271859294325194, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1914574181}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1954156618
@@ -13699,7 +13760,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1790872
+      value: -2.17836
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -14473,6 +14534,7 @@ MonoBehaviour:
   dialogueChain:
   - name: Billy
     sentences:
+    - And still, a dragon. Soooo dumb.
     - Hey Mr. Dragon, can you move a little bit please?
   - name: Mr. Dragon?
     sentences:
@@ -14709,7 +14771,7 @@ PrefabInstance:
     - target: {fileID: 5086237227790546655, guid: ea94b536105f8f9499334137fb71186b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1790872
+      value: -2.17836
       objectReference: {fileID: 0}
     - target: {fileID: 5086237227790546655, guid: ea94b536105f8f9499334137fb71186b,
         type: 3}
@@ -14783,7 +14845,7 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.size
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -14833,7 +14895,7 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[1].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -14868,12 +14930,17 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[0].sentences.Array.data[0]
-      value: Oh, dear me. Where am I?
+      value: Oh no, still Middle Ages!
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[1].sentences.Array.data[0]
-      value: Ethan can you hear me?
+      value: I know, you still need to get through a few portals to get to the present.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
+        type: 3}
+      propertyPath: dialogueChain.Array.data[1].sentences.Array.data[1]
+      value: Keep going, you can do it!
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -16199,7 +16266,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016686, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622021039166016687, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
@@ -16319,26 +16386,13 @@ MonoBehaviour:
   dialogueChain:
   - name: Jacob
     sentences:
-    - What the f...
-    - Where am I?!
+    - 'Really?? Again??
+
+      And we''re still stuck here!'
+    - I thought Ethan was smarter.
   - name: Stephanie
     sentences:
-    - Please calm down. I can help you.
-  - name: Jacob
-    sentences:
-    - What do you want from me?
-  - name: Stephanie
-    sentences:
-    - My name is Stephanie, I was talking to Ethan until a few minutes ago.
-  - name: Jacob
-    sentences:
-    - Ethan? He's a loser! He doesn't deserve control of MY body.
-    - I'm training to bench-press one hundred kilos and when he takes over he just
-      reads all the time!
-  - name: Stephanie
-    sentences:
-    - I know, I definitely prefer you! But now you have to come back to present so
-      find a way to open that door...
+    - He is quite smart, but he can't get through this without your help, Jacob.
   triggerOnStart: 0
   zoneTrigger: 0
   eventTrigger: 1
