@@ -51,7 +51,229 @@ ModelImporter:
   - first:
       74: -1201593313782875763
     second: Barril_01.003|Barril_01|Take 001|BaseLayer.003
-  externalObjects: {}
+  - first:
+      74: -1168465785980164675
+    second: Barril_01|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 139985749543905031
+    second: Barril_01|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -2045452961507379957
+    second: Barril_01|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 5837042070627176937
+    second: Barril_01|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -2339087505681048078
+    second: Barril_01|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: -3499987714334716391
+    second: Barril_01|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: 2958147407954971175
+    second: Barril_01|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: -1624849432192124101
+    second: Barril_01|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 7505981671253282084
+    second: Barril_01|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: -1625855409393108102
+    second: Barril_01|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: 5569648035463482268
+    second: Barril_01|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 6104224932960719793
+    second: Barril_01|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -4450963496481469315
+    second: Barril_01|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.001|Barril_01|
+  - first:
+      74: -4179551889385208768
+    second: Barril_01|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.002|Barril_01|
+  - first:
+      74: -5706663571022251447
+    second: Barril_01|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.003|Barril_01|
+  - first:
+      74: 7280776533227609941
+    second: Barril_01|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer|Barril_01|Barr
+  - first:
+      74: 3758979799340631182
+    second: Barril_01.001|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: -4325327058811982051
+    second: Barril_01.001|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: 6962566254906442416
+    second: Barril_01.001|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: -2885772839523399786
+    second: Barril_01.001|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 1616537449256882006
+    second: Barril_01.001|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: -1240245095147855682
+    second: Barril_01.001|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: 7025058171037550932
+    second: Barril_01.001|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 7838877581562658805
+    second: Barril_01.001|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -3673216832315063316
+    second: Barril_01.001|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 8270256128306608451
+    second: Barril_01.001|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: 412185175362276594
+    second: Barril_01.001|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: -8693627794144655736
+    second: Barril_01.001|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -5448037891175413094
+    second: Barril_01.001|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.001|Barril_01|
+  - first:
+      74: -8859004085416404209
+    second: Barril_01.001|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.002|Barril_01|
+  - first:
+      74: -8147496807735255820
+    second: Barril_01.001|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.003|Barril_01|
+  - first:
+      74: -6607414235830040267
+    second: Barril_01.001|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer|Barril_01|Barr
+  - first:
+      74: -7057292962581854182
+    second: Barril_01.002|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 1138392532175134182
+    second: Barril_01.002|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -6585612311826502979
+    second: Barril_01.002|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: -7458100232006653521
+    second: Barril_01.002|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -9216054106186656117
+    second: Barril_01.002|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 3292277856404964054
+    second: Barril_01.002|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -6375800995788403659
+    second: Barril_01.002|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: -3222634738509356978
+    second: Barril_01.002|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 3620808994697878143
+    second: Barril_01.002|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 4286113579089801229
+    second: Barril_01.002|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -5526920182557991999
+    second: Barril_01.002|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 8323771496727667120
+    second: Barril_01.002|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 3924244418729078415
+    second: Barril_01.002|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.001|Barril_01|
+  - first:
+      74: 215953174779359257
+    second: Barril_01.002|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.002|Barril_01|
+  - first:
+      74: -7606257080864257169
+    second: Barril_01.002|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.003|Barril_01|
+  - first:
+      74: -5450656514596876897
+    second: Barril_01.002|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer|Barril_01|Barr
+  - first:
+      74: 1684027495758510228
+    second: Barril_01.003|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 9190070593295277307
+    second: Barril_01.003|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -4055817156702350865
+    second: Barril_01.003|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 1449874842989162234
+    second: Barril_01.003|Barril_01.001|Barril_01.001|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: -5725029408804347177
+    second: Barril_01.003|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 796270060831422230
+    second: Barril_01.003|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -1436837115042317197
+    second: Barril_01.003|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 6899855092233940351
+    second: Barril_01.003|Barril_01.002|Barril_01.002|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 2273510141829977560
+    second: Barril_01.003|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.001|Ba
+  - first:
+      74: 8068769055941165414
+    second: Barril_01.003|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.002|Ba
+  - first:
+      74: -3846007158360468048
+    second: Barril_01.003|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer.003|Ba
+  - first:
+      74: 5452877351613443502
+    second: Barril_01.003|Barril_01.003|Barril_01.003|Barril_01|Take 001|BaseLayer|Barril
+  - first:
+      74: 5703725706656623073
+    second: Barril_01.003|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.001|Barril_01|
+  - first:
+      74: 5378911270710089561
+    second: Barril_01.003|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.002|Barril_01|
+  - first:
+      74: 3006599901332522526
+    second: Barril_01.003|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer.003|Barril_01|
+  - first:
+      74: -3521824131799188757
+    second: Barril_01.003|Barril_01|Barril_01|Barril_01|Take 001|BaseLayer|Barril_01|Barr
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BASE
+    second: {fileID: 2100000, guid: 33d99cf0b7466dd4c8f6c311bc65d692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 42b45cdb0b6c27b4aa5334101dbabd91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 0f9ab604dccb65a4f91e3b9b34def395, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrels
+    second: {fileID: 2100000, guid: 33d99cf0b7466dd4c8f6c311bc65d692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_bars
+    second: {fileID: 2100000, guid: 42b45cdb0b6c27b4aa5334101dbabd91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_floor
+    second: {fileID: 2100000, guid: 0f9ab604dccb65a4f91e3b9b34def395, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
