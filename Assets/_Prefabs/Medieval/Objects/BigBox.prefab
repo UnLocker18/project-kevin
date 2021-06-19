@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3310874925928591449}
   - component: {fileID: 8692827906302043664}
-  - component: {fileID: 2623684620728127339}
+  - component: {fileID: 7158217384818567198}
   m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
@@ -47,19 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plane: 0
   freezeRotation: 1
---- !u!65 &2623684620728127339
+--- !u!65 &7158217384818567198
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112153253038306216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 23040d5ae9b4cdd4fa1f8fb6485baf88, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 1, z: 0.65}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.6755967, y: 1, z: 0.6786593}
+  m_Center: {x: 0.0030604275, y: 0, z: 0.0015304305}
 --- !u!1 &4652542239718533284
 GameObject:
   m_ObjectHideFlags: 0

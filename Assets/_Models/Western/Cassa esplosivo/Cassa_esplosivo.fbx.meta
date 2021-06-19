@@ -3,7 +3,17 @@ guid: d860e7f7cdb045c498f2bbc9f6339251
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrateBody
+    second: {fileID: 2100000, guid: bc7b0d7a679120e459b1d3815fae073e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrateTop
+    second: {fileID: 2100000, guid: df6ad2c6b9574ec469390109e979c50a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -31,7 +41,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
