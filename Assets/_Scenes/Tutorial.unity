@@ -1371,7 +1371,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016689, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: dialogueChain.Array.data[0].sentences.Array.data[0]
-      value: A rope? What should i do with that? Maybe I can burn it!
+      value: A rope? What should I do with that? Maybe I could burn it!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35aee0dd232c7a1479de7239f8db8f1c, type: 3}
@@ -4032,7 +4032,7 @@ PrefabInstance:
     - target: {fileID: 8622021039166016689, guid: 35aee0dd232c7a1479de7239f8db8f1c,
         type: 3}
       propertyPath: dialogueChain.Array.data[0].sentences.Array.data[0]
-      value: This one seems a bit lighter, but probably I'm not strong enough.
+      value: This one seems a bit lighter, but probably I'm still not strong enough.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35aee0dd232c7a1479de7239f8db8f1c, type: 3}
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   dialogueChain:
   - name: Ethan
     sentences:
-    - Oh, I'm back.
+    - Oh, thank goodness I'm back.
   triggerOnStart: 0
   zoneTrigger: 0
   eventTrigger: 1
@@ -15800,7 +15800,7 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[1].sentences.Array.data[0]
-      value: Ethan can you hear me?
+      value: Ethan, can you hear me?
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -15811,13 +15811,13 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueChain.Array.data[3].sentences.Array.data[0]
       value: "That's because I'm in a place that is not part of space or time. Well,
-        it's complicated but the important thing is that i can help you.\r"
+        it's complicated but the important thing is that I can help you.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[3].sentences.Array.data[1]
-      value: To answer your question, you just travelled time from year 2021 to year
-        1220.
+      value: To answer your question, you just travelled through time from year 2021
+        to year 1220.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -15833,28 +15833,28 @@ PrefabInstance:
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[5].sentences.Array.data[1]
-      value: happened something big that altered space-time continuum somehow.
+      value: something big happened and it altered space-time continuum somehow.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[6].sentences.Array.data[0]
-      value: Oh I see... Well, kinda. Do you know how I can get back to present?
+      value: Oh I see... Well, kinda. Do you know how I can get back to the present?
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[7].sentences.Array.data[0]
-      value: So, to do that you'll need to find a space-time portal. There should
-        be one of them not too far from here.
+      value: To do so you'll need to find a space-time portal. There should be one
+        of them not too far from here.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[7].sentences.Array.data[1]
-      value: The problem is that exploring this place is not so easy.
+      value: But look out, exploring this place is not so easy.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367877, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
       propertyPath: dialogueChain.Array.data[7].sentences.Array.data[2]
-      value: Let's see if you can open that door somehow.
+      value: Let's see if you can open that door someway.
       objectReference: {fileID: 0}
     - target: {fileID: 2438319280329367878, guid: 0c260a9048f4f484f88bc592c2b45713,
         type: 3}
@@ -17278,7 +17278,7 @@ MonoBehaviour:
     - Please calm down. I can help you.
   - name: Jacob
     sentences:
-    - What do you want from me?
+    - Who are you and what do you want from me?
   - name: Stephanie
     sentences:
     - My name is Stephanie, I was talking to Ethan until a few minutes ago.
@@ -17289,8 +17289,8 @@ MonoBehaviour:
       reads all the time!
   - name: Stephanie
     sentences:
-    - I know, I definitely prefer you! But now you have to come back to present so
-      find a way to open that door...
+    - I know, I definitely like you better! But now you're stuck in the past and
+      have to come back to the present. So figure out how to open that door...
   triggerOnStart: 0
   zoneTrigger: 0
   eventTrigger: 1
