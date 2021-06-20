@@ -45,7 +45,7 @@ public class ImaginaryCharacter : Interactable
             if (child.tag == "Path") path.Add(child.position);
         }
 
-        Move();
+        //Move();
     }
 
     //private void Update()
@@ -74,8 +74,6 @@ public class ImaginaryCharacter : Interactable
     {
         float speed = (transform.position - mLastPosition).magnitude / Time.deltaTime;
         mLastPosition = transform.position;
-
-        Debug.Log(speed);
     }
 
     private void ToggleInteractability(int personality)

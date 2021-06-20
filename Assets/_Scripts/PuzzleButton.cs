@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System;
 using DG.Tweening;
+using System.Collections;
 
 public class PuzzleButton : Interactable
 {
+    [SerializeField] public bool activeAtStart = false;
     [SerializeField] private int requiredPersonality = 0;
     [SerializeField] private float animationSeconds = 1f;
     [SerializeField] private Material activeMaterial;
@@ -34,6 +36,8 @@ public class PuzzleButton : Interactable
         discs = transform.GetChild(0).GetComponentsInChildren<Transform>();
         movingPiece = transform.GetChild(1).Find("MovingPiece").GetComponent<Transform>();
         movingPiecePos = movingPiece.position;
+
+        if (activeAtStart) StartCoroutine("DelayedToggle");
     }
 
     public override int Interact(Transform mainCharacter)
@@ -120,5 +124,11 @@ public class PuzzleButton : Interactable
         {
             isInteractable = false;
         }
+    }
+
+    private IEnumerator DelayedToggle()
+    {
+        yield return new WaitForSeconds(2f);
+        Toggle();
     }
 }

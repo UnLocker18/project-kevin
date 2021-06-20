@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: rubikWestern_mat
+  m_Name: rubikWesternMoving_mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 9d4950e878290db4aa6109c23a0f0e68, type: 3}
+        m_Texture: {fileID: 2800000, guid: 79f046defae8a43498644e9559bfcecf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 14d5136d9e6b71f4bae9d9ec614bf4e2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 42e3d01a187cdf24c88cab6fb8c405e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 43eb85d54c5bb5f4bbaa52dbba9efbb2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b68d9da8a1d53441bfaa98b0e3cf02a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

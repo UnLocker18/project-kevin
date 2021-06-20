@@ -54,6 +54,8 @@ MonoBehaviour:
   rotationSeconds: 0.5
   dialoguePreMove: {fileID: 0}
   dialoguePostMove: {fileID: 0}
+  pathType: 1
+  pathMode: 1
 --- !u!54 &1549002314669557063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97,7 +99,7 @@ Transform:
   m_GameObject: {fileID: 3853288737375323461}
   m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
   m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 3671305392300590756}
   m_Father: {fileID: 1549002314669557060}
@@ -156,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 8831103391351824600}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 3671305392557394608}
   m_Father: {fileID: 1549002314669557060}

@@ -7,6 +7,7 @@ public class FloorButton : MonoBehaviour
     //[SerializeField] private Material activeMaterial;
     //[SerializeField] private Material inactiveMaterial;
 
+    [SerializeField] private bool inverted;
     [SerializeField] private float range = 0.1f;
     [SerializeField] private float animationSeconds = 0.5f;
 
@@ -28,19 +29,18 @@ public class FloorButton : MonoBehaviour
     void Start()
     {
         //_renderer = GetComponentInChildren<Renderer>();
-
     }
 
     public void Activate()
     {
         buttonMove.DOLocalMoveY(buttonMovePosition.y - range, animationSeconds);
-        Toggle(true);
+        Toggle(!inverted);
     }
 
     public void Deactivate()
     {
         buttonMove.DOLocalMoveY(buttonMovePosition.y, animationSeconds);
-        Toggle(false);
+        Toggle(inverted);
     }
 
     void Toggle(bool activate)
