@@ -54,7 +54,7 @@ public class Door : MonoBehaviour
             door1.DORotate(doorAngle + new Vector3(0, 100, 0), animationSeconds);
             door2.DORotate(doorAngle + new Vector3(0, -100, 0), animationSeconds);
         }
-        else transform.DORotate(doorAngle + new Vector3(0, 120, 0), animationSeconds);
+        else transform.DORotate(doorAngle + new Vector3(0, 100, 0), animationSeconds);
         isOpen = true;
     }
 
