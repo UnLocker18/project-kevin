@@ -341,6 +341,7 @@ MonoBehaviour:
   storicoWalkCoefficient: 0.667
   sportivoWalkCoefficient: 1
   moveThreshold: 0.3
+  isGrabbing: 0
 --- !u!114 &7083243251938010861
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public abstract class Interactable : MonoBehaviour
     public bool isInteractable;
     public Outline outline;
 
+    private float originalSpeed = 0f;
+
     public abstract int Interact(Transform mainCharacter);
 
     public void SetUpOutline()
@@ -38,23 +40,33 @@ public abstract class Interactable : MonoBehaviour
         if (!isInteractable) return;
 
         Rigidbody rb = GetComponent<Rigidbody>();
+        Transform spineTransform = GameObject.FindGameObjectWithTag("GrabParent").transform;
 
-        if (transform.parent != mainCharacter)
+        if (transform.parent != spineTransform)
         {
             rb.isKinematic = true;
-            transform.parent = mainCharacter;
+            
             transform.rotation = mainCharacter.localRotation;
             transform.position = mainCharacter.Find("GrabbingPoint").position;
+            transform.parent = spineTransform;
+
+            GetComponentInChildren<BoxCollider>().enabled = false;
             mainCharacter.GetComponent<BoxCollider>().enabled = true;
 
+            mainCharacter.GetComponent<SimpleThirdPRigidbodyController>().isGrabbing = true;
+            originalSpeed = mainCharacter.GetComponent<SimpleThirdPRigidbodyController>()._speed;
+            mainCharacter.GetComponent<SimpleThirdPRigidbodyController>()._speed = 1.3f;
             FindObjectOfType<AudioManager>().Play("pickSound");
         }
         else
         {
             mainCharacter.GetComponent<BoxCollider>().enabled = false;
+            GetComponentInChildren<BoxCollider>().enabled = true;
             transform.parent = null;
             rb.isKinematic = false;
 
+            mainCharacter.GetComponent<SimpleThirdPRigidbodyController>().isGrabbing = false;
+            mainCharacter.GetComponent<SimpleThirdPRigidbodyController>()._speed = originalSpeed;
             FindObjectOfType<AudioManager>().Play("dropSound");
         }
     }

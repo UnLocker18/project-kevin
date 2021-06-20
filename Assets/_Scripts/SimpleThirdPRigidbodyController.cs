@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class SimpleThirdPRigidbodyController : MonoBehaviour
 {    
-    [SerializeField] private float _speed = 2f;
+    [SerializeField] public float _speed = 2f;
     [SerializeField] private float _rotationSpeed = 15f;
-
-    [SerializeField] private float walkAnimationSpeed = 0f;
+        
     [SerializeField] private float storicoWalkCoefficient = 0.667f;
     [SerializeField] private float sportivoWalkCoefficient = 0.7f;
-    [SerializeField] private float moveThreshold = 0.1f;
+    [SerializeField] private float moveThreshold = 0.3f;
+
+    private float walkAnimationSpeed = 0f;
+    [HideInInspector] public bool isGrabbing = false;
 
     private Transform _cameraT;
 
@@ -79,6 +81,21 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
 
         animator.SetFloat("WalkSpeed", _inputSpeed * _speed * walkAnimationSpeed, 0.1f, Time.deltaTime);
         animator.SetFloat("InputSpeed", _inputSpeed, 0.1f, Time.deltaTime);
+        animator.SetBool("Grabbing", isGrabbing);
+
+        //GameObject sportivo = transform.Find("Sportivo").gameObject;
+        //GameObject woodWalking = transform.Find("WoodWalking").gameObject;
+
+        //if (isGrabbing && sportivo.activeSelf)
+        //{
+        //    sportivo.SetActive(false);
+        //    woodWalking.SetActive(true);
+        //}
+        //else if (!isGrabbing && woodWalking.activeSelf)
+        //{
+        //    sportivo.SetActive(true);
+        //    woodWalking.SetActive(false);
+        //}
     }
 
     private void SwitchCharacter(int personality)
