@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public abstract class Interactable : MonoBehaviour
 {
@@ -47,10 +48,17 @@ public abstract class Interactable : MonoBehaviour
             rb.isKinematic = true;
             
             transform.rotation = mainCharacter.localRotation;
-            transform.position = mainCharacter.Find("GrabbingPoint").position;
-            transform.parent = spineTransform;
+            //transform.position = mainCharacter.Find("GrabbingPoint").position;
 
-            GetComponentInChildren<BoxCollider>().enabled = false;
+            mainCharacter.GetComponent<AdditionalControls>().DisableControls();
+
+            transform.DOJump(mainCharacter.Find("GrabbingPoint").position, 0.2f, 1, 0.5f)
+                .OnComplete( () => {
+                    GetComponentInChildren<BoxCollider>().enabled = false;
+                    transform.parent = spineTransform;
+                    mainCharacter.GetComponent<AdditionalControls>().EnableControls();                    
+                });
+                        
             mainCharacter.GetComponent<BoxCollider>().enabled = true;
 
             mainCharacter.GetComponent<SimpleThirdPRigidbodyController>().isGrabbing = true;

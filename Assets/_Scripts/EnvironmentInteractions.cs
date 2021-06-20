@@ -10,12 +10,22 @@ public class EnvironmentInteractions : MonoBehaviour
 
     public event Action<int> ChangePersonality;
 
+    private CheckpointManager checkpointManager;
     private UIManager uIManager;
 
     private void Start()
     {
         uIManager = FindObjectOfType<UIManager>();
-        if (ChangePersonality != null) ChangePersonality.Invoke(currentPersonality);
+        checkpointManager = FindObjectOfType<CheckpointManager>();
+
+        if (checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero)
+        {
+            currentPersonality = checkpointManager.personality;
+            transform.position = checkpointManager.lastCheckpointPos;
+            checkpointManager.respawned = true;
+        }
+
+        if (ChangePersonality != null) ChangePersonality.Invoke(currentPersonality);        
     }
 
     public void Interaction()

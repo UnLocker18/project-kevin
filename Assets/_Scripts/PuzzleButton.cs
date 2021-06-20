@@ -34,8 +34,11 @@ public class PuzzleButton : Interactable
     {
         renderers = GetComponentsInChildren<Renderer>();
         discs = transform.GetChild(0).GetComponentsInChildren<Transform>();
-        movingPiece = transform.GetChild(1).Find("MovingPiece").GetComponent<Transform>();
-        movingPiecePos = movingPiece.position;
+        if (transform.childCount > 1)
+        {
+            movingPiece = transform.GetChild(1).Find("MovingPiece").GetComponent<Transform>();
+            movingPiecePos = movingPiece.position;
+        }       
 
         if (activeAtStart) StartCoroutine("DelayedToggle");
     }

@@ -65,10 +65,12 @@ public class AdditionalControls : MonoBehaviour
     public void DisableControls()
     {
         controlsEnabled = false;
+        GetComponent<SimpleThirdPRigidbodyController>().DisableControls();
     }
 
     public void EnableControls()
     {
         controlsEnabled = true;
+        GetComponent<SimpleThirdPRigidbodyController>().EnableControls();
     }
 }

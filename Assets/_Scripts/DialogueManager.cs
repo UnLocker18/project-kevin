@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour {
         //dialogueText = GameObject.FindGameObjectsWithTag("Dialogue")[1].GetComponent<Text>();
 
         additionalControls = FindObjectOfType<AdditionalControls>();
-        characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();
+        //characterController = FindObjectOfType<SimpleThirdPRigidbodyController>();
     }
 
     public void StartDialogueChain(Dialogue[] dialogueChain, ImaginaryCharacter imaginaryCharacter = null)
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour {
 	public void StartDialogue (Dialogue dialogue)
 	{
         additionalControls.DisableControls();
-        characterController.DisableControls();
+        //characterController.DisableControls();
 
         animator.SetBool("IsOpen", true);
 
@@ -108,7 +108,7 @@ public class DialogueManager : MonoBehaviour {
 	{
 		animator.SetBool("IsOpen", false);
 
-        characterController.EnableControls();
+        //characterController.EnableControls();
         additionalControls.EnableControls();
 
         if (imaginaryCharacter != null) imaginaryCharacter.Move();

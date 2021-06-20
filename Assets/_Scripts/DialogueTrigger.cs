@@ -11,12 +11,14 @@ public class DialogueTrigger : MonoBehaviour {
     [SerializeField] private int triggerPersonality = 2;
 
     private EnvironmentInteractions environmentInteractions;
+    private CheckpointManager checkpointManager;
     
     private void Start()
     {
         environmentInteractions = GameObject.FindGameObjectWithTag("Player").GetComponent<EnvironmentInteractions>();
+        checkpointManager = FindObjectOfType<CheckpointManager>();
 
-        if (triggerOnStart) StartCoroutine("DelayedTrigger");
+        if (triggerOnStart && !checkpointManager.respawned) StartCoroutine("DelayedTrigger");
         if (eventTrigger) StartCoroutine("DelayedSubscription");
     }
 
