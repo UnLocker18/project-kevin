@@ -22,6 +22,7 @@ public class ImaginaryCharacter : Interactable
     private Vector3 afterInteractionPosition;
     private Vector3 afterInteractionRotation;
     private bool dialogueAlreadyTriggered = false;
+    private Vector3 mLastPosition;
 
     private void Awake()
     {
@@ -68,6 +69,14 @@ public class ImaginaryCharacter : Interactable
 
     //    Debug.Log(GetComponent<Rigidbody>().velocity);
     //}
+
+    private void Update()
+    {
+        float speed = (transform.position - mLastPosition).magnitude / Time.deltaTime;
+        mLastPosition = transform.position;
+
+        Debug.Log(speed);
+    }
 
     private void ToggleInteractability(int personality)
     {

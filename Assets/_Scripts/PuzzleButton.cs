@@ -13,8 +13,11 @@ public class PuzzleButton : Interactable
     public int buttonNumber;
 
     [SerializeField] public bool isActive = false;
+    [SerializeField] private bool westernVersion = false;
     private Renderer[] renderers;
     private Transform[] discs;
+    private Transform movingPiece;
+    private Vector3 movingPiecePos;
     private EnvironmentInteractions environmentInteractions;    
 
     void Awake()
@@ -29,6 +32,8 @@ public class PuzzleButton : Interactable
     {
         renderers = GetComponentsInChildren<Renderer>();
         discs = transform.GetChild(0).GetComponentsInChildren<Transform>();
+        movingPiece = transform.GetChild(1).Find("MovingPiece").GetComponent<Transform>();
+        movingPiecePos = movingPiece.position;
     }
 
     public override int Interact(Transform mainCharacter)
@@ -57,18 +62,24 @@ public class PuzzleButton : Interactable
         if (isActive)
         {
             //renderers[0].material = inactiveMaterial;
-            foreach (Renderer renderer in renderers)
+            if (!westernVersion)
             {
-                renderer.material = inactiveMaterial;
+                foreach (Renderer renderer in renderers)
+                {
+                    renderer.material = inactiveMaterial;
+                }
             }
             PlayAnimation(0);
         }
         else
         {
             //renderers[0].material = activeMaterial;
-            foreach (Renderer renderer in renderers)
+            if (!westernVersion)
             {
-                renderer.material = activeMaterial;
+                foreach (Renderer renderer in renderers)
+                {
+                    renderer.material = activeMaterial;
+                }
             }
             PlayAnimation(1);
         }
@@ -80,14 +91,21 @@ public class PuzzleButton : Interactable
 
     private void PlayAnimation(int multiplier)
     {
-        int sign = 1;
+        if (westernVersion)
+        {
+            movingPiece.DOMoveY(movingPiecePos.y + (0.1f * multiplier), animationSeconds);
+        }
+        else
+        {
+            int sign = 1;
 
-        foreach (Transform disc in discs)
-        {            
-            if (disc.name != "Piedistallo" && disc.name != "Mesh")
+            foreach (Transform disc in discs)
             {
-                disc.DORotate(new Vector3(0, multiplier * sign * 210, 0), animationSeconds);
-                sign = -sign;
+                if (disc.name != "Piedistallo" && disc.name != "Mesh")
+                {
+                    disc.DORotate(new Vector3(0, multiplier * sign * 210, 0), animationSeconds);
+                    sign = -sign;
+                }
             }
         }
     }
