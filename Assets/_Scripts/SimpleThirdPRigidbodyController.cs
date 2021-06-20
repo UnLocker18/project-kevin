@@ -68,8 +68,8 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
     {
         Vector3 newDir = Vector3.RotateTowards(transform.forward, _targetDirection, _rotationSpeed * Time.fixedDeltaTime, 0f);
 
-        Debug.DrawRay(transform.position + transform.up * 3f, _targetDirection * 5f, Color.red);
-        Debug.DrawRay(transform.position + transform.up * 3f, newDir * 5f, Color.blue);
+        //Debug.DrawRay(transform.position + transform.up * 3f, _targetDirection * 5f, Color.red);
+        //Debug.DrawRay(transform.position + transform.up * 3f, newDir * 5f, Color.blue);
 
         _rigidbody.MoveRotation(Quaternion.LookRotation(newDir));
         _rigidbody.MovePosition(_rigidbody.position + transform.forward * _inputSpeed * _speed * Time.fixedDeltaTime);

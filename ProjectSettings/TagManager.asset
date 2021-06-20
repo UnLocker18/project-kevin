@@ -9,6 +9,7 @@ TagManager:
   - Dialogue
   - Menu
   - GrabParent
+  - Path
   layers:
   - Default
   - TransparentFX
