@@ -7,9 +7,9 @@ public class ImaginaryCharacter : Interactable
     [SerializeField] private bool westernVersion = false;
     [SerializeField] private int requiredPersonality = 1;
     [SerializeField] private float animationSeconds = 1.5f;
-    [SerializeField] private float rotationSeconds = 0.5f;
     [SerializeField] private DialogueTrigger dialoguePreMove;
     [SerializeField] private DialogueTrigger dialoguePostMove;
+    [SerializeField] private bool collidersActiveOnMove = true;
 
     [SerializeField] private PathType pathType;
     [SerializeField] private PathMode pathMode;
@@ -20,14 +20,12 @@ public class ImaginaryCharacter : Interactable
     private EnvironmentInteractions environmentInteractions;
     private Renderer renderer;
     private Animator animator;
-
-    private Vector3 afterInteractionPosition;
-    private Vector3 afterInteractionRotation;
+    private Collider[] colliders;
+    
     private bool dialogueAlreadyTriggered = false;
     private Vector3 mLastPosition;
-    [SerializeField] private float walkSpeedCoeff = 1f;
-
-    private Tween floatingTween;
+    private float walkSpeedCoeff = 1f;
+    
     private bool hasMoved = false;
 
     private void Awake()
@@ -38,27 +36,22 @@ public class ImaginaryCharacter : Interactable
 
     private void Start()
     {
-        //_cameraT = GameObject.FindGameObjectWithTag("MainCamera").transform;
-
         animator = transform.GetChild(0).GetComponentInChildren<Animator>();
 
         renderer = GetComponentInChildren<Renderer>();
         if (renderer != null) renderer.enabled = false;
-
-        afterInteractionPosition = transform.Find("AfterInteraction").position;
-        afterInteractionRotation = transform.Find("AfterInteraction").eulerAngles;
 
         foreach (Transform child in transform)
         {
             if (child.tag == "Path")
             {
                 path.Add(child.position);
-                //lastPathPos = child.position;
             }
         }
 
+        if (westernVersion) colliders = transform.GetChild(0).GetComponents<BoxCollider>();
+
         FloatAnimation();
-        //Move();
     }
 
     private void Update()
@@ -105,12 +98,27 @@ public class ImaginaryCharacter : Interactable
     {
         if (hasMoved) return;
 
-        DOTween.Kill(transform);
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => FloatAnimation() );
-        hasMoved = true;
+        if (!collidersActiveOnMove && colliders.Length > 0)
+        {
+            foreach (Collider col in colliders)
+            {
+                col.enabled = false;
+            }
+        }
 
-        //transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
-        //transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);
+        DOTween.Kill(transform);
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => {
+            FloatAnimation();
+            if (!collidersActiveOnMove && colliders.Length > 0)
+            {
+                foreach (Collider col in colliders)
+                {
+                    col.enabled = true;
+                }
+            }
+        });
+
+        hasMoved = true;        
     }
 
     private void FloatAnimation()
@@ -123,7 +131,7 @@ public class ImaginaryCharacter : Interactable
             floatPath[2] = transform.localPosition + new Vector3(0f, 0.1f, 0f);
             floatPath[3] = transform.localPosition + new Vector3(0f, 0.05f, 0.05f);
 
-            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(floatEase).SetLoops(-1);
+            transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(floatEase).SetLoops(-1);
         }
     }
 }

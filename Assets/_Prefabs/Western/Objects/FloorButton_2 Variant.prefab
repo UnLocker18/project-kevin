@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4569779858299315162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 849942941, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 849942942, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 849942943, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5de9b7ba7a360b7409c89428c77dd241, type: 2}
+    - target: {fileID: 849942944, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273677678553886911, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c34ffa6829aebe74497cbba9fd963b58, type: 2}
+    - target: {fileID: 2716962310855865946, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: inverted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865947, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716962310855865948, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_Name
+      value: FloorButton_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251142777426033037, guid: 975b66eb49529ad4394a751d15e72260,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c34ffa6829aebe74497cbba9fd963b58, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
