@@ -1,9 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 using System.Collections.Generic;
-using DG.Tweening.Core;
-using DG.Tweening.Plugins.Core.PathCore;
-using DG.Tweening.Plugins.Options;
 
 public class ImaginaryCharacter : Interactable
 {
@@ -60,44 +57,14 @@ public class ImaginaryCharacter : Interactable
             }
         }
 
-        if (westernVersion)
-        {
-            Vector3[] floatPath = new Vector3[4];
-            floatPath[0] = transform.localPosition;
-            floatPath[1] = transform.localPosition + new Vector3(0f, 0.05f, -0.05f);
-            floatPath[2] = transform.localPosition + new Vector3(0f, 0.1f, 0f);
-            floatPath[3] = transform.localPosition + new Vector3(0f, 0.05f, 0.05f);
-
-            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(floatEase).SetLoops(-1);
-        }
-
+        FloatAnimation();
         //Move();
     }
 
-    //private void Update()
-    //{
-    //    //Compute direction According to Camera Orientation
-    //    _targetDirection = _cameraT.TransformDirection(_inputVector).normalized;
-    //    _targetDirection.y = 0f;
-
-    //    //Rotate Object
-    //    Vector3 newDir = Vector3.RotateTowards(transform.forward, _targetDirection, _rotationSpeed * Time.deltaTime, 0f);
-    //    transform.rotation = Quaternion.LookRotation(newDir);
-
-    //    //Move object along forward
-    //    //_characterController.Move(transform.forward * _inputSpeed * _speed * Time.deltaTime);        
-    //}
-
-    //private void Update()
-    //{
-    //    speed = Vector3.Distance(oldPosition, transform.position);
-    //    oldPosition = transform.position;
-
-    //    Debug.Log(GetComponent<Rigidbody>().velocity);
-    //}
-
     private void Update()
     {
+        if (westernVersion) return;
+
         float speed = (transform.position - mLastPosition).magnitude / Time.deltaTime;
         mLastPosition = transform.position;
 
@@ -139,10 +106,24 @@ public class ImaginaryCharacter : Interactable
         if (hasMoved) return;
 
         DOTween.Kill(transform);
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1));
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => FloatAnimation() );
         hasMoved = true;
 
         //transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
         //transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);
+    }
+
+    private void FloatAnimation()
+    {
+        if (westernVersion)
+        {
+            Vector3[] floatPath = new Vector3[4];
+            floatPath[0] = transform.localPosition;
+            floatPath[1] = transform.localPosition + new Vector3(0f, 0.05f, -0.05f);
+            floatPath[2] = transform.localPosition + new Vector3(0f, 0.1f, 0f);
+            floatPath[3] = transform.localPosition + new Vector3(0f, 0.05f, 0.05f);
+
+            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(floatEase).SetLoops(-1);
+        }
     }
 }
