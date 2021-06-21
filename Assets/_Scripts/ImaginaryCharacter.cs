@@ -7,6 +7,7 @@ using DG.Tweening.Plugins.Options;
 
 public class ImaginaryCharacter : Interactable
 {
+    [SerializeField] private bool westernVersion = false;
     [SerializeField] private int requiredPersonality = 1;
     [SerializeField] private float animationSeconds = 1.5f;
     [SerializeField] private float rotationSeconds = 0.5f;
@@ -15,6 +16,7 @@ public class ImaginaryCharacter : Interactable
 
     [SerializeField] private PathType pathType;
     [SerializeField] private PathMode pathMode;
+    [SerializeField] private Ease ease;
     private List<Vector3> path = new List<Vector3>();
 
     private EnvironmentInteractions environmentInteractions;
@@ -23,6 +25,7 @@ public class ImaginaryCharacter : Interactable
     private Vector3 afterInteractionRotation;
     private bool dialogueAlreadyTriggered = false;
     private Vector3 mLastPosition;
+    private Tween floatingTween;
 
     private void Awake()
     {
@@ -42,7 +45,22 @@ public class ImaginaryCharacter : Interactable
 
         foreach (Transform child in transform)
         {
-            if (child.tag == "Path") path.Add(child.position);
+            if (child.tag == "Path")
+            {
+                path.Add(child.position);
+                //lastPathPos = child.position;
+            }
+        }
+
+        if (westernVersion)
+        {
+            Vector3[] floatPath = new Vector3[4];
+            floatPath[0] = transform.localPosition;
+            floatPath[1] = transform.localPosition + new Vector3(0f, 0.05f, -0.05f);
+            floatPath[2] = transform.localPosition + new Vector3(0f, 0.1f, 0f);
+            floatPath[3] = transform.localPosition + new Vector3(0f, 0.05f, 0.05f);
+
+            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(ease).SetLoops(-1);
         }
 
         //Move();
@@ -108,7 +126,8 @@ public class ImaginaryCharacter : Interactable
 
     public void Move()
     {
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetLookAt(0f, new Vector3(0, 0, -1));        
+        DOTween.Kill(transform);
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetLookAt(0f, new Vector3(0, 0, -1));
 
         //transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
         //transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);
