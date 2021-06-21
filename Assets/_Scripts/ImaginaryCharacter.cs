@@ -31,6 +31,7 @@ public class ImaginaryCharacter : Interactable
     [SerializeField] private float walkSpeedCoeff = 1f;
 
     private Tween floatingTween;
+    private bool hasMoved = false;
 
     private void Awake()
     {
@@ -135,8 +136,11 @@ public class ImaginaryCharacter : Interactable
 
     public void Move()
     {
+        if (hasMoved) return;
+
         DOTween.Kill(transform);
         transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1));
+        hasMoved = true;
 
         //transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
         //transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);
