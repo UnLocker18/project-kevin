@@ -1,19 +1,12 @@
 fileFormatVersion: 2
-guid: f0f8f5f57f50e6c47bfec9764e4becdb
+guid: f88dc7aecc53c9741a6bf9a48c5d474a
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Modelbody_Material002
-    second: {fileID: 2100000, guid: db56f7b4bec64ae4a9db2a2ba954e97b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Modeleyewhites_Material005
-    second: {fileID: 2100000, guid: a99a8d8e4493e70418e95edf64fb6a6f, type: 2}
+      74: -887982601649841707
+    second: metarig|metarigAction
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -25,8 +18,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
-      does not match:\n\tCannot find root motion transform 'metarig'.\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -42,7 +34,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -93,7 +85,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: metarig
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

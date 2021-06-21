@@ -18,7 +18,7 @@ public class EnvironmentInteractions : MonoBehaviour
         uIManager = FindObjectOfType<UIManager>();
         checkpointManager = FindObjectOfType<CheckpointManager>();
 
-        if (checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero)
+        if (checkpointManager && checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero)
         {
             currentPersonality = checkpointManager.personality;
             transform.position = checkpointManager.lastCheckpointPos;

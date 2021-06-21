@@ -16,15 +16,20 @@ public class ImaginaryCharacter : Interactable
 
     [SerializeField] private PathType pathType;
     [SerializeField] private PathMode pathMode;
-    [SerializeField] private Ease ease;
+    [SerializeField] private Ease pathEase;
+    [SerializeField] private Ease floatEase;
     private List<Vector3> path = new List<Vector3>();
 
     private EnvironmentInteractions environmentInteractions;
     private Renderer renderer;
+    private Animator animator;
+
     private Vector3 afterInteractionPosition;
     private Vector3 afterInteractionRotation;
     private bool dialogueAlreadyTriggered = false;
     private Vector3 mLastPosition;
+    [SerializeField] private float walkSpeedCoeff = 1f;
+
     private Tween floatingTween;
 
     private void Awake()
@@ -37,7 +42,9 @@ public class ImaginaryCharacter : Interactable
     {
         //_cameraT = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
-        renderer = gameObject.GetComponentInChildren<Renderer>();
+        animator = transform.GetChild(0).GetComponentInChildren<Animator>();
+
+        renderer = GetComponentInChildren<Renderer>();
         if (renderer != null) renderer.enabled = false;
 
         afterInteractionPosition = transform.Find("AfterInteraction").position;
@@ -60,7 +67,7 @@ public class ImaginaryCharacter : Interactable
             floatPath[2] = transform.localPosition + new Vector3(0f, 0.1f, 0f);
             floatPath[3] = transform.localPosition + new Vector3(0f, 0.05f, 0.05f);
 
-            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(ease).SetLoops(-1);
+            floatingTween = transform.DOLocalPath(floatPath, 8f, pathType, pathMode, 10).SetOptions(true).SetEase(floatEase).SetLoops(-1);
         }
 
         //Move();
@@ -92,6 +99,8 @@ public class ImaginaryCharacter : Interactable
     {
         float speed = (transform.position - mLastPosition).magnitude / Time.deltaTime;
         mLastPosition = transform.position;
+
+        animator.SetFloat("WalkSpeed", speed * walkSpeedCoeff, 0.1f, Time.deltaTime);
     }
 
     private void ToggleInteractability(int personality)
@@ -127,7 +136,7 @@ public class ImaginaryCharacter : Interactable
     public void Move()
     {
         DOTween.Kill(transform);
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetLookAt(0f, new Vector3(0, 0, -1));
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1));
 
         //transform.DORotate(afterInteractionRotation + new Vector3(0f, 90f, 0f), rotationSeconds);
         //transform.DOMove(new Vector3(afterInteractionPosition.x, 0, afterInteractionPosition.z), animationSeconds);

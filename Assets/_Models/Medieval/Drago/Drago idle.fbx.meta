@@ -1,19 +1,17 @@
 fileFormatVersion: 2
-guid: f0f8f5f57f50e6c47bfec9764e4becdb
+guid: 8db0b12651dee794f867096b324ffdd4
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -887982601649841707
+    second: metarig|metarigAction
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Modelbody_Material002
+      name: Material
     second: {fileID: 2100000, guid: db56f7b4bec64ae4a9db2a2ba954e97b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Modeleyewhites_Material005
-    second: {fileID: 2100000, guid: a99a8d8e4493e70418e95edf64fb6a6f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -25,8 +23,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
-      does not match:\n\tCannot find root motion transform 'metarig'.\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -101,7 +98,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
