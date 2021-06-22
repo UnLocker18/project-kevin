@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MidLevel.unity
     guid: c2bb580d088933b48aa0483f164e1708
+  - enabled: 1
+    path: Assets/_Scenes/WesternLevel.unity
+    guid: a08e1800ecfa91143a7ee689b9a06b9e
   m_configObjects: {}

@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6029407714068618100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569779857205209131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da44fe72eecbc4cbe3f037fc45e33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  albedoStandard: {fileID: 2800000, guid: 8e343a29d61854e4ea2e2d3a6d86f82c, type: 3}
+  albedoPath:
+  - {fileID: 2800000, guid: cf297b2642fed8244b26aefcbcae1bf6, type: 3}
+  - {fileID: 2800000, guid: 83a827343984a90458482dc8f0692fa4, type: 3}
+  - {fileID: 2800000, guid: 281a941ed32610c4494c59c788cbecb5, type: 3}
+  - {fileID: 2800000, guid: c0f4e1a339f99f142894e4230c05ef2f, type: 3}
+  - {fileID: 2800000, guid: 6ae758b0a5c815149b02ca21d026ee06, type: 3}
+  - {fileID: 2800000, guid: 455f6bb979cfe91409bb89a3a3df67ec, type: 3}
+  - {fileID: 2800000, guid: a25a37cb3c60af6468a5f933802ad8a4, type: 3}
+  - {fileID: 2800000, guid: 504b523cf54c01f4eb4aa40d89cf0c2a, type: 3}
+  - {fileID: 2800000, guid: 8f191298fe5e22c4da47d29685885520, type: 3}
+  - {fileID: 2800000, guid: 47541d476d65ff34f895c69046c68cf5, type: 3}
+  emissionPath:
+  - {fileID: 2800000, guid: c314fef157172e146a9a917e3a28f876, type: 3}
+  - {fileID: 2800000, guid: 59ce49f454ed0bf4a8d28e051e916dcc, type: 3}
+  - {fileID: 2800000, guid: f08716e34dee8f343a28479fd6182660, type: 3}
+  - {fileID: 2800000, guid: 13e9c35bffc9ecc4e91209d5fb2d41e5, type: 3}
+  - {fileID: 2800000, guid: 6692e79b8b002c749818987e0b925eb3, type: 3}
+  - {fileID: 2800000, guid: 62bfee3070d68ba479fbb992e3cc81c5, type: 3}
+  - {fileID: 2800000, guid: b8ca9c9d5423e754ca6e91bd51964563, type: 3}
+  - {fileID: 2800000, guid: a9cc8a828f3ecd746bf38b28baa50397, type: 3}
+  - {fileID: 2800000, guid: 4b88d8c1137a7e046af82ae835a5e1ae, type: 3}
+  - {fileID: 2800000, guid: d56f646b397a2534683d238a85cfa35a, type: 3}
 --- !u!1001 &4569779858299315162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,12 +126,19 @@ PrefabInstance:
     - target: {fileID: 2716962310855865948, guid: 975b66eb49529ad4394a751d15e72260,
         type: 3}
       propertyPath: m_Name
-      value: FloorButton_2
+      value: FloorButton_2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8251142777426033037, guid: 975b66eb49529ad4394a751d15e72260,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c34ffa6829aebe74497cbba9fd963b58, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8690436822585041042, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 975b66eb49529ad4394a751d15e72260, type: 3}
+--- !u!1 &4569779857205209131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1104792561, guid: 975b66eb49529ad4394a751d15e72260,
+    type: 3}
+  m_PrefabInstance: {fileID: 4569779858299315162}
+  m_PrefabAsset: {fileID: 0}

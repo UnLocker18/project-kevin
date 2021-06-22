@@ -107,7 +107,7 @@ public class ImaginaryCharacter : Interactable
         }
 
         DOTween.Kill(transform);
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => {
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetOptions(AxisConstraint.None, AxisConstraint.X | AxisConstraint.Z).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => {
             FloatAnimation();
             if (!collidersActiveOnMove && colliders.Length > 0)
             {

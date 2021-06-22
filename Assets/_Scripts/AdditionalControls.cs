@@ -23,6 +23,7 @@ public class AdditionalControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown) Debug.Log("any");
         if (enableCheats)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);
