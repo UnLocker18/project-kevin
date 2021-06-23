@@ -13,6 +13,7 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
 
     private float walkAnimationSpeed = 0f;
     [HideInInspector] public bool isGrabbing = false;
+    [HideInInspector] public bool isMoving = false;
 
     private Transform _cameraT;
 
@@ -55,7 +56,12 @@ public class SimpleThirdPRigidbodyController : MonoBehaviour
         _inputVector = new Vector3(h, 0, v);
         _inputSpeed = Mathf.Clamp(_inputVector.magnitude, 0f, 1f);
 
-        if (_inputSpeed < moveThreshold) _inputSpeed = 0f;
+        if (_inputSpeed < moveThreshold)
+        {
+            _inputSpeed = 0f;
+            isMoving = false;
+        }
+        else isMoving = true;
 
         //Compute direction According to Camera Orientation
         _targetDirection = _cameraT.TransformDirection(_inputVector).normalized;
