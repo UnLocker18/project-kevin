@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
 
     private GameObject ropeIndicator;
     private GameObject hintGroup;
+    private GameObject checkpointReached;
     private TMP_Text hintText;
     private RawImage hintIcon;
 
@@ -22,8 +24,9 @@ public class UIManager : MonoBehaviour
 
         ropeIndicator = transform.GetChild(0).gameObject;
         hintGroup = transform.GetChild(2).gameObject;
+        checkpointReached = transform.Find("CheckpointReached").gameObject;
         hintText = transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>();
-        hintIcon = transform.GetChild(2).GetChild(1).GetComponent<RawImage>();
+        hintIcon = transform.GetChild(2).GetChild(1).GetComponent<RawImage>();        
 
         HideHint();
     }
@@ -115,5 +118,19 @@ public class UIManager : MonoBehaviour
     {
         //hintText.text = "";
         hintGroup.SetActive(false);
+    }
+
+    public void CheckpointReached()
+    {
+        TMP_Text checkpointText = checkpointReached.transform.GetChild(0).GetComponent<TMP_Text>();
+        checkpointText.alpha = 0f;
+
+        checkpointReached.SetActive(true);
+                
+        checkpointText.DOFade(1f, 2f)
+            .OnComplete(() => {
+                checkpointText.DOFade(0f, 2f)
+                    .OnComplete(() => checkpointReached.SetActive(false));                
+            });
     }
 }

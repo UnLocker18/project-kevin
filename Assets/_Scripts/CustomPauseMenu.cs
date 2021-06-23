@@ -42,6 +42,15 @@ public class CustomPauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void RestartFromBeginning()
+    {
+        CheckpointManager checkpointManager = CheckpointManager.instance;
+        if (checkpointManager != null) Destroy(checkpointManager.gameObject);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
+
     public void QuitToMenu()
     {
         CheckpointManager checkpointManager = CheckpointManager.instance;
