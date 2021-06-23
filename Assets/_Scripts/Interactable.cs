@@ -58,7 +58,7 @@ public abstract class Interactable : MonoBehaviour
                     GetComponentInChildren<BoxCollider>().enabled = false;
                     transform.parent = spineTransform;
                     mainCharacter.GetComponent<AdditionalControls>().EnableControls();
-                    mainCharacter.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                    mainCharacter.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
                 });
                         
             mainCharacter.GetComponent<BoxCollider>().enabled = true;
