@@ -19,19 +19,19 @@ public class FloorButton : MonoBehaviour
     private bool isActive = false;
     private Transform buttonMove;
     private Vector3 buttonMovePosition;
-    
+
     void Awake()
-    {        
+    {
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
         buttonMove = transform.Find("Pulsante").GetChild(0);
-        buttonMovePosition = buttonMove.position;        
+        buttonMovePosition = buttonMove.position;
     }
 
     void Start()
     {
         //_renderer = GetComponentInChildren<Renderer>();
 
-        if (inverted) Deactivate();
+        if (inverted) StartCoroutine("DelayedDeactivate");
     }
 
     public void Activate()
@@ -57,4 +57,12 @@ public class FloorButton : MonoBehaviour
         //if (isActive) _renderer.material = activeMaterial;
         //else _renderer.material = inactiveMaterial;
     }
+
+    private IEnumerator DelayedDeactivate()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Deactivate();
+    }
+
 }

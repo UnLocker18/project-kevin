@@ -2,23 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Filo;
+using System;
 
 public class SpawnCable : MonoBehaviour
 {
+    [SerializeField] private GameObject cableObj;    
     [SerializeField] private CableBody[] bodies;
-    
-    void Start()
+    [SerializeField] private bool startMode = false;
+    [SerializeField] private bool triggerMode = false;
+
+    private Cable cable;
+
+    private void Awake()
     {
-        StartCoroutine("DelayedSpawn");    
+        cable = cableObj.GetComponent<Cable>();
     }
 
-    private IEnumerator DelayedSpawn()
+    void Start()
     {
-        Cable cable = GetComponent<Cable>();
-        cable.enabled = false;
+        //if (cable == null) cable = GetComponent<Cable>();
+        if (startMode) StartCoroutine("DelayedSpawn");
+    }
 
-        yield return new WaitForSeconds(5f);        
+    private void OnTriggerEnter(Collider other)
+    {
+        if (triggerMode && other.gameObject.name == "MainCharacter")
+        {
+            Spawn();
+        }
+    }
 
+    private void Spawn()
+    {
         cable.links = new Cable.Link[bodies.Length];
 
         int i = 0;
@@ -39,8 +54,15 @@ public class SpawnCable : MonoBehaviour
 
             cable.links[i] = link;
             i++;
-        }
-                
-        cable.enabled = true;
+        }        
+
+        Instantiate(cableObj);
+    }
+
+    private IEnumerator DelayedSpawn()
+    {
+        yield return new WaitForSeconds(5f);
+
+        Spawn();
     }
 }

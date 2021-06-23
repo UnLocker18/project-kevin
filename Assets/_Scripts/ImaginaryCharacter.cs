@@ -103,20 +103,24 @@ public class ImaginaryCharacter : Interactable
             foreach (Collider col in colliders)
             {
                 col.enabled = false;
-            }
+                environmentInteractions.gameObject.GetComponentInChildren<Trigger>().RemoveFromList(col);
+            }            
         }
 
         DOTween.Kill(transform);
-        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10).SetOptions(AxisConstraint.None, AxisConstraint.X | AxisConstraint.Z).SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1)).OnComplete( () => {
-            FloatAnimation();
-            if (!collidersActiveOnMove && colliders.Length > 0)
-            {
-                foreach (Collider col in colliders)
+        transform.DOPath(path.ToArray(), animationSeconds, pathType, pathMode, 10)
+            .SetOptions(AxisConstraint.None, AxisConstraint.X | AxisConstraint.Z)
+            .SetEase(pathEase).SetLookAt(0f, new Vector3(0, 0, -1))
+            .OnComplete( () => {
+                FloatAnimation();
+                if (!collidersActiveOnMove && colliders.Length > 0)
                 {
-                    col.enabled = true;
+                    foreach (Collider col in colliders)
+                    {
+                        col.enabled = true;
+                    }
                 }
-            }
-        });
+            });
 
         hasMoved = true;        
     }

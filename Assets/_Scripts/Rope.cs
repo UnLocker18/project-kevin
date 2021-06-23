@@ -11,7 +11,7 @@ public class Rope : Interactable
     private Vector3 startPostition;
     private Rigidbody rigidbody;
 
-    Cable cable;
+    private Cable cable;
     [SerializeField] private GameObject cableObj;
     private GameObject cableInstance;
 
