@@ -92,16 +92,14 @@ public class Rope : Interactable
     {
         Cable.Link link = new Cable.Link();
 
-        if (obj.GetComponentInChildren<CableBody>().GetType()==typeof(CableDisc)){
-
-        link.type = Cable.Link.LinkType.Rolling;
-        
+        if (obj.GetComponentInChildren<CableBody>().GetType()==typeof(CableDisc))
+        {
+            link.type = Cable.Link.LinkType.Rolling;        
         }
 
-        else {
-
-        link.type = Cable.Link.LinkType.Attachment;
-        
+        else
+        {
+            link.type = Cable.Link.LinkType.Attachment;        
         }
 
         link.body = obj.GetComponentInChildren<CableBody>();

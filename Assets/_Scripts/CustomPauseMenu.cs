@@ -7,21 +7,10 @@ public class CustomPauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
     private GameObject restartLevel;
-    //public GameObject UICanvas;
-    //public AudioSource backgroundAudio;
 
     private void Start()
     {
         restartLevel = transform.Find("RestartLevel").gameObject;
-    }
-
-    private void Update()
-    {
-        //if (Input.GetButtonDown("Cancel"))
-        //{
-        //    if (gameIsPaused) Resume();
-        //    else Pause();
-        //}
     }
 
     public void ToggleMenu()
@@ -33,11 +22,8 @@ public class CustomPauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        //UICanvas.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
-
-        //backgroundAudio.Pause();
     }
 
     public void Resume()
@@ -46,11 +32,8 @@ public class CustomPauseMenu : MonoBehaviour
         if (restartLevel.activeSelf) restartLevel.SetActive(false);
 
         pauseMenuUI.SetActive(false);
-        //UICanvas.SetActive(true);
         Time.timeScale = 1f;
         gameIsPaused = false;
-
-        //backgroundAudio.Play();
     }
 
     public void Restart()
@@ -61,24 +44,28 @@ public class CustomPauseMenu : MonoBehaviour
 
     public void QuitToMenu()
     {
+        CheckpointManager checkpointManager = CheckpointManager.instance;
+        if (checkpointManager != null) Destroy(checkpointManager.gameObject);
+
         SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
+        Time.timeScale = 1f;        
     }
 
     public void LoadMainLevel()
     {
+        CheckpointManager checkpointManager = CheckpointManager.instance;
+        if (checkpointManager != null) Destroy(checkpointManager.gameObject);
+
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
 
     public void LoadNextLevel()
     {
+        CheckpointManager checkpointManager = CheckpointManager.instance;
+        if (checkpointManager != null) Destroy(checkpointManager.gameObject);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
     }
-
-    //public void LoadTutorial()
-    //{
-    //    SceneManager.LoadScene(2);
-    //}
 }

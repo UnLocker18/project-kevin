@@ -21,8 +21,6 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-
         doorAngle = transform.eulerAngles;
 
         door1 = transform.Find("Door1");
@@ -52,7 +50,9 @@ public class Door : MonoBehaviour
     }
 
     public void Open()
-    {   
+    {
+        if (audioManager == null) audioManager = FindObjectOfType<AudioManager>();
+
         if (door1 && door2)
         {
             door1.DORotate(doorAngle + new Vector3(0, 100, 0), animationSeconds);
@@ -67,6 +67,8 @@ public class Door : MonoBehaviour
 
     public void Close()
     {
+        if (audioManager == null) audioManager = FindObjectOfType<AudioManager>();
+
         if (door1 && door2)
         {
             door1.DORotate(doorAngle, animationSeconds);

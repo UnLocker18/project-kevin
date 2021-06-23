@@ -28,13 +28,14 @@ public class AudioManager : MonoBehaviour
 
     public void Play (string name){
 
-        Sound s = Array.Find(sounds, sound=> sound.name==name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
         if (name=="dropSound"){
             s.source.PlayDelayed(0.4f);
 
         }
         else{
-        s.source.Play();
+            s.source.Play();
         }
     }
 }

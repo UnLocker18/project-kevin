@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91609a312e8b943819b6b3b9b5b83792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 399de4742e06834448ffc36f0999f7b4, type: 2}
   sounds:
   - name: dropSound
     clip: {fileID: 8300000, guid: a09480ce1b2d64f3a9aea2b9c9988bff, type: 3}
@@ -62,3 +63,9 @@ MonoBehaviour:
     pitch: 1.37
     source: {fileID: 0}
     loop: 1
+  - name: doorOpen
+    clip: {fileID: 8300000, guid: 3c13677b37b08904487fbe0c29e52dd3, type: 3}
+    volume: 0.442
+    pitch: 1.37
+    source: {fileID: 0}
+    loop: 0

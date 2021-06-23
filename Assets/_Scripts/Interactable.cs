@@ -49,14 +49,16 @@ public abstract class Interactable : MonoBehaviour
             
             transform.rotation = mainCharacter.localRotation;
             //transform.position = mainCharacter.Find("GrabbingPoint").position;
-
+            
+            mainCharacter.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             mainCharacter.GetComponent<AdditionalControls>().DisableControls();
 
             transform.DOJump(mainCharacter.Find("GrabbingPoint").position, 0.2f, 1, 0.5f)
                 .OnComplete( () => {
                     GetComponentInChildren<BoxCollider>().enabled = false;
                     transform.parent = spineTransform;
-                    mainCharacter.GetComponent<AdditionalControls>().EnableControls();                    
+                    mainCharacter.GetComponent<AdditionalControls>().EnableControls();
+                    mainCharacter.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 });
                         
             mainCharacter.GetComponent<BoxCollider>().enabled = true;
@@ -67,7 +69,7 @@ public abstract class Interactable : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("pickSound");
         }
         else
-        {
+        {            
             mainCharacter.GetComponent<BoxCollider>().enabled = false;
             GetComponentInChildren<BoxCollider>().enabled = true;
             transform.parent = null;

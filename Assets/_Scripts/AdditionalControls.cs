@@ -25,8 +25,8 @@ public class AdditionalControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey) Debug.Log("keyboard");
-        else if (characterController.isMoving && (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.95f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.95f)) Debug.Log("controller");
+        //if (Input.anyKey) Debug.Log("keyboard");
+        //else if (characterController.isMoving && (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.95f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.95f)) Debug.Log("controller");
 
         if (enableCheats)
         {

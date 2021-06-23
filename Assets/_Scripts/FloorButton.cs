@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using DG.Tweening;
 
 public class FloorButton : MonoBehaviour
@@ -7,7 +8,7 @@ public class FloorButton : MonoBehaviour
     //[SerializeField] private Material activeMaterial;
     //[SerializeField] private Material inactiveMaterial;
 
-    [SerializeField] private bool inverted;
+    [SerializeField] private bool inverted = false;
     [SerializeField] private float range = 0.1f;
     [SerializeField] private float animationSeconds = 0.5f;
 
@@ -23,12 +24,14 @@ public class FloorButton : MonoBehaviour
     {        
         buttonNumber = int.Parse(gameObject.name.Substring(gameObject.name.Length - 1));
         buttonMove = transform.Find("Pulsante").GetChild(0);
-        buttonMovePosition = buttonMove.position;
+        buttonMovePosition = buttonMove.position;        
     }
 
     void Start()
     {
         //_renderer = GetComponentInChildren<Renderer>();
+
+        if (inverted) Deactivate();
     }
 
     public void Activate()
@@ -53,5 +56,5 @@ public class FloorButton : MonoBehaviour
 
         //if (isActive) _renderer.material = activeMaterial;
         //else _renderer.material = inactiveMaterial;
-    } 
+    }
 }

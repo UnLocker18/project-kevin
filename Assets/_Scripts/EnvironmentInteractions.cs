@@ -16,10 +16,16 @@ public class EnvironmentInteractions : MonoBehaviour
     private void Start()
     {
         uIManager = FindObjectOfType<UIManager>();
-        checkpointManager = FindObjectOfType<CheckpointManager>();
+        checkpointManager = CheckpointManager.instance;
 
-        if (checkpointManager && checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero)
+        Debug.Log(checkpointManager);
+        Debug.Log(checkpointManager.lastCheckpointPos);
+        Debug.Log(checkpointManager != null && checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero);
+
+        if (checkpointManager != null && checkpointManager.lastCheckpointPos != null && checkpointManager.lastCheckpointPos != Vector3.zero)
         {
+            Debug.Log("Teleporting to checkpoint");
+
             currentPersonality = checkpointManager.personality;
             transform.position = checkpointManager.lastCheckpointPos;
             checkpointManager.respawned = true;

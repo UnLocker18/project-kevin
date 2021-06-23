@@ -8,7 +8,7 @@ public class CheckpointManager : MonoBehaviour
     public int personality;
     public bool respawned = false;
 
-    private static CheckpointManager instance;
+    public static CheckpointManager instance;
 
     private void Awake()
     {
