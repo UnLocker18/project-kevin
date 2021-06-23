@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
 
         Sound s = Array.Find(sounds, sound=> sound.name==name);
         if (name=="dropSound"){
-            s.source.PlayDelayed(0.6f);
+            s.source.PlayDelayed(0.4f);
 
         }
         else{

@@ -6,6 +6,7 @@ public class AdditionalControls : MonoBehaviour
     [SerializeField] private bool enableCheats = true;
 
     private EnvironmentInteractions environmentInteractions;
+    private SimpleThirdPRigidbodyController characterController;
     private DialogueTrigger dialogueTrigger;
     private DialogueManager dialogueManager;
     private CustomPauseMenu customPauseMenu;
@@ -15,6 +16,7 @@ public class AdditionalControls : MonoBehaviour
     void Start()
     {
         environmentInteractions = GetComponent<EnvironmentInteractions>();
+        characterController = GetComponent<SimpleThirdPRigidbodyController>();
         dialogueTrigger = GetComponent<DialogueTrigger>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         customPauseMenu = FindObjectOfType<CustomPauseMenu>();
@@ -23,7 +25,9 @@ public class AdditionalControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown) Debug.Log("any");
+        if (Input.anyKey) Debug.Log("keyboard");
+        else if (characterController.isMoving && (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.95f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.95f)) Debug.Log("controller");
+
         if (enableCheats)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1)) environmentInteractions.SetPersonality(0);

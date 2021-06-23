@@ -16,9 +16,13 @@ public class Door : MonoBehaviour
     private int activeButtons = 0;
     private int neededActivators = 1;
 
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+
         doorAngle = transform.eulerAngles;
 
         door1 = transform.Find("Door1");
@@ -55,7 +59,10 @@ public class Door : MonoBehaviour
             door2.DORotate(doorAngle + new Vector3(0, -100, 0), animationSeconds);
         }
         else transform.DORotate(doorAngle + new Vector3(0, 100, 0), animationSeconds);
+
         isOpen = true;
+
+        audioManager.Play("doorOpen");
     }
 
     public void Close()
@@ -66,7 +73,10 @@ public class Door : MonoBehaviour
             door2.DORotate(doorAngle, animationSeconds);
         }
         else transform.DORotate(doorAngle, animationSeconds);
+
         isOpen = false;
+
+        audioManager.Play("doorOpen");
     }
 
     void Toggle(int buttonNumber, bool isActive)
