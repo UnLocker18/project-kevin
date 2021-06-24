@@ -8142,6 +8142,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBox
       objectReference: {fileID: 0}
+    - target: {fileID: 7158217384818567198, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3a60d0ff9d893b045b3a430f8caa25af,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e39adaaca2a5e42aee3c5508ddd5ab, type: 3}
 --- !u!4 &1216936137 stripped
@@ -8217,6 +8223,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBox (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7158217384818567198, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3a60d0ff9d893b045b3a430f8caa25af,
+        type: 2}
     - target: {fileID: 7636554977782825625, guid: 69e39adaaca2a5e42aee3c5508ddd5ab,
         type: 3}
       propertyPath: m_Mass
