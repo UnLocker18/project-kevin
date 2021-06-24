@@ -60,7 +60,7 @@ public class FloorButton : MonoBehaviour
 
     private IEnumerator DelayedDeactivate()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
 
         Deactivate();
     }
