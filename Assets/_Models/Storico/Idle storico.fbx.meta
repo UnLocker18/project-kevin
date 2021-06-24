@@ -1,17 +1,36 @@
 fileFormatVersion: 2
-guid: 9f367e5ce3da5824cb85179b7a61a374
+guid: f6a609881d9719e47a271becc3d4ef95
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects:
+      74: -2889085019725202202
+    second: Action.001
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: bd242cf9accb8f04984ef054ec90bc85, type: 2}
+      74: 4005700512374508713
+    second: Armature.002|mixamo.com|Layer0.001
+  - first:
+      74: -2737621890591929121
+    second: Action.002
+  - first:
+      74: -9125523489441110064
+    second: Armature|Action.001
+  - first:
+      74: 4864456487366326693
+    second: Armature|Action.002
+  - first:
+      74: 5184763646461071743
+    second: Armature|Action.005
+  - first:
+      74: -8863752359954458708
+    second: Armature|Armature.001|mixamo.com|Layer0.005
+  - first:
+      74: 6842826258572903525
+    second: Armature|Armature.002|mixamo.com|Layer0.002
+  - first:
+      74: 3591740854655688942
+    second: Armature|Armature|mixamo.com|Layer0.002
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -38,36 +57,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 35
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -119,7 +109,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: mixamorig:Hips
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -127,7 +117,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
