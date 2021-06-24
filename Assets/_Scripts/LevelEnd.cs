@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class LevelEnd : MonoBehaviour
 {
-    private GameObject menu;
+    private CustomPauseMenu menu;
 
     // Start is called before the first frame update
     void Start()
     {
-        menu = GameObject.FindGameObjectWithTag("Menu");
+        menu = FindObjectOfType<CustomPauseMenu>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "MainCharacter")
         {
-            menu.transform.Find("EndLevel").gameObject.SetActive(true);
-            Time.timeScale = 0f;
+            menu.ShowEndLevel();
         }
     }
 }

@@ -8,10 +8,12 @@ public class CustomPauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
     private GameObject restartLevel;
+    private GameObject endLevel;
 
     private void Start()
     {
         restartLevel = transform.Find("RestartLevel").gameObject;
+        endLevel = transform.Find("EndLevel").gameObject;
     }
 
     public void ToggleMenu()
@@ -22,8 +24,16 @@ public class CustomPauseMenu : MonoBehaviour
         else Pause();
     }
 
+    public void ShowEndLevel()
+    {
+        endLevel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void Pause()
     {
+        if (endLevel.activeSelf) return;
+
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
