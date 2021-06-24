@@ -48,11 +48,7 @@ public class AdditionalControls : MonoBehaviour
 
             if (Input.GetButtonDown("Pause")) customPauseMenu.ToggleMenu();
 
-            if (Input.GetButtonDown("Restart"))
-            {
-                customPauseMenu.transform.Find("RestartLevel").gameObject.SetActive(true);
-                Time.timeScale = 0f;                
-            }
+            if (Input.GetButtonDown("Restart")) customPauseMenu.ShowRestart();                          
         }
         else if (Input.GetButtonDown("ContinueDialogue")) dialogueManager.DisplayNextSentence();
     }

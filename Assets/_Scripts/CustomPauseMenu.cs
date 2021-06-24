@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CustomPauseMenu : MonoBehaviour
@@ -15,6 +16,8 @@ public class CustomPauseMenu : MonoBehaviour
 
     public void ToggleMenu()
     {
+        if (restartLevel.activeSelf) restartLevel.SetActive(false);
+
         if (gameIsPaused) Resume();
         else Pause();
     }
@@ -28,8 +31,7 @@ public class CustomPauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        if (optionsMenuUI.activeSelf) optionsMenuUI.SetActive(false);
-        if (restartLevel.activeSelf) restartLevel.SetActive(false);
+        if (optionsMenuUI.activeSelf) optionsMenuUI.SetActive(false);        
 
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -76,5 +78,13 @@ public class CustomPauseMenu : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
+    }
+
+    public void ShowRestart()
+    {
+        if (pauseMenuUI.activeSelf) return;
+
+        restartLevel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
