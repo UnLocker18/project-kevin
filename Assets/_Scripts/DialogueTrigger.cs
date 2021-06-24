@@ -16,9 +16,8 @@ public class DialogueTrigger : MonoBehaviour {
     private void Start()
     {
         environmentInteractions = GameObject.FindGameObjectWithTag("Player").GetComponent<EnvironmentInteractions>();
-        checkpointManager = FindObjectOfType<CheckpointManager>();
 
-        if (triggerOnStart && !checkpointManager.respawned) StartCoroutine("DelayedTrigger");
+        StartCoroutine("DelayedTrigger");
         if (eventTrigger) StartCoroutine("DelayedSubscription");
     }
 
@@ -39,7 +38,10 @@ public class DialogueTrigger : MonoBehaviour {
     private IEnumerator DelayedTrigger()
     {
         yield return new WaitForSeconds(1f);
-        TriggerDialogue(environmentInteractions.currentPersonality);
+
+        checkpointManager = CheckpointManager.instance;
+
+        if (triggerOnStart && !checkpointManager.respawned) TriggerDialogue(environmentInteractions.currentPersonality);
     }
 
     private IEnumerator DelayedSubscription()
