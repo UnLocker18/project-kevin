@@ -2017,6 +2017,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostProcessing
       objectReference: {fileID: 0}
+    - target: {fileID: 8727050866972018689, guid: e4e52b04796900a4398565573928c28c,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: f4fe4cda08a1b704986f014a0aac332b,
+        type: 2}
     - target: {fileID: 8727050866972018690, guid: e4e52b04796900a4398565573928c28c,
         type: 3}
       propertyPath: m_RootOrder
@@ -3923,7 +3929,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1787424
+      value: -2.1792264
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -8392,7 +8398,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1787424
+      value: -2.1792264
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -12227,7 +12233,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1787424
+      value: -2.1792264
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -14061,7 +14067,7 @@ PrefabInstance:
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1787424
+      value: -2.1792264
       objectReference: {fileID: 0}
     - target: {fileID: 642114266276541977, guid: 6f52c827fce7d7345a0ed7a25b78e0f7,
         type: 3}
@@ -14398,6 +14404,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24100000, guid: 399de4742e06834448ffc36f0999f7b4,
         type: 2}
+    - target: {fileID: 6890662286619178405, guid: 5624f278fd540d943b8c1f13b926ff58,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 10870a786c343e54d9e2aac5d14f4ad9, type: 3}
+    - target: {fileID: 6890662286619178405, guid: 5624f278fd540d943b8c1f13b926ff58,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890662286619178410, guid: 5624f278fd540d943b8c1f13b926ff58,
         type: 3}
       propertyPath: m_Name
@@ -15408,7 +15424,7 @@ PrefabInstance:
     - target: {fileID: 5086237227790546655, guid: ea94b536105f8f9499334137fb71186b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1787424
+      value: -2.1792264
       objectReference: {fileID: 0}
     - target: {fileID: 5086237227790546655, guid: ea94b536105f8f9499334137fb71186b,
         type: 3}

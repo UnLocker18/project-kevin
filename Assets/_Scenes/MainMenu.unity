@@ -1948,7 +1948,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 1d6cb9f3301f6914fbe33240f91cc41b, type: 3}
     - target: {fileID: 6890662286619178405, guid: 5624f278fd540d943b8c1f13b926ff58,
         type: 3}
       propertyPath: sounds.Array.data[0].loop
@@ -1958,6 +1958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].name
       value: theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890662286619178405, guid: 5624f278fd540d943b8c1f13b926ff58,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6890662286619178410, guid: 5624f278fd540d943b8c1f13b926ff58,
         type: 3}
