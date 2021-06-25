@@ -97,4 +97,10 @@ public class CustomPauseMenu : MonoBehaviour
         restartLevel.SetActive(true);
         Time.timeScale = 0f;
     }
+
+    public void CancelRestart()
+    {
+        restartLevel.SetActive(false);
+        Resume();
+    }
 }

@@ -69,25 +69,25 @@ public class PuzzleButton : Interactable
         if (isActive)
         {
             //renderers[0].material = inactiveMaterial;
-            if (!westernVersion)
-            {
+            //if (!westernVersion)
+            //{
                 foreach (Renderer renderer in renderers)
                 {
                     renderer.material = inactiveMaterial;
                 }
-            }
+            //}
             PlayAnimation(0);
         }
         else
         {
             //renderers[0].material = activeMaterial;
-            if (!westernVersion)
-            {
+            //if (!westernVersion)
+            //{
                 foreach (Renderer renderer in renderers)
                 {
                     renderer.material = activeMaterial;
                 }
-            }
+            //}
             PlayAnimation(1);
         }
         

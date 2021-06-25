@@ -195,7 +195,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 133353913973638053}
-        m_MethodName: Resume
+        m_MethodName: CancelRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -28,13 +28,18 @@ PrefabInstance:
     - target: {fileID: 4354793899643198291, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
       propertyPath: m_Name
-      value: PuzzleButton_1
+      value: PuzzleButton_1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4354793899643198292, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4354793899643198292, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
+        type: 3}
+      propertyPath: activeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c5a89231e1f7aa47ad38cf071bd5ee8, type: 2}
     - target: {fileID: 4354793899643198292, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
       propertyPath: westernVersion
@@ -45,6 +50,11 @@ PrefabInstance:
       propertyPath: animationSeconds
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4354793899643198292, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
+        type: 3}
+      propertyPath: inactiveMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d3aedfe3f38738c4e808d8513ec579b1, type: 2}
     - target: {fileID: 4354793899643198293, guid: 6bd3a6ff51bf45f47ad8d762d109e408,
         type: 3}
       propertyPath: m_RootOrder
